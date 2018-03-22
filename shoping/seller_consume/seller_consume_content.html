@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html class="um  landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="seller_consume_content/css/main.css">
+		<link rel="stylesheet" href="../../common/css/app.css">
+
+		<body class="shop-bccol bc-bg seller-content-fontcol  " ontouchstart>
+			<div class="ub ub-ver">
+				<!--  图片轮播开始-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+
+						<!---->
+					</div>
+				</div>
+				<!--    图片轮播结束-->
+				<!--<div class="seller-header-border bc-bg">
+                <div id="" class="seller-content-picpad">
+                <img src="../../images/img1.png" style="width: 100%;" class="ub ub-ac ub-pc" />
+                </div>
+                </div>-->
+				<div id="" class="ub ub-ver bc-bg seller-content-pad ">
+					<div id="" class="ub ub-f1 ub-ac seller-content-divheight">
+						<div id="" class="ub ub-fh seller-content-div2 seller-content-font1 seller-content-fontallcol">
+							商家名称:
+						</div>
+						<div id="FWithdrawalsName" class="seller-content-font1 seller-content-font2">
+
+						</div>
+					</div>
+					<div id="" class="ub ub-f1 ub-ac seller-content-divheight">
+						<div id="" class="ub ub-fh seller-content-div2 seller-content-fontcol">
+							人均消费:
+						</div>
+						<div>
+							￥
+						</div>
+						<div id="FaverageConsume" class="ub ub-f1  seller-content-font2" style="color: #FF7670;">
+
+						</div>
+					</div>
+				</div>
+				<div id="" class="seller-content-div1"></div>
+				<div id="" class="ub ub-ver seller-content-pad  bc-bg">
+					<div id="" class="ub ub-f1 ub-ac ">
+						<div id="" class="ub ub-ac seller-content-fontcol mybreak">
+							商家地址:
+						</div>
+						<div id="FshopAddress" class="ub ub-ac seller-content-pad4 seller-content-fontcol">
+
+						</div>
+					</div>
+					<div id="" class="ub ub-f1 ub-ac">
+						<div id="" class="ub ub-ac seller-content-fontcol">
+							商家电话:
+						</div>
+						<div id="FshopPhone" class="ub ub-ac seller-content-pad4 seller-content-fontcol">
+
+						</div>
+					</div>
+				</div>
+				<div id="" class="seller-content-div1"></div>
+				<div class="ub seller-content-padcen  bc-bg">
+					<div class="ub ub-ver ub-ac ub-pc ">
+						<div class="ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1">
+							消费金额:
+						</div>
+						<div class="ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1">
+							支付方式:
+						</div>
+						<div id="points" class="ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1">
+							分期月数:
+						</div>
+
+					</div>
+					<div class="ub">
+						<div class="ub ub-ver">
+							<div id="" class="ub ub-ac ub-pc ub-f1 seller-content-hei1  seller-content-bod2 uc-a1 seller-content-mar1">
+								<input type="number" name="" id="FwithdrawMoney" placeholder="输入本次消费金额" value="" class="seller-content-input seller-content-pad4" onkeyup="onmoneychange()" />
+							</div>
+							<div class="ub ub-pj ub-f1 seller-content-mar1" id="mode">
+								<div id="mode1" class="clsitem" onclick="clsitemclick('mode','mode1')">
+									<div style="margin-left: 0.5em; margin-right: 0.5em;" myid="1" class="shop-content-fontallco2">
+										大学生分期付
+									</div>
+									<img src="../../images/checked.png" class="clitemimg" />
+								</div>
+								<div id="mode2" class="clsitem seller-content-mar" onclick="clsitemclick('mode','mode2')">
+									<div style="margin-left: 0.5em; margin-right: 0.5em;" myid="2" class="shop-content-fontallco2">
+										自己付
+									</div>
+									<img src="../../images/checked.png" class="clitemimg" />
+								</div>
+							</div>
+							<div id="pointsvalue" class="ub ub-ac ub-pc  seller-content-hei1  seller-content-bod2 seller-content-mar1">
+								<select id="selectmonth" class="ub ub-f1 uc-a1  seller-content-select" onchange="onmonthchange();">
+
+								</select>
+								<div id="selectioc" class="ub ub-ac ub-pc ub-fv  fa fa-sort-down" onclick="selectionclick();" style="width: 2em;"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="selfpay">
+					<div class="ub seller-content-pad5  bc-bg">
+						<div class="ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1">
+							月供:
+						</div>
+						<div class="ub ub-ac  seller-content-heiw1  seller-content-mar1">
+							<div class="seller-content-textcolor">
+								￥
+							</div>
+							<div id="Fmoneymonth" class="seller-content-textcolor">
+								0.00
+							</div>
+							<div>
+								x
+							</div>
+							<div id="monthvalue">
+								1
+							</div>
+						</div>
+					</div>
+					<!--<div class="ub seller-content-pad5  bc-bg">
+                    <div class="ub  seller-content-heiw1 seller-content-font1">
+                    手续费:
+                    </div>
+                    <div class="ub seller-content-heiw1 ">
+                    <div class="seller-content-textcolor">
+                    ￥
+                    </div>
+                    <div id="Fbond" class="seller-content-textcolor">
+                    0.00
+                    </div>
+                    <div>
+                    元
+                    </div>
+                    </div>
+                    </div>-->
+
+					<div class="ub bc-bg uinn-pLb1 seller-content-padcen seller-content-mar6">
+						<div class="ub">
+							<img src="seller_consume_content/css/myImg/worn.png" class="seller-content-imge1" />
+						</div>
+						<div class="ub ub-ac ub-f1 seller-content-textcolor seller-content-mar seller-content-font1" style="width: 100%;">
+							还款日期为30天后,请及时还款
+						</div>
+					</div>
+				</div>
+				<div id="selfhid" class="selfhid" style="height: 1.5em;background-color: #FFFFFF;"></div>
+				<div class="ub ub-ver seller-content-bgc">
+					<div class="ub umar-a ub-ac seller-content-padwo">
+						<div class="checkbox checked-font-size">
+							<input type="checkbox" name="checkset" id="checkset" class="uabs ub-con" checked="checked">
+							</input>
+						</div>
+						<div class="lv_title ub-f1 marg-l ub  ut-m line1" style="color: #57CCBE;">
+							<div style="color:#787875; font-weight: bold;">
+								同意
+							</div>
+
+							<div id="agreement">
+								《分期协议》
+							</div>
+						</div>
+
+					</div>
+					<div id="servicebtn">
+						<div class="uinn-at1 uinn-pLb1 seller-content-mar4 seller-content-mar7" style="padding:1em 1em 0 1em;">
+							<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="pointspaybtn">
+								立即支付消费
+							</div>
+						</div>
+					</div>
+					<div id="selfbtn" class="uhide">
+						<div class="uinn-at1 uinn-pLb1 seller-content-mar4 seller-content-mar7" style="padding:1em 1em 0 1em;">
+							<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="selfpaybtn">
+								立即支付消费
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="../../common/js/jquery-1.7.1.min.js"></script>
+			<script src="../../common/js/appcan.js"></script>
+			<script src="../../common/js/appcan.control.js"></script>
+			<script src="../../common/js/yfkj.js"></script>
+		</body>
+		<script>
+			var consumepaym = '';
+			FeveryRate = 0;
+			FserviceRate = 0;
+			var Fmoney = 0;
+			var consumtag = '';
+			
+			shopinfo = JSON.parse(appcan.locStorage.getVal("shopinfo"));
+			//alert(shopinfo.FshoperId);
+			appcan.ready(function() {
+				
+				appcan.window.subscribe('subsumed', function(msg) {
+					consumedOrder();
+				});
+				appcan.window.subscribe('selfForderaddress', function(msg) {
+					ownerPayConsume();
+				});
+				getShoperImgs();
+				findRate();
+				//查询费率
+				//findmonthInfo(1);
+				//查询月份
+				findConsumedMoney();
+				//查询可消费金额
+				getShoperInfo();//查询商家信息
+				appcan.initBounce();
+			})
+
+			function agreement() {
+				appcan.window.open("agreement", "../../agreement/agreement.html");
+			}
+			appcan.button("#submit", "ani-act", function() {
+				$("form").submit();
+			})
+			appcan.button("#selectioc", "ani-act", function() {
+				open($(this).prev('select'));
+			})
+
+			function open(elem) {
+				if (document.createEvent) {
+					var e = document.createEvent("MouseEvents");
+					e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+					elem[0].dispatchEvent(e);
+				} else if (element.fireEvent) {
+					elem[0].fireEvent("onmousedown");
+				}
+			}
+			clsitemclick("mode", "mode1");
+
+			function clsitemclick(pid, id) {
+				$("#" + pid + " .clsitem").removeClass("clsitemselectdiv");
+				$("#" + pid + " .clsitem img").removeClass("clsitemselectimg");
+				$("#" + id).addClass("clsitemselectdiv");
+				$("#selfhid").addClass("uhide");
+				console.log($("#" + id + " img"));
+				$("#" + id + " img").addClass("clsitemselectimg");
+				if ($("#" + pid + " .clsitemselectdiv div").attr("myid") == 2) {
+				      $("#agreement").text("《服务协议》");
+					$("#selfhid").removeClass("uhide");
+					$("#selfpay").addClass("uhide");
+					$("#points").removeClass().addClass("ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1 uhide");
+					$("#pointsvalue").removeClass().addClass("ub ub-ac ub-pc  seller-content-hei1  seller-content-bod2 seller-content-mar1 uhide");
+					$("#selfbtn").removeClass();
+					$("#servicebtn").removeClass().addClass("uhide");
+					consumtag = 'selfcon';
+				} else {
+				     $("#agreement").text("《分期付协议》");
+					$("#selfhid").addClass("uhide");
+					$("#selfpay").removeClass("uhide");
+					$("#points").removeClass().addClass("ub ub-ac  seller-content-heiw1 seller-content-mar1 seller-content-font1");
+					$("#pointsvalue").removeClass().addClass("ub ub-ac ub-pc  seller-content-hei1  seller-content-bod2 seller-content-mar1");
+					$("#selfbtn").removeClass().addClass("uhide");
+					$("#servicebtn").removeClass();
+					consumtag = 'pointscon';
+				}
+			}
+
+			function getclsitemvalue(pid) {
+				appcan.window.openToast($("#" + pid + " .clsitemselectdiv div").attr("myid"));
+			}
+			//下拉选择和选中取值
+			function findmonthInfo(value) { //加载分期月数信息
+			   // alert(shopinfo.FshoperId);
+				var datas = {
+					FpointsId: value, //此处由消费列表传来
+				};
+				appcan.ajax({
+					url: Serverurl + "/user/findMonthForConsume",
+					type: "POST",
+					dataType: 'json',
+					data: datas,
+					success: function(result) {
+						var data = result.Data;
+						loadselect("selectmonth", 1, data);
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '500');
+					}
+				});
+			}
+			//查询商家信息
+			function getShoperInfo() {
+				
+				appcan.ajax({
+					url: Serverurl + "/user/getShoperInfo",
+					type: "POST",
+					dataType: 'json',
+					data: {
+						FshoperId: shopinfo.FshoperId
+					},
+					success: function(result) {
+						var data = result.Data[0];
+						$("#FWithdrawalsName").text(data.FshopName);
+						$("#FshopAddress").text(data.FshopAddress);
+						$("#FaverageConsume").text(data.FaverageConsume);
+						$("#FshopPhone").text(data.FshopPhone);
+						
+						findmonthInfo(data.FavgNumber);
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错1!', '500');
+					}
+				});
+			}
+			//协议合同按钮
+			appcan.button("#agreement", "btn-act", function() {
+					if ($("#FwithdrawMoney").val() == "") {
+						appcan.window.openToast("请输入消费金额", "1000");
+						return;
+					}
+					if (consumtag == 'pointscon') {
+						var datas = {
+							FwithdrawMoney: $("#FwithdrawMoney").val(), //消费金额
+							FpointsId: getselectvalue('selectmonth'), //分期月数
+							FuserId: getuserid()
+						};
+						appcan.locStorage.setVal("takecontract", datas);
+						appcan.window.open("pact", "../../contract/pact/pact.html");
+					} else if (consumtag == 'selfcon') {
+						 appcan.window.open("agreement", "../../agreement/agreement.html");
+					}
+				})
+				//查询商家图片
+			function getShoperImgs() {
+				//alert(shopinfo.FshoperId);
+				appcan.ajax({
+					url: Serverurl + "/user/getShoperImgs",
+					type: "POST",
+					dataType: 'json',
+					data: {
+						FshoperId: shopinfo.FshoperId
+					},
+					success: function(result) {
+						var data = result.Data;
+						if (result.Msg == '1') {
+							var length = data.length;
+							for (var i = 0; i < length; i++) {
+								var imgs = data[i].Fphoto;
+								var newimg = imgs.split(',')[0];
+								var img = '<div class="swiper-slide"><img src=' + newimg + ' style="width: 100%" /></div>'
+								$(".swiper-wrapper").append(img);
+								//                   图片轮播js
+								var swiper = new Swiper('.swiper-container', {
+									pagination: '.swiper-pagination',
+									nextButton: '.swiper-button-next',
+									prevButton: '.swiper-button-prev',
+									paginationClickable: true,
+									spaceBetween: 0,
+									centeredSlides: true,
+									autoplay: 2000, //动画播放时间间隔在此设置
+									autoplayDisableOnInteraction: false,
+									//noSwiping:true,
+								});
+							}
+						}
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错1!', '500');
+					}
+				});
+			}
+
+			function loadselect(id, value, data) { //加载月数
+				$("#" + id).append("<option value='-1'>请选择分期月数</option>");
+				$.each(data, function(i, item) {
+					Fvalue = item.Fvalue;
+					FpointsName = item.FpointsName;
+					$("#" + id).append("<option value='" + Fvalue + "'>" + item.FpointsName + "</option>");
+				});
+				selectchoose(id, value);
+			}
+
+			function selectMonth(id, value) {
+				$("#" + id + " option[selected='select'").attr("selected", false);
+				$("#" + id + " option[value=" + value + "]").attr("selected", true);
+			}
+
+			function getselectvalue(id) {
+				var index = $("#" + id).get(0).selectedIndex;
+				var value = $("#" + id).get(0).options[index].value;
+				return value;
+			}
+
+			function selectchoose(id, value) {
+				$("#" + id + " option[selected='select'").attr("selected", false);
+				$("#" + id + " option[value=" + value + "]").attr("selected", true);
+			}
+			//下拉选择和选中取值结束
+			//服务费利率、月手续费利率查询
+			function findRate() {
+				appcan.ajax({
+					url: Serverurl + "/user/findRate",
+					type: "POST",
+					dataType: 'json',
+					success: function(result) {
+						var data = result.Data[0];
+						FeveryRate = data.FeveryRate;
+						FserviceRate = data.FserviceRate;
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '500');
+					}
+				});
+			}
+			//计算服务费
+			function onmoneychange() {
+				var takeservicemoney = $("#FwithdrawMoney").val() * FserviceRate;
+				//消费总手续费
+				//月供
+				var cost = ($("#FwithdrawMoney").val()) / (getselectvalue('selectmonth')) + ($("#FwithdrawMoney").val()) * FeveryRate;
+				$("#Fbond").text(takeservicemoney.toFixed(2));
+				//提现手续费赋值
+				$("#Fmoneymonth").text(cost.toFixed(2));
+				//月供
+				$("#monthvalue").text(getselectvalue('selectmonth'));
+				//分期月数
+			}
+			//点击月数动态计算月供和保证金
+			function onmonthchange() {
+				var takeservicemoney = $("#FwithdrawMoney").val() * FserviceRate;
+				//消费总手续费
+				//月供
+				var cost = ($("#FwithdrawMoney").val()) / (getselectvalue('selectmonth')) + ($("#FwithdrawMoney").val()) * FeveryRate;
+				$("#Fbond").text(takeservicemoney.toFixed(2));
+				//提现手续费赋值
+				$("#Fmoneymonth").text(cost.toFixed(2));
+				//月供
+				$("#monthvalue").text(getselectvalue('selectmonth'));
+				//分期月数
+			}
+			//查询可消费金额
+			function findConsumedMoney() {
+				var datas = {
+					FuserId: getuserid()
+				};
+				appcan.ajax({
+					url: Serverurl + "/user/findConsumedMoney",
+					type: "POST",
+					dataType: 'json',
+					data: datas,
+					success: function(result) {
+						var data = result.Data[0];
+						if (result.Msg == '1') {
+							Fmoney = data.Fusemoney;
+						}
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '500');
+					}
+				});
+			}
+
+			function checkset() {
+				if (!$("#checkset").prop("checked")) {
+					appcan.window.openToast("请阅读协议", "500");
+					return;
+				}
+			} 
+			//分期付按钮
+			appcan.button("#pointspaybtn", "ani-act", function(a, b) {
+					consumepaym = 'pointspaybtn';
+					$("selfhid").addClass("uhide");
+					if (cheackPaystat() == 0) {
+						return;
+					}
+					if (getselectvalue('selectmonth') < 0) {
+						appcan.window.openToast("请选择分期月数", "1000");
+						return;
+					}
+					if ($("#FwithdrawMoney").val() < 100) {
+						appcan.window.openToast("消费金额不得小于100", "1000");
+						return;
+					}
+					if ($("#FwithdrawMoney").val() == "") {
+						appcan.window.openToast("请输入消费金额", "1000");
+						return;
+					}
+					if (!$("#checkset").prop("checked")) {
+						appcan.window.openToast("请阅读协议", "1000");
+						return;
+					}
+					if($("#FwithdrawMoney").val() > Fmoney){
+					    appcan.window.openToast("您的可消费金额不足！", "1000");
+                        return;
+					}
+					var fejiao = $("#FwithdrawMoney").val();
+					appcan.locStorage.setVal("fejiao", fejiao);
+					appcan.window.open({
+						name: 'subpassword',
+						dataType: 0,
+						data: '../../subsumed/subsumed.html',
+						aniId: 12,
+						type: 256
+					});
+					//consumedOrder();
+				})
+				//  分期付     提交到后台的数据
+			function consumedOrder() {
+				var datas = {
+					FwithdrawMoney: $("#FwithdrawMoney").val(), //消费金额
+					FpointsId: getselectvalue('selectmonth'), //分期月数
+					FuserId: getuserid(),
+					FWithdrawalsName: $("#FWithdrawalsName").text(),
+					FshoperId: shopinfo.FshoperId
+				};
+				appcan.ajax({
+					url: Serverurl + "/user/consumedOrder",
+					type: "POST",
+					dataType: 'json',
+					data: datas,
+					success: function(result) {
+						if (result == '1') {
+							appcan.window.openToast('提现信息提交成功', '1000');
+							appcan.locStorage.setVal("orderindex", 2);
+							appcan.window.open("myorder", "../../myorder/order.html");
+							appcan.window.evaluateScript({
+								name: 'seller_consume',
+								scriptContent: 'windowclose()'
+							});
+						} else if (result == '2') {
+							appcan.window.openToast('您的可消费金额不足', '1000');
+						}
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '500');
+					}
+				});
+			}
+			//自己付按钮
+			appcan.button("#selfpaybtn", "ani-act", function(a, b) {
+					consumepaym = 'selfpaybtn';
+					var userid = getuserid();
+					if (userid == -1) {
+						appcan.window.alert({
+							title: "提示",
+							content: "您没有登陆或者注册",
+							buttons: ['取消', '去完成'],
+							callback: function(err, data, dataType, optId) {
+								if (data == 1) {
+									appcan.window.open({
+										name: "login",
+										aniId: 1,
+										data: "../../login/login.html",
+									});
+								}
+							}
+						});
+						return;
+					}
+					if ($("#FwithdrawMoney").val() == "") {
+						appcan.window.openToast("请输入消费金额", "500");
+						return;
+					}
+					if (!$("#checkset").prop("checked")) {
+						appcan.window.openToast("请阅读协议", "500");
+						return;
+					}
+					ownerPayConsume();
+				})
+				//自己付   提交到后台的数据
+			function ownerPayConsume() {
+				var selfdatas = {
+					FwithdrawMoney: $("#FwithdrawMoney").val(), //消费金额
+					FWithdrawalsName: $("#FWithdrawalsName").text(), //消费订单名
+					FshoperId: shopinfo.FshoperId, //商家ID
+					Fpaystates: 0
+				};
+				appcan.locStorage.setVal("selfdatas", selfdatas);
+				appcan.window.open("selfpay", "../../billpayback/selfpay.html");
+			}
+		</script>
+
+</html>

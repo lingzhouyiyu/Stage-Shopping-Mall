@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="detailcategory_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="um-vp bc-bg common-font-color1" ontouchstart>
+
+		<div class="ub ub-fv" style="z-index: 9999;;position: fixed !important; top: 0; width: 100%;">
+			<div class="ub ub-ver myleft" style="overflow: auto;">
+				<div class="ub ub-ac  myleft-list ">
+					<div class="ub ub-ac ub-pc myleft-div">
+						<img class="ub ub-ac ub-pc myleft-list-img" src="../common/images/shop1.png" />
+					</div>
+					<div class="ub ub-ac mylistname ub-f1">
+						大众便利店
+					</div>
+					<div class="fa fa-angle-right common-font-color1 myfa">
+
+					</div>
+				</div>
+				<div class="ub ub-ac myleft-list ">
+					<div class="ub ub-ac ub-pc myleft-div">
+						<img class="ub ub-ac ub-pc myleft-list-img" src="../common/images/Driving-training1.png" />
+					</div>
+					<div class="ub ub-ac  ub-f1 mylistname">
+						驾校培训
+					</div>
+					<div class="fa fa-angle-right common-font-color1 myfa">
+
+					</div>
+				</div>
+				<div class="ub ub-ac myleft-list ">
+					<div class="ub ub-ac ub-pc myleft-div">
+						<img class="ub ub-ac ub-pc myleft-list-img" src="../common/images/compute1r.png" />
+					</div>
+					<div class="ub ub-ac ub-f1 mylistname">
+						电脑平板
+					</div>
+					<div class="fa fa-angle-right common-font-color1 myfa">
+
+					</div>
+				</div>
+				<div class="ub ub-ac  myleft-list ">
+					<div class="ub ub-ac ub-pc myleft-div">
+						<img class="ub ub-ac ub-pc myleft-list-img" src="../common/images/electronic-vehicle1.png" />
+					</div>
+					<div class="ub ub-ac ub-f1 mylistname">
+						电动车
+					</div>
+					<div class="fa fa-angle-right common-font-color1 myfa">
+
+					</div>
+				</div>
+				<div class="ub ub-ac  myleft-list ">
+					<div class="ub ub-ac ub-pc myleft-div">
+						<img class="ub ub-ac ub-pc myleft-list-img" src="../common/images/Mobile-phone-communication1.png" />
+					</div>
+					<div class="ub ub-ac ub-f1 mylistname">
+						手机通讯
+					</div>
+					<div class="fa fa-angle-right common-font-color1 myfa">
+
+					</div>
+				</div>
+
+			</div>
+			<div class="ub ub-f1 uinn">
+				<div id="" class="ub ub-ac mysearch uc-a1  ub-f1">
+					<div class="ub ub-ac ub-pc  ub-f1 ">
+						<input type="text" placeholder="大家都在搜iphonse 6s" class="myinput" name="" id="" value="" class="ub ub-ac ub-pc " />
+					</div>
+					<div class="ub ub-img ub-ac ub-pc">
+						<img src="../images/search.png" class="ub ub-ac ub-pc my-img-search" />
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ver">
+					<div id="">
+						1111
+					</div>
+					<div id="">
+						1111
+					</div>
+					<div id="">
+						1111
+					</div>
+				</div>
+		</div>
+		<script src="../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/swiper/swiper.min.js"></script>
+		<script src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			//appcan.initBounce();
+		})
+		appcan.button("#submit", "ani-act", function() {
+			$("form").submit();
+		})
+
+		$("form").on('submit', function() {
+			appcan.request.postForm($("form"), function() {
+				appcan.window.alert({
+					title: "提醒",
+					content: "您已经提交了表单:)",
+					buttons: '确定',
+					callback: function(err, data, dataType, optId) {
+						console.log(err, data, dataType, optId);
+					}
+				});
+			}, function(err) {
+
+			});
+			return false;
+		});
+	</script>
+
+</html>

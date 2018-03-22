@@ -1,0 +1,141 @@
+.mymarginn{
+    margin-left:0.5em;
+    margin-right0.5em;
+    margin-top:0.8em;
+    margin-bottom:0.5em;
+  
+}
+.titlemar{
+	margin-left: 0.5em;
+}
+.myprice{
+	color: #FF7670;margin-top: 1em;
+}
+.myimge{
+	height:5.5em;
+	width: 5.5em;
+}
+.mypading{
+    padding: 0.5em 0;
+}
+.myheader{
+    margin-left: 1.5em;margin-bottom: 2em;margin-top: 2em;margin-right: 0.5em;
+}
+.myheader-pic{
+    border: 1px solid #bbbbbb;height: 6em;width: 6em;
+}
+.myheader-mar{
+    margin-left: 1em;
+}
+.myheader-right-text{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.myfadiv{
+    border-bottom: 1px solid #bbbbbb;
+}
+.mybgmar{
+    margin: 0.5em 0.5em;
+}
+.myyellow{
+    margin-left: 0.5em;
+}
+.b-gra{
+	border-color:#b7b7b7;
+}
+.t-gra
+{
+	color:#a1a1a1;
+}
+.addfont{
+	font-weight:bold;
+}
+.t-blu
+{
+	color:#177fc7;
+}
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.respwd{
+	background-image:url('myImg/pwd.png');
+}
+.resuser{
+	background-image:url('myImg/user.png');
+}
+.logo{
+	background-image:url('myImg/logo.png');
+}
+.umhw{
+	min-height:1em;
+	min-width:1em;
+}
+.umhw1{
+	min-height:3.16em;
+	min-width:11.5em;
+}
+.umhw2{
+	min-height:1.6em;
+	min-width:1.6em;
+}
+.ulab .uinput
+{
+	margin-left:3px
+}
+.pnlgroup
+{
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 1.6em;
+    padding-bottom: 0.8em;
+    background-color: #FFFFFF;
+    margin-bottom: 0.5em;
+    margin-left:0.5em;
+    margin-right: 0.5em;
+    border-radius: 0.3em;
+   // border-image: -webkit-gradient(linear,center top,center bottom,from(#ccc), to(#000)) 21 100 30 21 repeat repeat;
+
+}
+.pnlphoneinput
+{
+    border-bottom: 1px #CCCCCA solid;
+}
+.pnlinputs{
+    border: 1px #CCCCCA solid;
+    background-color: #F6F6F4;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+}
+
+.item
+{
+   float: left;
+   height: 2em;
+   line-height: 2em;
+   position: relative;
+   padding-left: 0.8em;
+   padding-right: 0.8em;
+   margin-right: 0.5em;
+   margin-left: 0.5em;
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+   border-radius: 0.3em;
+   border: 2px solid #bbbbbb;
+}
+.itemactive{
+	border-color: #ff7670;
+}
+.itemimg
+{
+	width: 0.6em;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+.itemclear{
+	clear: both;
+}

@@ -1,0 +1,77 @@
+
+.body-color{
+	background-color:#f0f0f0;
+}
+.uinn-pLb1{
+	padding-bottom:0.7em;
+}
+.userImg{
+	background-image:url('images/userImg.png');
+}
+.pwdImg{
+	background-image:url('images/pwdImg.png');
+}
+.b-gra3{
+	border-color:#d8d8d8;
+}
+.uinn-a4{
+	padding:0.9em 0.625em 0.8125em 0.625em;
+}
+.t-gra2 {
+	color: #d8d8d8;
+}
+.t-gra2-font {
+	color: #626262;
+}
+.mar-ar2 {
+margin-right: 0.375em;
+}
+.uinn-a5 {
+padding: 0.8125em 0.625em 0.9em 0.625em;
+}
+.uinn-a6 {
+padding: 1em 0.65em 0 0.65em;
+}
+.uinn-at2{
+    padding-top:0.75em;
+}
+
+.uinn-at1{
+     padding: 1em;
+    margin: 0;
+}
+.c-wh{
+    background-color: white;
+}
+.picture-div1{
+	height: 10em;
+}
+.picture-div-color{
+	background-color: #e8eaed;
+}
+.picture-mar1{
+	margin-right: 0.5em;
+}
+.picture-mar2{
+	margin-left: 0.5em;
+}
+.picture-mar3{
+    margin-bottom: 2em;
+}
+.picture-pad1{
+	padding-top: 1em;
+}
+.picture-text-color{
+	color: #9ba3b0;
+}
+.picture-btn{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.picture-btn-pad{
+	padding-top: 2em;
+}
+.picture-width{
+	height: 10em;
+	width: 10em;
+}

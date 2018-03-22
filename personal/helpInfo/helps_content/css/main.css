@@ -1,0 +1,86 @@
+.help_border {
+    border: 3px solid #d3d3d3;
+    height: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom-left-radius: 0.2em;
+    border-top-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+.help_head_height {
+    height: 2.2em;
+    border: none;
+}
+.help_width{
+width: 5em;
+}
+.help_margin_top{
+margin: 1em 0 1em 0;
+}
+
+.help_border_left {
+    border-left: 1px #A0A0A0 solid;
+    height:8em;
+}
+
+.help_q{
+    width: 5em;
+    height: 3em;
+    background-color:#FF7670;
+    border: 2px solid #FF7670;
+    color: white;
+
+}
+.help_img {
+    width: 4.6em;
+    height: 4.4em;
+}
+
+.help_p {
+   margin-left:2em;
+    width: 5em;
+    height: 3em;
+    background-color:#b8b8b8;
+    border: 2px solid #b8b8b8;
+    color: white;
+}
+
+.help_center_height {
+    background-color: #f0f0f0;
+    height: 0.5em;
+}
+
+.help_border_center {
+    border: 2px solid #c6c6c6;
+    border-left: none;
+    border-right: none;
+}
+
+.help_border_center_one {
+    border: 2px solid #c6c6c6;
+    border-right: none;
+    padding-left: 0.5em;
+    height: 3em;
+}
+.help_border_center_left{
+  padding-left: 0.5em;
+  height: 5em;
+  border-left: 2px solid #c6c6c6;}
+
+.help_qq {
+    width: 3em;
+    height: 2em;
+    border: 2px solid #649f12;
+    color: #649f12;
+}
+
+.help_phone {
+    width: 3em;
+    height: 2em;
+    border: 2px solid #f76500;
+    color: #f76500;
+}
+
+

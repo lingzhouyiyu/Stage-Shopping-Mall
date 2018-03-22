@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../../common/css/app.css">
+        <link rel="stylesheet" href="pact_content/css/main.css">
+    </head>
+
+    <body class="um-vp my_color" ontouchstart>
+        <div class="ub ub-pc ub-ac">
+            <div class="ub ub-ac ub-pc title ">
+                分期服务协议
+            </div>
+        </div>
+        <div class="ub ub-ac ub-f1 pact_num line_height uhide">
+            <div class="ub">
+                合同编号：借字第
+            </div>
+            <div class="ub num" id="contractNum">
+                
+            </div>
+            <div class="ub">
+                号
+            </div>
+        </div>
+        <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+                甲方（出借方）：昆明东远民间资本管理有限责任公司
+            </div>
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+               法定代表人：柳从容
+            </div>
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+               地址：昆明市盘龙区欣都龙城5栋A座31楼01号北面
+            </div>
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+               联系电话：65892207
+            </div>
+        </div>
+        <div class="ub ub-ac ub-f1 line_height" style="margin-top: 2em;">
+            <div class="ub ">
+                <div id="">
+                    乙方（借款方）：
+                </div>
+                 <div class="ub s_name num" style="font-weight: bold;color: #FF7670;">
+                 
+                    <span id="Fname" style="color: #FF7670;font-weight: bold;"></span>
+                    
+                </div>
+            </div>
+           
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+              身份证：
+            </div>
+            <div>
+                <span style="color: #FF7670;font-weight: bold;"></span><span id="FidCard" style="color: #FF7670;font-weight: bold;"></span><span style="color: #FF7670;font-weight: bold;"></span>
+            </div>
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+               地址： <span id="Faddress" style="color: #FF7670;font-weight: bold;"></span>
+            </div>
+        </div>
+         <div class="ub ub-ac  line_height" >
+            <div class="ub" >
+             联系电话： <span id="Fphone" style="color: #FF7670;font-weight: bold;"></span>
+            </div>
+        </div>
+         <div class="ub ub-ac line_height">
+               
+                <div class="ub ub-f1 s_ident num uhide">
+                    <span style="color: #626262;font-weight: bold;">(</span><span style="color: #626262;font-weight: bold;"></span><span style="color: #626262;font-weight: bold;">)</span>
+                </div>
+            </div>
+        <div class="ub ub-ac sdetial" style="margin-top: 2em;">
+            <div class="ub ub-ac">
+                &nbsp;&nbsp;&nbsp;&nbsp;乙方因分期需要，请求甲方提供借款资金，各方经协商一致，订立如下借款
+                合同条款，以资共同遵守。
+            </div>
+        </div>
+         <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+               一、特别提示
+            </div>
+        </div>
+        <div class="ub ub-ver ub-ac arnm arnb">
+
+            <div class=" ub ub-ac">
+            1、您通过网络页面点击确认或以其他方式选择接受本协议，即表示您同意本协议及与本协议有关的已经发布或将来可能发布的各项规则、页面展示、操作流程、公告或通知（以下合称“规则”）。
+
+            </div>
+            <div class="ub ub-ac">
+                2、在接受本协议之前，请您仔细阅读本协议的全部内容。如果您不同意本协议的任何内容，或者无法准确理解任一条款的含义，请不要进行后续操作。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                二、分期金额
+            </div>
+        </div>
+        <div class="ub ub-ac arnm arnb">
+
+            <div class=" ub ub-ac">
+                甲方向乙方提供分期资金人民币<span id="FwithdrawMoney"> </span>元（大写：人民币<span id="chinsemoney"></span>）。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac id="ttitle"">
+                三、分期期限
+            </div>
+        </div>
+        <div class="ub ub-ac arnm arnb">
+            <div class="ub ">
+
+                1. 本合同所述分期期限为：<span id="FpointsId">12</span>个月，自资金分期完成之日 之次日开始起算，即自<span id="FWithdrawalTime">2015年08月07日</span>起至<span id="FendTime">2016年08月07日</span>止。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac id="ttitle"">
+                四、分期费用及支付方式
+            </div>
+        </div>
+        <div class="ub ub-ac arnm arnb">
+            <div id="" class="ub ">
+                1. 在本合同约定的分期时限内，分期手续费为<span id="serviceMoney">20.0</span>元,每期手续费为<span id="everyServiceMoney">10.00</span>
+            </div>
+        </div>
+        <div class="ub ub-ac arnb arnm">
+            <div class="ub">
+                2. 甲方收取的手续费为税后费用，甲方因收取手续费所应缴纳的所有税收由乙方自愿代甲方承担。
+
+            </div>
+        </div>
+        <div class="ub ub-ac arnb arnm uhide">
+            <div class="ub ub-ac">
+                3. <span>手续费结算</span>方式：按等额本息归还本金和手续费.
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height ">
+            <div class="ub ub-ac" id="ttitle">
+                五、分期归还
+            </div>
+        </div>
+        <div class="ub  ub-ver arnb arnm">
+            <div class="ub ub-ac">
+                <span>1.本金:每期分期届满日,乙方归还甲方本期本金.</span>
+            </div>
+            <div class="ub" style="color: #FF7670;">
+                <span>2.手续费:每期分期届满日,乙方支付甲方</span>本期<span>手续费.</span>
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                六、乙方应按本合同约定<span>通过</span>妙分期<span>平台</span>将分期手续费、服务费及
+                分期本金支付给甲方。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                七、乙方在分期时,资金将转入乙方在妙分期平台上填写的银行卡
+                或支付宝账号。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                八、违约责任
+            </div>
+        </div>
+        <div class="ub  ub-ver arnb arnm">
+            <div class="ub">
+                <span>1.乙方逾期</span>偿还<span>分期本金</span>和分期手续费<span>时,需</span>要<span>支付逾期</span>违约金.逾期违约金为逾期金额2%/天。.
+            </div>
+            <div class="ub">
+                <span>2.提前还款：乙方需提前还款时，手续费未满一个月以一个月来计算。此外，乙方需向甲方支付提前还款手续费，其金额按本合同借款金额的</span>2<span>%计算。</span>
+            </div>
+            <div class="ub">
+                3. 乙方应承担甲方因追回分期、手续费等实现债权而产生的全部费用（包括但不限于催收费用、律师费、诉讼费、公告费、执行费、拍卖费、评估费等）。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                九、其他
+            </div>
+        </div>
+        <div class="ub  ub-ver arnb arnm">
+            <div class="ub">
+                <span>1.若甲方</span>为乙方<span>提供实物分期,视为甲方</span>为乙方<span>提供借款资金购买实物.</span>
+            </div>
+            <div class="ub">
+                2. 乙方未及时足额支付分期手续费、本金和违约金时，乙方所支付款项按先违约金、后手续费、再本金的顺序进行偿付。
+            </div>
+            <div class="ub">
+                3. 甲方有权监督乙方分期资金的使用情况，了解乙方的偿债能力等情况，乙方应如实提供相关的资料。
+            </div>
+            <div class="ub">
+                4. 乙方作出任何影响甲方债权实现的决定或出现危及分期安全的情况时，甲方有权提前收回分期本金和手续费。
+            </div>
+            <div class="ub">
+                5. 各方的通讯地址、联系方式、银行账号发生变动的，应当在3日内书面告知各方，因未及时告知而导致的损失，由责任方承担。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                十、争议解决方式
+            </div>
+        </div>
+        <div class="ub ub-ac ub-ver arnb arnm">
+            <div class="ub">
+                因履行本合同发生争议的，各方应协商解决，协商不成的，甲方所在地人民法院通过诉讼方式解决。
+            </div>
+        </div>
+        <div class="ub ub-ac ntitle line_height">
+            <div class="ub ub-ac" id="ttitle">
+                十一、合同生效
+            </div>
+        </div>
+        <div class="ub  ub-ver arnb arnm ">
+            <div class="ub">
+                本合同经乙方点击确认同意协议后成立，并立即生效。
+            </div>
+        </div>
+        <div class="ub  arnb arnm ">
+            <div class="ub bootm">
+                签订日期：<span id="confirmTime">2015年08月06日</span>
+            </div>
+        </div>
+        <script src="../../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+        <script src="../../common/js/countUp.min.js"></script>
+        <script src="../../common/js/yfkj.js"></script>
+    </body>
+    <script>
+        var takecontract = JSON.parse(appcan.locStorage.getVal("takecontract"));
+       // alert(takecontract.FwithdrawMoney);
+       // alert(takecontract.FpointsId);
+        //alert(takecontract.FwithdrawMoney);
+       // alert(getuserid());
+        appcan.ready(function() {
+            examineInfoContract();
+            // alert($("#confirmTime").text());
+            appcan.initBounce();
+        })
+        function chineseNumber(num) {
+            if (isNaN(num) || num > Math.pow(10, 12))
+                return ""
+            var cn = "零壹贰叁肆伍陆柒捌玖"
+            var unit = new Array("拾百千", "分角")
+            var unit1 = new Array("万亿", "")
+            var numArray = num.toString().split(".")
+            var start = new Array(numArray[0].length - 1, 2)
+
+            function toChinese(num, index) {
+                var num = num.replace(/\d/g, function($1) {
+                    return cn.charAt($1) + unit[index].charAt(start-- % 4 ? start % 4 : -1)
+                })
+                return num
+            }
+
+            for (var i = 0; i < numArray.length; i++) {
+                var tmp = ""
+                for (var j = 0; j * 4 < numArray[i].length; j++) {
+                    var strIndex = numArray[i].length - (j + 1) * 4
+                    var str = numArray[i].substring(strIndex, strIndex + 4)
+                    var start = i ? 2 : str.length - 1
+                    var tmp1 = toChinese(str, i)
+                    tmp1 = tmp1.replace(/(零.)+/g, "零").replace(/零+$/, "")
+                    tmp1 = tmp1.replace(/^壹拾/, "拾")
+                    tmp = (tmp1 + unit1[i].charAt(j - 1)) + tmp
+                }
+                numArray[i] = tmp
+            }
+
+            numArray[1] = numArray[1] ? numArray[1] : ""
+            numArray[0] = numArray[0] ? numArray[0] + "元" : numArray[0], numArray[1] = numArray[1].replace(/^零+/, "")
+            numArray[1] = numArray[1].match(/分/) ? numArray[1] : numArray[1] + "整"
+            return numArray[0] + numArray[1]
+        }
+
+        function examineInfoContract() {
+            var datas = {
+                FwithdrawMoney : takecontract.FwithdrawMoney, //提现金额
+                FpointsId : takecontract.FpointsId, //分期月数
+                FuserId : getuserid()
+            };
+            appcan.ajax({
+                url : Serverurl + "/user/examineInfoContract",
+                type : "POST",
+                dataType : 'json',
+                data : datas,
+                success : function(result) {
+                  
+                    $("#confirmTime").text(result.confirmTime);
+                     $("#Fphone").text(result.Fphone);
+                    $("#Faddress").text(result.Faddress);
+                    $("#Fname").text(result.Fname);
+                    $("#FidCard").text(result.FidCard);
+                    $("#FpointsId").text(result.FpointsId);
+                    $("#FwithdrawMoney").text(result.FwithdrawMoney);
+                    $("#serviceMoney").text((result.serviceMoney).toFixed(2));
+                    $("#everyServiceMoney").text((result.everyServiceMoney).toFixed(2));
+                    $("#FWithdrawalTime").text(result.FWithdrawalTime);
+                    $("#FendTime").text(result.FendTime);
+                    $("#contractNum").text(result.contractNum);
+                     $("#chinsemoney").text(chineseNumber(result.FwithdrawMoney));
+                    
+                    
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '500');
+                }
+            });
+        }
+    </script>
+
+</html>

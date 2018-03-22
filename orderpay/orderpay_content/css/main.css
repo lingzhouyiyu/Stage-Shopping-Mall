@@ -1,0 +1,176 @@
+.b-gra{
+	border-color:#d8d8d8;
+}
+.t-gra
+{
+	color:#d8d8d8;
+}
+.t-gra1
+{
+	color:#b5b5b5;
+}
+.t-blu
+{
+	color:#177fc7;
+}
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.respwd{
+	background-image:url('myImg/pwd.png');
+}
+.resuser{
+	background-image:url('myImg/user.png');
+}
+.resqq{
+	background-image:url('myImg/qq.png');
+}
+.resxinlang{
+	background-image:url('myImg/xinlang.png');
+}
+.umhw1{
+	min-height:1.8em;
+	min-width:1.8em;
+}
+.ulab .uinput
+{
+	margin-left:3px
+}
+.uinput input,.uinput textarea
+{
+	margin:0px;
+	border:0px;
+	width:100%;
+	height:100%;
+	-webkit-appearance: none;
+	padding: .4em 0;
+	line-height: 1.2em;
+	background:none;
+	text-decoration: none;
+	font-size: 1em;
+	display:block;
+}
+.uwh-pu{
+	width:0.7em;
+	height:0.7em;
+}
+.order-boxsize-1{
+	height: 2em;
+}
+.order-font-left{
+	padding-left: 0.8em;
+}
+.order-fontsize{
+	color: #313131;
+	font-size: 1.1em;
+}
+.order-text-over{
+	overflow: hidden;   
+	white-space: nowrap;   
+	-o-text-overflow: ellipsis;   
+	-ms-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	text-overflow: ellipsis; 
+	line-height: 2em;
+}
+.order-line{   /*分割线的高和颜色*/
+   height: 0.9em;background-color: #ffffff;
+   background-image: url(myImg/juchi.png);
+   background-repeat-x: repeat-x;
+   -webkit-background-size:contain;
+	background-size:contain;
+	
+	background-position:center;
+}
+.order-payfont{
+	background-color: white;
+	border-top: 0.1em solid #F3F3F3;
+}
+.order-less-img{
+	height: 2em;
+	width: 2em;
+}
+.order-less-img1{
+	height: 2em;
+	width: 2.5em;
+}
+.check-box-cicle{
+	border: 0.12em solid red;
+	 width:1.4em; 
+	 height: 1.4em;
+	 font-size: 0.8em; 
+	 border-radius: 50%
+}
+.order-body-color{
+	background-color: #F5F5F3;
+}
+.order-gig-color{
+	background-color: white;
+}
+.order-free-text{
+	color: #F8B141;
+}
+.order-lessfree-text{
+	color:#589CC9;
+}
+
+.order-bond-text{
+	color:#629308;
+}
+
+.order-needpay-text{
+	color:#9E110D;
+}
+.order-name-text{
+	font-weight: bolder;
+	color: #313131;
+}
+.order-less-font{
+	font-size: 0.85em;
+	color: #a0a0a0;
+}
+.order-notice{
+	padding: 1em ;
+}
+.order-btn{
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.order-comm {
+    padding: 1em 1em;
+    margin: 0;
+}
+.order-three-pic{
+	background-color:  #E9E7E7;
+	width: 3.5em;
+}
+.order-threebtn-active{
+     border: 0.12em solid #24C0B3;
+     width:1.8em; height: 1.8em;
+     font-size: 0.8em; 
+     border-radius: 50%;
+     background-color: #24C0B3;
+}
+.order-threebtn-old{
+     border: 0.12em solid #D7D7D7;
+     width:1.8em; 
+     height: 1.8em;
+     font-size: 0.8em;
+     border-radius: 50%;
+}
+.order-half-circle{
+	background-color: red;
+     width:2em;/*宽度为高度的2倍*/
+      height: 1em;
+      border-radius: 0 0 1em 1em;/*圆角半径为高度的值*/
+}
+.order-less-half{
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.choose_img{
+	width: 1.8em;
+}

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../bill/bill_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="ub ub-ver bill_weight bill_background_color">
+		<div class="ub ub-ver bill_center_height bill_background_color_two">
+			<div class="ub ub-f1 text_color_one mybill_padding umh3 ub-ac foot_background_color">
+				今日到期账单
+				<div class="uinn1" id="endtime"></div>
+			</div>
+			<div class="ub ub-f1 ub-ver">
+				<div class="ub ub-f1 ub-ac bc-text-head bill_padding_top">
+					<div class="ub ub-f1 ub-ver uinn text_color_one mybill_padding">
+						<div class="mybill_width_one umh4">
+							应还款总额
+						</div>
+						<div class="ub ub-pc text_color_three mybill_width">
+							￥
+							<div id="totalmoney">
+								0.00
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver uinn text_color_one mybill_padding">
+						<div class="mybill_width_one umh4">
+							到期账单
+						</div>
+						<div class="ub ub-pc text_color_three mybill_width" id="FbillId">
+							<div id="totalcount">
+								0
+							</div>
+							<div class="umar-l">
+								笔
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac uinn bill_background_color_one mybill_magin_right uc-a1 mybill_width" id="payback" onclick="gopay()">
+						<div class="ub ub-f1 bc-text-head ub-pc ">
+							去还款
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bill_img mybill_height"></div>
+		</div>
+		<div class="ub text_color_one mybill_padding umh3 mybill_magin_bottom">
+			<div class="">
+				我的账单明细
+			</div>
+			<div class="ub">
+				(账单日是每月的
+				<div id="FrepaymentDay">
+					1
+				</div>
+				<div>
+					号)
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-f1 ub-ver ub-pc mybillnone">
+			<div class="tx-c orderno umar-t">
+				<img class="" style="height:6em;" src="../images/Nobill.png" />
+				<div class="common-font-color2 ub ub-pc umar-t">
+					<img class="ub ub-ac umar-r" style="height:1.2em;" src="../images/Tips.png" /> 您还没有账单哦
+				</div>
+			</div>
+			<div class="list"></div>
+			<!--提现模板-->
+			<div id="tmp" class="ub-fv uhide">
+				<div class="bill_background_color_two bill_border_bottom  item" id="mybillID">
+					<div class="ub ub-ac mybill_padding bill_font_size">
+						<div class="ub ub-f1 umh5 ub-ac text_color_one">
+							账单号：
+							<div class="ub FbillNumber">
+
+							</div>
+						</div>
+						<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+						</div>
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-pc ub-ac bill_center_height">
+						<div class="ub ub-f1 bc-text-head umar-l">
+							<div class="ub bc-text-head bill_height_width ub-ac ub-pc ">
+								提现
+							</div>
+
+							<div class="ub ub-f1 ub-ver uinn1">
+								<div class="ub ub-f1 text_color_one umh4">
+									账单名称：
+									<div class="text_color_two FWithdrawalsName">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 text_color_one umh4">
+									下单时间：
+									<div class="text_color_two FWithdrawalTime">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 umh4">
+									<div class="text_color_one">
+										提现金额：
+									</div>
+									<div class="text_color_two_1 ub itembtn">
+										￥
+										<div class="text_color_two FwithdrawMoney">
+
+										</div>
+										<div class="text_color_two_1 umar-l">
+											元
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-ac bill_height mybill_padding">
+						<div class="ub ub-ver text_color_one">
+							<div class="mybill_width_one umh4">
+								已还分期
+							</div>
+							<div class="ub ub-pc mybill_width">
+								<div class="ub passcount">
+									12
+								</div>
+								<div class="ub">
+									/
+								</div>
+								<div class="ub Fvalue">
+									12
+								</div>
+								<div class="ub">
+									期
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-pe mybill_magin_right text_color_one">
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 help" id="help" onclick="help()">
+								<div class="ub ub-f1 ub-pc ">
+									查看帮助
+								</div>
+							</div>
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 subbtn" id="subbtn">
+								<div class="ub ub-f1 ub-pc ">
+									提前还款
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--消费模板-->
+			<div id="consumetmp" class="ub-fv uhide">
+				<div class="bill_background_color_two bill_border_bottom  item" id="mybillID">
+					<div class="ub ub-ac mybill_padding bill_font_size">
+						<div class="ub ub-f1 umh5 ub-ac text_color_one">
+							账单号：
+							<div class="ub FbillNumber">
+
+							</div>
+						</div>
+						<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+						</div>
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-pc ub-ac bill_center_height">
+						<div class="ub ub-f1 bc-text-head umar-l">
+							<div class="ub bc-text-head bill_height_width-consume ub-ac ub-pc ">
+								消费
+							</div>
+
+							<div class="ub ub-f1 ub-ver uinn1">
+								<div class="ub ub-f1 text_color_one umh4">
+									账单名称：
+									<div class="text_color_two FWithdrawalsName">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 text_color_one umh4">
+									下单时间：
+									<div class="text_color_two FWithdrawalTime">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 umh4">
+									<div class="text_color_one">
+										提现金额：
+									</div>
+									<div class="text_color_two_1 ub itembtn">
+										￥
+										<div class="text_color_two FwithdrawMoney">
+
+										</div>
+										<div class="text_color_two_1 umar-l">
+											元
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-ac bill_height mybill_padding">
+						<div class="ub ub-ver text_color_one">
+							<div class="mybill_width_one umh4">
+								已还分期
+							</div>
+							<div class="ub ub-pc mybill_width">
+								<div class="ub passcount">
+									12
+								</div>
+								<div class="ub">
+									/
+								</div>
+								<div class="ub Fvalue">
+									12
+								</div>
+								<div class="ub">
+									期
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-pe mybill_magin_right text_color_one">
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 help" id="help" onclick="help()">
+								<div class="ub ub-f1 ub-pc ">
+									查看帮助
+								</div>
+							</div>
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 subbtn" id="subbtn">
+								<div class="ub ub-f1 ub-pc ">
+									提前还款
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--商品模板-->
+			<div id="goodstmp" class="ub-fv uhide">
+				<div class="bill_background_color_two bill_border_bottom  item" id="mybillID">
+					<div class="ub ub-ac mybill_padding bill_font_size">
+						<div class="ub ub-f1 umh5 ub-ac text_color_one">
+							账单号：
+							<div class="ub FbillNumber">
+
+							</div>
+						</div>
+						<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+						</div>
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-pc ub-ac " style="margin-top: 1em;">
+						<div class="ub ub-f1 bc-text-head umar-l">
+							<div class="ub bc-text-head bill_height_width-goods ub-ac ub-pc ">
+								商品
+							</div>
+
+							<div class="ub ub-f1 ub-ver uinn1">
+								<div class="ub ub-f1 text_color_one ">
+									<div id="">
+										账单名称：
+									</div>
+
+									<div class="ub ub-f1 FWithdrawalsName mybreak" style="word-break:break-all;">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 text_color_one ">
+									下单时间：
+									<div class="text_color_two FWithdrawalTime">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 ">
+									<div class="text_color_one">
+										商品金额：
+									</div>
+									<div class="text_color_two_1 ub itembtn">
+										￥
+										<div class="text_color_two FwithdrawMoney">
+
+										</div>
+										<div class="text_color_two_1 umar-l">
+											元
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="address_underline_dash"></div>
+					<div class="ub ub-ac bill_height mybill_padding">
+						<div class="ub ub-ver text_color_one">
+							<div class="mybill_width_one umh4">
+								已还分期
+							</div>
+							<div class="ub ub-pc mybill_width">
+								<div class="ub passcount">
+									12
+								</div>
+								<div class="ub">
+									/
+								</div>
+								<div class="ub Fvalue">
+									12
+								</div>
+								<div class="ub">
+									期
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-pe mybill_magin_right text_color_one">
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 help" id="help" onclick="help()">
+								<div class="ub ub-f1 ub-pc ">
+									查看帮助
+								</div>
+							</div>
+							<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-r us uc-a1 subbtn" id="subbtn">
+								<div class="ub ub-f1 ub-pc ">
+									提前还款
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/yfkj.js"></script>
+		<script>
+			var pageno = 0;
+			var star = 0;
+			var pagesize = 30;
+			var canclick = 0;
+			FbillCost = '0';
+			FbillId = '0';
+			appcan.ready(function() {
+					appcan.window.subscribe('mybill0', function(msg) {
+						pageno = 0;
+						star = 0;
+						$(".list").empty();
+						findEndTimeBill()
+						findBillInfoInTime(++pageno, star);
+					});
+					appcan.window.subscribe('fastpay', function(msg) {
+						findEndTimeBill();
+						pageno = 0;
+						star = 0;
+						$(".list").empty();
+						findBillInfoInTime(++pageno, star);
+					});
+					findBillInfoInTime(++pageno, star);
+					findEndTimeBill(getuserid());
+					appcan.frame.setBounce([0, 1], function(type) {
+						$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+					}, function(type) {
+						$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+					}, function(type) {
+						if (type == 0) {
+							pageno = 0;
+							star = 0;
+							$(".list").empty();
+						}
+						findEndTimeBill();
+						findBillInfoInTime(++pageno, star);
+						appcan.window.openToast('数据加载成功', '1000');
+						setTimeout(function() {
+							appcan.frame.resetBounce(type);
+						}, 1000);
+					})
+				})
+				//已到账单还款黑色按钮
+				//查看帮助
+			appcan.button("#help", "ani-act", function(a, b) {
+					appcan.window.open("help", "../personal/help/help.html");
+				})
+				//加載訂單信息
+			function findBillInfoInTime(apageno, astart) {
+				var datas = {
+					FuserId: getuserid(),
+					Fstart: astart,
+					pageSize: pagesize,
+					currentPageNum: apageno
+				};
+				appcan.ajax({
+					url: Serverurl + "/user/findBillInfoInTime",
+					type: "POST",
+					dataType: 'json',
+					data: datas,
+					success: function(result) {
+						if (result.Data.Data.length > 0) {
+							$(".orderno").addClass("uhide");
+							$(".mybillnone").removeClass("ub-pc");
+						}
+						var msg = result.Msg;
+						if (msg == 1) {;
+							var length = result.Data.Data.length;
+							var fulltag = result.Data.fulltag;
+							var lastno = result.Data.lastno;
+							if (fulltag == 0) {
+								pageno = pageno - 1;
+							}
+							star = lastno;
+							for (var i = 0; i < length; i++) {
+								var data = result.Data.Data[i];
+								if (data.t_detailtotalbill == 't_detailtotalbill') {
+									additem(result.Data.Data[i]); //加载提现订单
+								} else if (data.t_detailtotalbill == 't_consumetotaldetial') {
+									additemconsume(result.Data.Data[i]); //加载消费订单
+								} else if (data.t_detailtotalbill == 't_ordertotaltatial') {
+									additemgoods(result.Data.Data[i]); //加载商品订单
+								}
+							}
+						}
+						if (msg == 0) {
+							pageno = pageno - 1;
+						}
+					},
+					error: function(e) {
+						appcan.window.openToast("服务器出错", "1000");
+					}
+				});
+			}
+			//			提现DOM
+			function additem(data) //加载账单
+			{
+				var list = $(".list");
+				var clonedom = $("#tmp").clone();
+				var itemdom = clonedom.find(".item");
+				itemdom.attr("id", data.FbillId);
+				itemdom.find(".FbillNumber").text(data.FbillNumber);
+				itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+				itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+				itemdom.find("#FexamineState").text(data.FexamineState);
+				itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+				itemdom.find(".FbillCost").text(data.FbillCost);
+				itemdom.find(".FrepaymentMoney").text(data.FrepaymentMoney);
+				itemdom.find(".Fvalue").text(data.Fvalue);
+				itemdom.find(".passcount").text(data.passcount);
+				if (data.passcount == data.Fvalue) {
+					itemdom.find(".subbtn").addClass("uhide");
+				} else {}
+				itemdom.find(".FpointsId").text(data.FpointsId);
+				itemdom.find(".subbtn").attr("id", data.FbillId);
+				itemdom.find("#FexamineState").text("分期中");
+				itemdom.find(".subbtn").attr("onclick", "firstPayMoney('" + data.FbillId + "','" + data.t_detailtotalbill + "')");
+				list.append(itemdom);
+			}
+			//			消费DOM
+			function additemconsume(data) //加载账单
+			{
+				var list = $(".list");
+				var clonedom = $("#consumetmp").clone();
+				var itemdom = clonedom.find(".item");
+				itemdom.attr("id", data.FbillId);
+				itemdom.find(".FbillNumber").text(data.FbillNumber);
+				itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+				itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+				itemdom.find("#FexamineState").text(data.FexamineState);
+				itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+				itemdom.find(".FbillCost").text(data.FbillCost);
+				itemdom.find(".FrepaymentMoney").text(data.FrepaymentMoney);
+				itemdom.find(".Fvalue").text(data.Fvalue);
+				itemdom.find(".passcount").text(data.passcount);
+				if (data.passcount == data.Fvalue) {
+					itemdom.find(".subbtn").addClass("uhide");
+				} else {}
+				itemdom.find(".FpointsId").text(data.FpointsId);
+				itemdom.find(".subbtn").attr("id", data.FbillId);
+				itemdom.find("#FexamineState").text("分期中");
+				itemdom.find(".subbtn").attr("onclick", "firstPayMoneyConsume('" + data.FbillId + "','" + data.t_detailtotalbill + "')");
+				list.append(itemdom);
+			}
+			//			商品DOM
+			function additemgoods(data) //加载账单
+			{
+				var list = $(".list");
+				var clonedom = $("#goodstmp").clone();
+				var itemdom = clonedom.find(".item");
+				itemdom.attr("id", data.FbillId);
+				itemdom.find(".FbillNumber").text(data.FbillNumber);
+				itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+				itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+				itemdom.find("#FexamineState").text(data.FexamineState);
+				itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+				itemdom.find(".FbillCost").text(data.FbillCost);
+				itemdom.find(".FrepaymentMoney").text(data.FrepaymentMoney);
+				itemdom.find(".Fvalue").text(data.Fvalue);
+				itemdom.find(".passcount").text(data.passcount);
+				if (data.passcount == data.Fvalue) {
+					itemdom.find(".subbtn").addClass("uhide");
+				} else {}
+				itemdom.find(".help").attr("onclick", "help()"); //查看帮助
+				itemdom.find(".FpointsId").text(data.FpointsId);
+				itemdom.find(".subbtn").attr("id", data.FbillId);
+				itemdom.find("#FexamineState").text("分期中");
+				itemdom.find(".subbtn").attr("onclick", "firstPayMoneyShop('" + data.FbillId + "','" + data.t_detailtotalbill + "')");
+				list.append(itemdom);
+			}
+			//读取表头数据
+			function findEndTimeBill() {
+				appcan.ajax({
+					url: Serverurl + "/user/findEndTimeBill",
+					type: "POST",
+					dataType: 'json',
+					data: {
+						FuserId: getuserid()
+					},
+					success: function(result) {
+						var data = result.Data[0];
+						if (data.totalmoney == null) {
+							$("#totalmoney").text('0.00');
+						}
+						$("#totalmoney").text(data.totalmoney); //还款金额
+						$("#endtime").text(data.endtime); //到期还款日期
+						$("#totalcount").text(data.totalcount); //到期笔数
+						if (data.totalcount > 0) {
+							canclick = 1;
+							$("#payback").addClass("gopayactive");
+						}
+						findBillDate(getuserid());
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '1000');
+					}
+				});
+			}
+			//读取还款账单日期
+			function findBillDate(FuserId) {
+				appcan.ajax({
+					url: Serverurl + "/user/findBillDate",
+					type: "POST",
+					dataType: 'json',
+					data: {
+						FuserId: getuserid()
+					},
+					success: function(result) {
+						var data = result.Data[0];
+						$("#FrepaymentDay").text(data.FrepaymentDay); //还款金额
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '1000');
+					}
+				});
+			}
+			//			提现提前还款
+			function firstPayMoney(tid, type) {
+				appcan.locStorage.setVal("firstpaytype", type);
+				appcan.locStorage.setVal("firstPayId", tid);
+				appcan.window.open("billdetail", "../bill/billdetail/billdetail.html");
+			}
+			//			消费提前还款
+			function firstPayMoneyConsume(cid, type) {
+				
+				appcan.locStorage.setVal("firstpaytype", type);
+				appcan.locStorage.setVal("firstPayId", cid);
+				appcan.window.open("billdetail", "../bill/billdetail/billdetail.html");
+			}
+			//			商品提前还款
+			function firstPayMoneyShop(sid, type) {
+			   // alert(sid);
+				appcan.locStorage.setVal("firstpaytype", type);
+				appcan.locStorage.setVal("firstPayId", sid);
+				appcan.window.open("billdetail", "../bill/billdetail/billdetail.html");
+			}
+			//帮助
+			function help() {
+				appcan.window.open("help", "../personal/help/help.html");
+			}
+			//去还款
+			function gopay() {
+				if (canclick == 0) {
+					return;
+				}
+				appcan.window.open("timeoutbill", "../bill/timeoutbill/timeoutbill.html");
+			}
+		</script>
+	</body>
+
+</html>

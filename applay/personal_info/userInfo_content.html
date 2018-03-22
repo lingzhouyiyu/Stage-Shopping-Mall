@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html class="um  landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+        <link rel="stylesheet" href="userInfo_content/css/main.css">
+        <link rel="stylesheet" href="../../common/css/app.css" />
+    </head>
+
+    <body class="userInfo-bdcolor bc-bg">
+        <div class="ub ub-ver uinn-a3 ub-fv">
+            <div id="" class="ub ub-ac userInfo-header1 mar-ar3">
+                <div id="" class="">
+                    <img src="userInfo_content/css/myImg/user1.png" style="height: 1em;" />
+                </div>
+                <div id="" class="ub ub-f1 userInfo-header-text">
+                    填写资料必须真实有效，若发现恶意造假行为将被拉入黑名单
+                </div>
+            </div>
+            <div class="ub ub-ver t-gra2-font">
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div id="" class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 名:
+                        </div>
+                        <div id="" class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="Fname" name="Fname" placeholder="请输入名字" type="text" class="ub ub-f1 userInfo-input userinfo-inputcol" />
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div id="" class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 别:
+                        </div>
+                        <div id="" class="ub ub-f1 umar-l ub-ac userInfo-div-height">
+                            <div id="sex0" class="sexitem ub-img userInfo-sexbtn1" onclick="sexchange('0')"></div>
+                            <div id="manval" class="userInfo-sexpad" style="padding-right: 1em;">男</div>
+                            <div id="sex1" class="sexitem ub-img userInfo-sexbtn1" onclick="sexchange('1')"></div>
+                            <div id="womval" class="userInfo-sexpad">女</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div id="" class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 话:
+                        </div>
+                        <div id="Fphone" class="ub ub-f1 umar-l userinfo-inputcol ub-ac userInfo-div-height">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            QQ号码:
+                        </div>
+                        <div class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="FQQ" name="FQQ" placeholder="请填写4-13位数字" type="tel" maxlength=13 class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            身份证号:
+                        </div>
+                        <div class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="FidCard" name="FidCard" placeholder="请填写15或18位字符" type="text" maxlength=18 class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac ub-pc">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            家庭现住址:
+                        </div>
+                        <div class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="Faddress" name="Faddress" placeholder="精确到门牌号" type="text" class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="userInfo-div2-width ub ub-ac userInfo-text1">
+                            学校区域:
+                        </div>
+                        <div id="selectschoolarea" class="ub ub-f1 ub-pe">
+
+                            <select id="selectareavalue" class="ub ub-ac umar-l ub-pc seller-content-select ub-f1 ub-ae" onchange="selectareaonchange()">
+
+                            </select>
+                            <div id="selectarea" class="ub ub-ac ub-pc  fa fa-angle-right ulev2 userInfo-choose-pic userInfo-select" onclick="selectschoolarea('selectarea')">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="userInfo-div2-width ub ub-ac userInfo-text1">
+                            学校名称:
+                        </div>
+                        <div id="selectschoolname" class="ub ub-f1 ub-pe">
+
+                            <select id="selectschoolvalue" class="ub ub-ac umar-l ub-pc seller-content-select ub-f1">
+
+                            </select>
+                            <div id="selectschool" class="ub ub-ac ub-pc  fa fa-angle-right ulev2 userInfo-choose-pic userInfo-select" onclick="selectschoolarea('selectschool')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div id="" class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            每月生活费:
+                        </div>
+                        <div id="" class="ub ub-f1 umar-l ub-ac userInfo-div-height">
+                            <input id="FlivingCost" name="FlivingCost" placeholder="" type="number" class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div id="" class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            生活费来源:
+                        </div>
+                        <div class="ub ub-f1">
+                            <div id="moneyfrom0" class="moneyfrom userinfo-inputcol" onclick="moneyfromchange(0)">
+                                现金
+                            </div>
+                            <div id="moneyfrom1" class="moneyfrom userinfo-inputcol" onclick="moneyfromchange(1)">
+                                转账
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-header">
+                    <div id="" class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            入学年月:
+                        </div>
+                        <div id="datebtn1" class="ub umar-l ub-f1 ub-ac userInfo-div-height">
+                            <div id="datebeg" class="datepad"></div>
+                            <div class="ub ub-f1 ub-pe userInfo-choose-text chooseinfo">
+                                请选择
+                            </div>
+                            <div class="ub ub-ac ub-pe umar-l fa fa-angle-right ulev2 userInfo-choose-pic userInfo-select">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            宿舍地址:
+                        </div>
+                        <div class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="FlivingAddress" name="FlivingAddress" placeholder="精确到宿舍号" type="text" class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            毕业年月:
+                        </div>
+                        <div id="datebtn2" class="ub ub-f1 umar-l ub-ac ub-pe userInfo-div-height">
+                            <div id="dateend" class="datepad"></div>
+                            <div class="ub ub-f1 ub-pe userInfo-choose-text chooseinfo">
+                                请选择
+                            </div>
+                            <div class="ub ub-ac ub-pc umar-l fa fa-angle-right ulev2 userInfo-choose-pic userInfo-select">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            学信网账号:
+                        </div>
+                        <div id="" class="ub ub-f1 umar-l ub-ac userInfo-div-height">
+                            <input id="FLearnAccount" name="FLearnAccount" type="text" class="ub ub-f1 userInfo-input" />
+                        </div>
+                        <div id="btn-school" class="ub ub-ac ub-pc userInfo-div-height" style="width: 3em;">
+                            <div>
+                                <img src="userInfo_content/css/myImg/user1.png" style="height: 1.2em;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-header">
+                    <div class="ub userInfo-border-end userInfo-div-height ub-con ub-ac">
+                        <div class="ub ub-ac userInfo-div2-width userInfo-text1">
+                            学信网密码:
+                        </div>
+                        <div class="ub ub-f1 umar-l umar-r ub-ac userInfo-div-height">
+                            <input id="FLearnPassword" name="FLearnPassword" placeholder="" type="password" class="ub ub-f1 userInfo-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc userInfo-warn-div userInfo-choose-text">
+                    <div class="ub ub-ac ub-pc">
+                        <img src="userInfo_content/css/myImg/arrow.png" class="ub ub-ac ub-pc userInfo-warn-image1" />
+                    </div>
+                    <div class="ub ub-ac ub-pc userInfo-warn-text">
+                        我们承诺不会主动与您的紧急联系人联系
+                    </div>
+
+                </div>
+                <div id="" class="ub ub-ac ub-pc userInfo-warn-text">
+                    你的所有资料都将得到严密保护
+                </div>
+            </div>
+            <div class="ub " style="height: 1em;"></div>
+            <div id="relationlist">
+                <div id="item1" class="ub ub-ver userInfo-relation-pad1">
+                    <div class="ub ub-ver userInfo-relation-div userInfo-relation-pad5">
+                        <div class=" ub ub-f1 ">
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg1 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="父母" type="text" class="ub-f1 userinfo-inputcol relation" maxlength="5">
+                                </div>
+                            </div>
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg2 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="姓名" type="text" class="ub-f1 username userinfo-inputcol relationname" maxlength="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-three-div" style="margin-top: 1em;">
+
+                            <div class="uinput ub ub-f1 userInfo-input-pad">
+                                <input placeholder="手机号" type="tel" maxlength="11" class="ub-f1 userphone userinfo-inputcol cell relationphone">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="item2" class="ub ub-ver userInfo-relation-pad1">
+                    <div class="ub ub-ver userInfo-relation-div userInfo-relation-pad5">
+                        <div class=" ub ub-f1">
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg1 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="同学" type="text" class="ub-f1 userinfo-inputcol relation" maxlength="5">
+                                </div>
+                            </div>
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg2 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="姓名" type="text" class="ub-f1 username userinfo-inputcol relationname" maxlength="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-three-div" style="margin-top: 1em;">
+
+                            <div class="uinput ub ub-f1 userInfo-input-pad">
+                                <input placeholder="手机号" type="tel" maxlength="11" class="ub-f1 userphone userinfo-inputcol cell relationphone">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="item3" class="ub ub-ver userInfo-relation-pad1">
+                    <div class="ub ub-ver userInfo-relation-div userInfo-relation-pad5">
+                        <div class=" ub ub-f1">
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg1 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="朋友" type="text" class="ub-f1 userinfo-inputcol relation" maxlength="5">
+                                </div>
+                            </div>
+                            <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-relation-marg2 userInfo-three-div">
+                                <div class="uinput ub ub-f1 userInfo-input-pad">
+                                    <input placeholder="姓名" type="text" class="ub-f1 username userinfo-inputcol relationname" maxlength="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 uba1 b-gra3 uc-a1 userInfo-three-div" style="margin-top: 1em;">
+
+                            <div class="uinput ub ub-f1 userInfo-input-pad">
+                                <input placeholder="手机号" type="tel" maxlength="11" class="ub-f1 userphone userinfo-inputcol cell relationphone">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uin uinn userInfo-btn">
+                <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 btn-color ulev1 userInfo-btn-bottom" id="submit" onclick="save()">
+                    提交认证 (1/3)
+                </div>
+            </div>
+        </div>
+        <script src="../../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+        <script type="text/javascript" src="../../common/js/yfkj.js"></script>
+    </body>
+    <script>
+        var cText = 0;
+        var cJson = 1;
+        var cInt = 2;
+        var gender = "-1";
+        FlivingCostSource = "";
+        var user = '';
+        var FuserId = '';
+        appcan.ready(function() {
+            findUserInfo(getuserid());
+            appcan.initBounce();
+        })
+
+        function DatePickerbegcallback(opCode, dataType, data) {
+            switch (dataType) {
+                case cText:
+                    appcan.window.openToast("uex.cText");
+                    break;
+                case cJson:
+                    if (dataType == 1) {
+                        var obj = eval('(' + data + ')');
+                        $("#datebeg").html(obj.year + "-" + obj.month);
+                    }
+                    break;
+                case cInt:
+                    appcan.window.openToast("uex.cInt", "1000");
+                    break;
+                default:
+                    appcan.window.openToast("error", "1000");
+            }
+        }
+
+        function DatePickerendcallback(opCode, dataType, data) {
+            switch (dataType) {
+                case cText:
+                    appcan.window.openToast("uex.cText", "1000");
+                    break;
+                case cJson:
+                    if (dataType == 1) {
+                        var obj = eval('(' + data + ')');
+                        $("#dateend").html(obj.year + "-" + obj.month);
+                    }
+                    break;
+                case cInt:
+                    appcan.window.openToast("uex.cInt", "1000");
+                    break;
+                default:
+                    appcan.window.openToast("error", "1000");
+            }
+        }
+
+        function sexchange(id) {
+            $(".sexitem").removeClass("userInfo-sexbtn2").addClass("userInfo-sexbtn1");
+            $("#sex" + id).removeClass("userInfo-sexbtn1").addClass("userInfo-sexbtn2");
+            gender = id;
+        }
+
+        function moneyfromchange(id) {
+            $(".moneyfrom").removeClass("moneyfromactive");
+            $("#moneyfrom" + id).addClass("moneyfromactive");
+            FlivingCostSource = id;
+        }
+        appcan.button("#datebtn1", "ani-act", function() {
+            uexControl.cbOpenDatePicker = DatePickerbegcallback;
+            var myDate = new Date();
+            var year = myDate.getFullYear(); 
+            var month = myDate.getMonth() + 1; 
+            var day = myDate.getDate();
+            uexControl.openDatePicker(year, month, day);
+        })
+        appcan.button("#datebtn2", "ani-act", function() {
+            uexControl.cbOpenDatePicker = DatePickerendcallback;
+            var myDate = new Date();
+            var year = myDate.getFullYear(); 
+            var month = myDate.getMonth() + 1; 
+            var day = myDate.getDate();
+            uexControl.openDatePicker(year, month, day);
+        })
+        function save() {
+            if ($("#Fname").val() == '') {
+                appcan.window.openToast("请输入名字", "1000");
+                return;
+            }
+            if (gender == '-1') {
+                appcan.window.openToast("请选择性别", "1000");
+                return;
+            }
+            if ($("#FQQ").val() == '') {
+                appcan.window.openToast("请输入QQ号码", "1000");
+                return;
+            }
+            if ($("#FidCard").val() == '') {
+                var values = $("#FidCard").val();
+                alert(values.length);
+                appcan.window.openToast("请输入身份证号码", "1000");
+                return;
+            }
+            if ($("#FidCard").val() != '') {
+                var values = $("#FidCard").val();
+                var length = values.length;
+                if(length < 15 || length > 18){
+                     appcan.window.openToast("请输入15或18位身份证号码", "1000");
+                     return;
+                }       
+            }
+            if ($("#Faddress").val() == '') {
+                appcan.window.openToast("请输入家庭现住址", "1000");
+                return;
+            }
+            if (getselectvalue('selectareavalue') == '-1') {
+                appcan.window.openToast("请选择学校区域", "1000");
+                return;
+            }
+            if (getselectvalue('selectschoolvalue') == '-1') {
+                appcan.window.openToast("请选择学校名称", "1000");
+                return;
+            }
+            if ($("#FlivingCost").val() == '') {
+                appcan.window.openToast("请输入每月生活费", "1000");
+                return;
+            }
+            if (FlivingCostSource != '0' && FlivingCostSource != '1') {
+                appcan.window.openToast("请选择生活费来源", "1000");
+                return;
+            }
+            if ($("#datebeg").html() == '') {
+                appcan.window.openToast("请选择入学年月", "1000");
+                return;
+            }
+            if ($("#FlivingAddress").val() == '') {
+                appcan.window.openToast("请输入宿舍地址", "1000");
+                return;
+            }
+            if ($("#dateend").html() == '') {
+                appcan.window.openToast("请选择毕业年月", "1000");
+                return;
+            }
+            if ($("#FLearnAccount").val() == '') {
+                appcan.window.openToast("请输入学信网账号", "1000");
+                return;
+            }
+            if ($("#FLearnPassword").val() == '') {
+                appcan.window.openToast("请输入学信网密码", "1000");
+                return;
+            }
+            if ($("#item .relation").val() == '') {
+                appcan.window.openToast("请填关系1", "1000");
+                return;
+            }
+            if ($("#item .username").val() == '') {
+                appcan.window.openToast("请填写关系人1的姓名", "1000");
+                return;
+            }
+            if ($("#item .userphone").val() == '') {
+                appcan.window.openToast("请填写关系人1的手机号码", "1000");
+                return;
+            }
+            if ($("#item1 .relation").val() == '') {
+                appcan.window.openToast("请填关系2", "1000");
+                return;
+            }
+            if ($("#item1 .username").val() == '') {
+                appcan.window.openToast("请填写关系人2的姓名", "1000");
+                return;
+            }
+            if ($("#item1 .userphone").val() == '') {
+                appcan.window.openToast("请填写关系人2的手机号码", "1000");
+                return;
+            }
+            if ($("#item2 .relation").val() == '') {
+                appcan.window.openToast("请填关系3", "1000");
+                return;
+            }
+            if ($("#item2 .username").val() == '') {
+                appcan.window.openToast("请填写关系人3的姓名", "1000");
+                return;
+            }
+            if ($("#item2 .userphone").val() == '') {
+                appcan.window.openToast("请填写关系人3的手机号码", "1000");
+                return;
+            }
+            var datas = {
+                FuserId: getuserid(),
+                Fname: $("#Fname").val(),
+                Fgender: gender,
+                Fphone: $("#Fphone").text(),
+                FQQ: $("#FQQ").val(),
+                FidCard: $("#FidCard").val(),
+                Faddress: $("#Faddress").val(),
+                FschoolAreaId: getselectvalue('selectareavalue'),
+                FschoolNameId: getselectvalue('selectschoolvalue'),
+                FlivingCost: $("#FlivingCost").val(),
+                FlivingCostSource: FlivingCostSource,
+                FlivingAddress: $("#FlivingAddress").val(),
+                FLearnAccount: $("#FLearnAccount").val(),
+                FLearnPassword: $("#FLearnPassword").val(),
+                Frelation1: $("#item1 .relation").val(),
+                FeduStartDate: $("#datebeg").text(),
+                FeduEndDate: $("#dateend").text(),
+                Fname1: $("#item1 .username").val(),
+                Fphone1: $("#item1 .userphone").val(),
+                Frelation2: $("#item2 .relation").val(),
+                Fname2: $("#item2 .username").val(),
+                Fphone2: $("#item2 .userphone").val(),
+                Frelation3: $("#item3 .relation").val(),
+                Fname3: $("#item3 .username").val(),
+                Fphone3: $("#item3 .userphone").val(),
+            };
+            appcan.ajax({
+                url: Serverurl + "/user/addUserInfo",
+                type: "POST",
+                dataType: 'json',
+                data: datas,
+                success: function(result) {
+                    if (result == '1') {
+                        appcan.window.open("picture_info", "../picture_info/picture_info.html");
+                        appcan.window.evaluateScript({
+
+                         name: 'userInfo',
+                         scriptContent: 'windowclose()'
+                         });
+                    }
+                },
+                error: function(e) {
+                    appcan.window.openToast("服务器出错", "1000");
+                }
+            });
+        }
+
+        function findUserInfo(id) //用户信息初始化
+        {
+            var dotas = {
+                FuserId: getuserid(),
+            };
+            appcan.ajax({
+                url: Serverurl + "/user/findUserInfo",
+                type: "POST",
+                dataType: 'json',
+                data: dotas,
+                success: function(result) {
+                    var userinfo = result[0];
+                    FuserId = userinfo.FuserId;
+                    $("#Fname").val(userinfo.Fname);
+                    $("#Fphone").text(userinfo.Fphone);
+                    $("#FQQ").val(userinfo.FQQ);
+                    $("#FidCard").val(userinfo.FidCard);
+                    $("#Faddress").val(userinfo.Faddress);
+                    $("#FlivingCost").val(userinfo.FlivingCost); //每月生活费
+                    $("#FlivingAddress").val(userinfo.FlivingAddress);
+                    $("#datebeg").text(userinfo.FeduStartDate);
+                    $("#dateend").text(userinfo.FeduEndDate);
+                    $("#FLearnAccount").val(userinfo.FLearnAccount);
+                    $("#FLearnPassword").val(userinfo.FLearnPassword);
+                    sexchange(userinfo.Fgender); // 性别赋值
+                    moneyfromchange(userinfo.FlivingCostSource); //生活费来源赋值
+                    findSchoolArea(userinfo.FschoolAreaId);
+                    findSchool(userinfo.FschoolNameId, userinfo.FschoolAreaId);
+                    findRelationInfo();
+                },
+                error: function(e) {
+                    appcan.window.openToast("服务器出错", "1000");
+                }
+            });
+        }
+
+        function findSchoolArea(value) //加载区域 var dota = result.Data[0];
+        {
+            appcan.ajax({
+                url: Serverurl + "/user/findSchoolArea",
+                type: "POST",
+                dataType: 'json',
+                success: function(result) {
+                    //alert(value);
+                     //alert(result.Msg);
+                    if(result.Msg == '1'){
+                        var data = result.Data;
+                      //  alert(data.FschoolAreaId);
+                        loadselect("selectareavalue", value, data) 
+                    }
+                   
+                },
+                error: function(e) {
+                    appcan.window.openToast("服务器出错", "1000");
+                }
+            });
+        }
+
+        function findSchool(value, FschoolAreaId) //加载学校
+        {
+            appcan.ajax({
+                url: Serverurl + "/user/findSchool",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    FschoolAreaId: FschoolAreaId
+                },
+                success: function(result) {
+                   
+                    if(result.Msg == '1'){
+                        var data = result.Data;
+                        loadselectshool("selectschoolvalue", value, data) 
+                    }      
+                },
+                error: function(e) {
+                    appcan.window.openToast("服务器出错", "1000");
+                }
+            });
+        }
+
+        function selectareaonchange() //选择区域加载学校
+        {
+            findSchool(-1, getselectvalue('selectareavalue'));
+        }
+
+        function loadselect(id, value, data) {
+            $("#" + id).empty();
+            $("#" + id).append("<option value='-1'>请选择</option>");
+            $.each(data, function(i, item) {　
+                //console.log(item);
+                $("#" + id).append("<option value='" + item.FschoolAreaId + "'>" + item.FschoolAreaName + "</option>");
+            });
+            selectchoose(id, value);
+        }
+
+        function findRelationInfo() //加载关系表
+        {
+            var datos = {
+                FuserId: getuserid(),
+            };
+            appcan.ajax({
+                url: Serverurl + "/user/findRelationInfo",
+                type: "POST",
+                dataType: 'json',
+                data: datos,
+                success: function(result) {
+                    for (var i = 1; i < 4; i++) {
+                        var data = result[0];
+                        var key = "Frelation" + i;
+                        $("#item" + i + ' .relation').val(data['' + key + '']);
+                        var FrelationId = "Fname" + i;
+                        $("#item" + i + ' .relationname').val(data['' + FrelationId + '']);
+                        var Fphone = "Fphone" + i;
+                        $("#item" + i + ' .relationphone').val(data['' + Fphone + '']);
+                    }
+                },
+                error: function(e) {
+                    appcan.window.openToast("服务器出错", "1000");
+                }
+            });
+        }
+
+        function loadselectshool(id, value, data) {
+            $("#" + id).empty();
+            $("#" + id).append("<option value='-1'>请选择</option>");
+            $.each(data, function(i, item) {　
+                $("#" + id).append("<option value='" + item.FschoolNameId + "'>" + item.FschoolName + "</option>");
+            });
+            selectchoose(id, value);
+        }
+
+        function selectchoose(id, value) {
+            $("#" + id + " option[selected='select'").attr("selected", false);
+            $("#" + id + " option[value=" + value + "]").attr("selected", true);
+        }
+
+        function selectschoolarea(id) //学校区域选择点击打开select
+        {
+            open($("#" + id).prev('select'));
+        }
+
+        function getselectvalue(id) {
+            var index = $("#" + id).get(0).selectedIndex;
+            var value = $("#" + id).get(0).options[index].value;
+            return value;
+        }
+
+        function open(elem) {
+            if (document.createEvent) {
+                var e = document.createEvent("MouseEvents");
+                e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                elem[0].dispatchEvent(e);
+            } else if (element.fireEvent) {
+                elem[0].fireEvent("onmousedown");
+            }
+        }
+        //电话号码判断
+        function cellphone() {
+            var phone = $(".cell").val();
+            if (phone && /^1[3|4|5|8]\d{9}$/.test(phone)) {} else {
+                appcan.window.openToast("您输入手机号码有误", "1000");
+            }
+        }
+
+        function Msgperson() {}
+    </script>
+
+</html>

@@ -1,0 +1,55 @@
+.personal_margin_two{
+	margin-left: 1.5em;
+}
+ .userInfo-header {
+ 	height: 2.5em;
+ }
+ 
+ .userInfo-border {
+ 	border-bottom: 1px solid #e3e3e3;
+ }
+ 
+ .userInfo-bdcolor {
+ 	background-color: #f5f5f5;
+ }
+ 
+ .password_text_red {
+ 	color: #ff7670;
+ }
+ 
+ .password_margin_small {
+ 	margin-top: 0.7em;
+ }
+ 
+ .password_margin {
+ 	margin-top: 1.2em;
+ }
+ 
+ .password_margin_big {
+ 	margin-top: 2em;
+ }
+ 
+ .password_btn {
+ 	margin-bottom: 1.2em;
+ }
+ 
+ .password_weight {
+ 	font-weight: 700;
+ }
+ 
+ .password_font_size {
+ 	font-size: 1.25em;
+ }
+ 
+ .password_padding {
+ 	padding-bottom: 1em;
+ 	padding-top: 1em;
+ }
+ 
+ .userInfo-input {
+ 	width: 95%;
+ 	border: 0;
+ 	font-size: 1em;
+ 	outline: none;
+ 	color: #979797;
+ }

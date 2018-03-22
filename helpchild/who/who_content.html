@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+
+        <link rel="stylesheet" href="../../common/css/app.css">
+        <link rel="stylesheet" href="about_content/css/main.css">
+
+    </head>
+
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class=" uinn ub-fv" style="color: #898989;">
+            <div class="items uhide" id="helps1">
+                <div>
+                    什么人可以申请分期？
+                </div>
+                <div>
+                    回复：分期服务目前面向昆明地区（包括昆明市区、呈贡大学城、杨林校区、安宁校区）的在校高校生提供，社会人士暂不支持分期。
+                </div>
+            </div>
+            <div class="items uhide" id="helps2">
+                <div>
+                    手续费是多少？
+                </div>
+                <div>
+                    回复：分期手续费为分期金额的1.5%，按月计收。
+                </div>
+            </div>
+             <div class="items uhide" id="helps3">
+                <div>
+                    还款方式及何如还款？
+                </div>
+                <div>
+                    回复：用户可通过点击妙分期APP平台【我的】中的“我要还款”进行还款。妙分期APP全天24小时支持用户还款。
+                </div>
+            </div>
+             <div class="items uhide" id="helps4">
+                <div>
+                    可以提前还款吗？
+                </div>
+                <div>
+                 回复：可以提前还款。提前还款将收取分期金额的2%作为提前还款手续费。
+                </div>
+            </div>
+             <div class="items uhide" id="helps5">
+                <div>
+                    如何申请授信及授信额度？
+                </div>
+                <div>
+                   回复：登录APP主页面进入【学生分期额度申请】按照指引填写相关资料即可。授信有基础认证授信和高级认证授信两种。通过基础认证授信最高额度4000元，通过高级认证后最高额度可达20000元。授信的有效期根据您的学籍情况，最高可达三年。也就是说在授信有效期内您可以随时提现、购买商品或消费，和信用卡一样方便哦！
+                </div>
+            </div>
+             <div class="items uhide" id="helps6">
+                <div>
+                    还款日
+                </div>
+                <div>
+                    回复：从分期日起至到期还款日之间的日期。例如：2016年3月10日放款，此后每月10日即为还款日。
+                </div>
+            </div>
+             <div class="items uhide" id="helps7">
+                <div>
+                   审批及放款
+                </div>
+                <div>
+                    回复：在接到您的认证或分期申请后，我们会在24小时内完成审核，并将审核结果以短信及APP站内信的形式通知到您。
+                </div>
+            </div>
+             <div class="items uhide" id="helps8">
+                <div>
+                    目前可以通过那几家银行收款及还款？
+                </div>
+                <div>
+                  回复：因为支付宝到账及时且手续费较低，所以目前我们的放款及还款通道选择的都是支付宝。
+                </div>
+            </div>
+             <div class="items uhide" id="helps9">
+                <div>
+                    如果没有及时还款怎么办？
+                </div>
+                <div>
+                    回复：借款人须按时在每月还款日前还款，否则视为逾期，逾期将产生逾期违约金，并将您的逾期记录提交至个人征信机构，会影响到您日后的个人信用记录。当逾期达到7个工作日时，我公司将会委派工作人员上门催收或依法对您提起诉讼。
+                </div>
+            </div>
+             <div class="items uhide" id="helps10">
+                <div>
+                    手续费是多少？
+                </div>
+                <div>
+                    回复：分期手续费为分期金额的1.5%，按月计收。
+                </div>
+            </div>
+        </div>
+
+    <script src="../../common/js/appcan.js"></script>
+    <script src="../../common/js/appcan.control.js"></script>
+    </body>
+    <script>
+        var answerid = appcan.locStorage.getVal("answerid");
+        
+        appcan.ready(function() {
+            
+            $(".items").addClass("uhide");
+            $("#" +answerid).removeClass("uhide");
+            // appcan.initBounce();
+        })
+        appcan.button("#submit", "ani-act", function() {
+            $("form").submit();
+        })
+        $("form").on('submit', function() {
+            appcan.request.postForm($("form"), function() {
+                appcan.window.alert({
+                    title : "提醒",
+                    content : "您已经提交了表单:)",
+                    buttons : '确定',
+                    callback : function(err, data, dataType, optId) {
+                        console.log(err, data, dataType, optId);
+                    }
+                });
+            }, function(err) {
+            });
+            return false;
+        });
+    </script>
+
+</html>

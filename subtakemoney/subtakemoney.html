@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="login_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="ub um-vp ub-ver" ontouchstart>
+        <div class="ub ub-ver ub-f1 ub-ac ub-pc mypassword" onclick="windowclose();">
+            
+            <div id="page_0" class="ub ub-ver uc-a3 bc-bg" style="width: 90%;" onclick="test(event);">
+                <div id="header" class="ub ub-ac ub-pc ub-f1" style="border-bottom: 1px solid #A8A8A8;height: 3em;">
+                    <div id="" class="ub ub-ac ub-pc" style="color: #000000;">
+                        验证交易密码
+                    </div>
+                </div>
+                <!--content开始-->
+                <div class="ub ub-ac ub-pc ub-ver" style=" padding-left: 0.5em;padding-right: 0.5em;padding-top: 0.5em;">
+                    <div class="ub ub-f1 ub-ac ub-pc">
+                        下单金额
+                    </div>
+                    <div class="ub ub-f1 ub-ac ub-pc" style="line-height: 2em;">
+                        <div class="ub ub-ac ub-pc myprice" style="color: #ff7670;">
+                            0
+                        </div>
+                        <div class="">
+                            元
+                        </div>
+                    </div>
+                    <div class="ub ub-f1  uinput " style="border: 1px solid #A8A8A8;padding: 0.3em;">
+                        <div class="ub ub-ac fa fa-lock" style="margin-right: 0.3em;color: #D4D4D4;">
+
+                        </div>
+                        <div id="">
+                            <input placeholder="输入你的交易密码" id="FbankPassword" value="" name="FbankPassword" type="password" class="uc-a1 common-font-color2">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div style="padding-left: 0.5em;padding-right: 0.5em;padding-top: 1em;padding-bottom: 1em;">
+                 <div class="ub-f1 ub ub-ac ub-pc bc-text-head bc-btn uc-a1 ulev1" id="selfpaybtn" onclick="register(event)" style=" height: 2.5em">
+                                                      确认下单
+                </div>
+               </div>
+            </div>
+
+        </div>
+
+        <!--content结束-->
+
+        </div>
+        <script src="../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../common/js/appcan.js"></script>
+        <script src="../common/js/appcan.control.js"></script>
+        <script src="../common/js/yfkj.js"></script>
+
+    </body>
+	<script>
+		appcan.ready(function() {
+			$(".myprice").text(appcan.locStorage.getVal("fejiao"))
+			var titHeight = $('#header').offset().height;
+		});
+		appcan.button("#nav-left", "btn-act", function() {
+			//appcan.window.open("root", "../index/index.html");
+		})
+
+		function checkpassword() { //验证交易密码
+		}
+
+		function register(event) {
+			//alert("dd");
+			//alert($("#FbankPassword").val());
+			event.stopPropagation();
+			if($("#FbankPassword").val() == ''){
+				appcan.window.openToast('请输入交易密码!', '1000');
+				return;
+			}
+			var datas = {
+				FuserId: getuserid(),
+				FbankPassword :$("#FbankPassword").val()
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/getFbankPassword",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					if (result == '0') {
+						appcan.window.openToast('交易密码错误!', '1000');
+						return;
+					} else if (result == '1') {
+						appcan.window.publish('subtakemoney', '');
+						appcan.window.close(-1);
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '100');
+				}
+			});
+		}
+
+		function test(event) {
+			event.stopPropagation();
+		}
+
+		function windowclose() {
+			appcan.window.close(-1);
+		}
+	</script>
+
+</html>

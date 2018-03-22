@@ -1,0 +1,154 @@
+.pwdImg_width {
+	width: 3em;
+	height: 1em;
+}
+
+.c-wh-pLG {
+	background-color: #f2f2f2;
+}
+
+.uinn-pLb1 {
+	padding-bottom: 0.7em;
+}
+
+.userImg {
+	background-image: url('images/userImg.png');
+}
+
+.pwdImg {
+	background-image: url('images/pwdImg.png');
+}
+
+.b-gra3 {
+	border-color: #d8d8d8;
+}
+
+.uinn-a4 {
+	padding: 0.9em 0.625em 0.8125em 0.625em;
+}
+
+.t-gra2 {
+	color: #d8d8d8;
+}
+
+.mar-ar2 {
+	margin-right: 0.375em;
+}
+
+.uinn-a5 {
+	padding: 0.8125em 0.625em 0.9em 0.625em;
+}
+
+.uinn-a6 {
+	padding: 1em 0.65em 0 0.65em;
+}
+
+.uinn-at2 {
+	padding-top: 0.75em;
+}
+
+.uinn-at1 {
+	padding-top: 1em;
+}
+
+.c-wh {
+	background-color: white;
+}
+
+.applay-head {
+	background-color: #FAFAFA;
+}
+
+.applay-text-head {
+	color: #4C4C4C;
+}
+
+.applay-head-border {
+	border-top: 0.7em #E8E8E8 solid;
+	border-left: 0em;
+	border-bottom: 0.1em #E8E8E8 solid;
+}
+
+.fa-2x-color {
+	color: #2CA6DC;
+}
+
+.applay-tag-font {
+	font-size: 0.7em;
+}
+
+.applay-tag-hidden {
+	visibility: hidden;
+}
+
+.applay-tag-fontcolor2 {
+	color: #8DC8CD;
+}
+
+.applay-tag-fontcolor3 {
+	color: #F3CB55;
+}
+
+.applay-tag-fontcolor4 {
+	color: #EE8473;
+}
+
+.applay-tag-fontcolor5 {
+	color: #A8CEAC;
+}
+
+.applay-tag-pad {
+	padding-top: 1.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.applay-tag-pad1 {
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.applay-tag-pad2 {
+	padding-top: 0.5em;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	padding-bottom: 0.5em;
+}
+
+.applay-tag-pad3 {
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+}
+
+.applay-tag-mar {
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.applay-tag-center {
+	padding: 0.3em 0.3em;
+}
+
+.applay-index-text {
+	font-size: 0.8em;
+	color: #8c8c8c;
+}
+
+.btnunactive {
+	background-color: #AAAAAA;
+	height: 1.8em;
+	width: 5.5em;
+	color: white;
+}
+
+.btnactive {
+	background-color: #0ea5fb;
+	height: 1.8em;
+	width: 5.5em;
+	color: white;
+}

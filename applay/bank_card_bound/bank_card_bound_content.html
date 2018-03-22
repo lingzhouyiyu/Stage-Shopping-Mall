@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="bank_card_bound_content/css/main.css">
+		<link rel="stylesheet" href="../../common/css/app.css">
+	</head>
+
+	<body class="bank-body-color bc-bg">
+		<div class="ub ub-ver uinn-a3 ub-fv">
+			<div id="" class="bank-line1"></div>
+			<div id="" class="ub ub-ver bank-border1 bc-bg t-gra2-font">
+				<div id="" class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						姓名
+					</div>
+					<div class="ub ub-pc ub-ac common-font-color2" id="Fname">
+
+					</div>
+				</div>
+				<div class="ub bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						身份证号
+					</div>
+					
+					<div class="ub ub-f1 ub-ac bank-font-marle common-font-color2" id="usercard">
+
+					</div>
+				</div>
+			</div>
+			<div class="bank-line1"></div>
+			<div class="ub ub-ver bank-border1 bc-bg t-gra2-font">
+				<div class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						银行卡信息
+					</div>
+					<div class="ub ub-f1 ub-ac bank-font-marle">
+						<input id="bankmsg"  placeholder="请输入银行卡具体信息" type="text" class="ub ub-f1 bank-font-input bank-input common-font-color2" />		   
+					</div>
+				</div>
+				<div class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						银行卡卡号
+					</div>
+					<div class="ub ub-f1 ub-ac">
+						<input id="bankcard" placeholder="请输入银行卡号" type="tel" class="ub ub-f1 bank-font-input bank-input common-font-color2" />		   
+					</div>
+				</div>
+				<div class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						手机号
+					</div>
+					<div class="ub ub-pc ub-ac common-font-color2" id="bankphone">
+
+					</div>
+				</div>
+				<div class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						支付宝账号
+					</div>
+					<div class="ub ub-pc ub-ac">
+						<input id="alipay" placeholder="本人实名下支付宝账号" type="text" class="ub-f1 bank-input common-font-color2" />
+					</div>
+				</div>
+				<div class="ub bank-border2 bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						妙分期交易密码
+					</div>
+					<div class="ub ub-f1 ub-ac bank-font-marle">
+						<input id="usepassword"  placeholder="请输入交易密码" type="password" class="ub ub-f1 bank-font-input bank-input common-font-color2" />		   
+					</div>
+				</div>
+				<div class="ub  bank-div-height">
+					<div class="ub ub-pe ub-ac bank-div2-width bank-margin">
+						再次输入
+					</div>
+					<div class="ub ub-f1 ub-ac bank-font-marle">
+						<input id="usepasswordagain" placeholder="再次输入交易密码" type="password" class="ub ub-f1 bank-font-input bank-input common-font-color2" />		   
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ac bank-reminder">
+				温馨提示:
+			</div>
+			<div class="ub bank-reminder1 bank-text-color1">
+				请绑定已开通网上银行储蓄卡，支付宝账号请使用本人支付宝，请仔细核银行卡卡号及支付宝账号，填写错误导致转账失败，自行承担后果。
+			</div>
+
+			<div class="uin uinn bank-foot-mar">
+				<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 btn-color bank-mar3 ulev1" id="submit">
+					完成认证 (3/3)
+				</div>
+			</div>
+		</div>
+		<script src="../../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../../common/js/appcan.js"></script>
+		<script src="../../common/js/appcan.control.js"></script>
+		<script src="../../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var FuserId = '';
+		var FbankId = '';
+		appcan.ready(function() {
+			appcan.initBounce();
+			findUserInfoForBank(getuserid());
+		})
+		appcan.button("#submit", "ani-act", function() {
+			save();
+			
+
+		})
+
+		function save() {
+			if ($("#Fname").text() == '') {
+				appcan.window.openToast("请输入名字", "1000");
+				return;
+			}
+			if ($("#usercard").text() == '') {
+				appcan.window.openToast("请输入身份证号码", "1000");
+				return;
+			}
+            if ($("#bankmsg").val() != '' & $("#bankcard").val()=="") {
+                appcan.window.openToast("请输入银行卡号", "1000");
+                return;
+            }			
+			if ($("#bankmsg").val() == '' & $("#alipay").val()=="") {
+				appcan.window.openToast("请完善银行卡信息或者支付宝账号信息", "1000");
+				return;
+			}
+			if ($("#usepassword").val() == '') {
+				appcan.window.openToast("请输入交易密码", "1000");
+				return;
+			}
+			if ($("#usepasswordagain").val() == '') {
+				appcan.window.openToast("请再次输入", "1000");
+				return;
+			}
+			if ($("#usepassword").val() != $("#usepasswordagain").val()) {
+				appcan.window.openToast("两次密码不一致", "1000");
+				return;	
+			}
+			var datas = {
+				FuserId: getuserid(),
+				//FbankId: getselectvalue('choose'),
+				//FbankPhone: $("#bankphone").val(),
+				FbankInfo:$("#bankmsg").val(),
+				FbankAccount: $("#bankcard").val(),
+				FalipayAccount: $("#alipay").val(),
+				FbankPassword: $("#usepassword").val(),
+				FbankPassword: $("#usepasswordagain").val()
+			};   
+			appcan.ajax({
+				url: Serverurl + "/user/bankInfoAuthentication",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					if (result == '1') {
+					    var userinfo=getuerinfo();
+					    userinfo.FuserState=0;
+					    //userinfo.FauthenticationLevel=0;
+					    appcan.locStorage.setVal("userinfo", userinfo);
+						appcan.window.openToast('认证信息填写完成', "1000");
+						appcan.locStorage.setVal("orderindex", 4);
+						appcan.window.open("index", "../../index/index.html");
+						//appcan.window.evaluateScript({
+
+                           // name: 'bank_card_bound',
+                          //  scriptContent: 'windowclose()'
+                       // });
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast("服务器出错", "1000");
+				}
+			});
+		}
+				function findUserInfoForBank(id)
+				{ //加载用户银行卡和支付宝信息
+					appcan.ajax({
+						url: Serverurl + "/user/findUserInfoForBank",
+							type: "POST",
+							dataType: 'json',
+							data:{
+								FuserId:getuserid()
+						    },
+						    success: function(result) {
+								var info = result.Data[0];
+								FuserId = info.FuserId;
+								$("#Fphone").text(info.Fphone);
+								$("#Fname").text(info.Fname);
+								$("#usercard").text(info.FidCard);
+								$("#bankphone").text(info.Fphone);
+								$("#alipay").val(info.FalipayAccount);
+								findBanckInfo(info.FbankId);
+							},
+							error: function(e) {
+								appcan.window.openToast("服务器出错","1000");
+							}
+					});
+				}
+		
+		//		function findBanckInfo(value) { //加载银行
+		//			appcan.ajax({
+		//				url: Serverurl + "/user/findBanckInfo",
+		//				type: "POST",
+		//				dataType: 'json',
+		//				success: function(result) {
+		//					var data = result.Data;
+		//					loadselect("choose",value,data)
+		//					
+		//				},
+		//				error: function(e) {
+		//					appcan.window.openToast("服务器出错","1000");
+		//				}
+		//			});
+		//		}
+		//
+		//		function loadselect(id, value, data) { //加载银行名称信息
+		//			$("#" + id).append("<option value='-1'>请选择开户行</option>");
+		//			$.each(data, function(i, item) {
+		//				//appcan.window.openToast(item);
+		//				$("#" + id).append("<option value='" + item.FbankId + "'>" + item.FbankName + "</option>");
+		//			});
+		//			selectchoose(id, value);
+		//		}
+		//
+		//		function selectbank(id, value) {
+		//			$("#" + id + " option[selected='select'").attr("selected", false);
+		//			$("#" + id + " option[value=" + value + "]").attr("selected", true);
+		//		}
+		//
+		//		function onbanckchange() {
+		//			getselectvalue('choose');
+		//		}
+		//
+		//		function getselectvalue(id) {
+		//			var index = $("#" + id).get(0).selectedIndex;
+		//			var value = $("#" + id).get(0).options[index].value;
+		//			return value;
+		//		}
+		//
+		//		function selectchoose(id, value) {
+		//			$("#" + id + " option[selected='select'").attr("selected", false);
+		//			$("#" + id + " option[value=" + value + "]").attr("selected", true);
+		//		}
+	</script>
+
+</html>

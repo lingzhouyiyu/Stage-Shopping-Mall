@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="login_content/css/main.css">
+        <link rel="stylesheet" href="../common/css/app.css">
+    </head>
+
+    <body class="bc-bg uof" ontouchstart style="background-color: #F5F5F3;">
+        <div style="background-color: #F5F5F3;">
+            <div id="page_0" class="up ub ub-ver" tabindex="0" style="position:relative;background-color:#F5F5F3; ">
+                <div id="content" class="ub-f1 tx-l ub ub-ver c-wh1">
+
+                    <div class="uinn ub ub-ac ub-pc ub-ver" style="background-color: #F5F5F3;padding-top: 3em;">
+                        <img src="login_content/css/myImg/login.png" style="width: 100%;" />
+                    </div>
+                    <div class="ub ub-ver ub-f1" style="background-color: #F6F6F4;">
+                        <form method="get" action="">
+                            <div class="ub ub-ver uinn-a1" style="padding-top: 2em;">
+                                <div class="pnlgroup">
+                                    <div class="pnlinputs">
+                                        <div class="pnlphoneinput">
+                                            <div class="ub ub-ac">
+
+                                                <div class="ub-f1 uinput uinn">
+                                                    <input placeholder="手机号在此" id="Fphone" value="" name="Fphone" type="text" class="uc-a1 common-font-color2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="ub ub-ac">
+                                                <div class="ub-f1 uinput uinn">
+                                                    <input placeholder="密码在此" id="Fpassword" value="" name="Fpassword" type="password" class="uc-a1 common-font-color2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ub umar-a ub-ac">
+                                        <div class="checkbox umar-r">
+
+                                        </div>
+                                        <div class="lv_title ub-f1 marg-l ub ub-ver ut-m line1">
+
+                                        </div>
+                                        <div class="ub t-blu umar-r ulev-1">
+                                            <a id="findpwd" style="color: #F1A8AB;">忘记密码?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uin uinn">
+                                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="submit" style="background-color: #FF7670;">
+                                        登录
+                                    </div>
+                                </div>
+                                <div class="uin uinn">
+                                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="register" style="background-color: #FF4D48;">
+                                        注册
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div id="footer" class=""></div>
+        </div>
+        </div>
+        <script src="../common/js/appcan.js"></script>
+        <script src="../common/js/appcan.control.js"></script>
+        <script src="../common/js/yfkj.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+
+        });
+        /*用户登录函数*/
+        function login() {
+            var Fphone = $("#Fphone").val();
+            //电话号码
+            var Fpassword = $("#Fpassword").val();
+            //密码
+            if (Fphone == "") {
+                appcan.window.openToast('手机号不能为空', '1000');
+                return;
+            }
+            if (Fpassword == "") {
+                appcan.window.openToast('密码不能为空', '1000');
+                return;
+            }
+            appcan.ajax({
+                url : Serverurl + "/user/login",
+                dataType : 'json',
+                type : "POST",
+                data : {
+                    "Fphone" : Fphone,
+                    "Fpassword" : Fpassword
+                },
+                success : function(result) {
+                    //返回json值格式{"Data":[{"FuserId":1,"FschoolAreaId":1,"FschoolNameId":1,"FrelationId":1,"FbankId":null,"FuserName":null,"Fname":"李春阳","Fpassword":"11","Fgender":"0","Fphone":"110","FQQ":"731457003","FidCard":"53233119891026","Faddress":"云南省昆明市","FlivingCost":550.0,"FlivingCostSource":"11","FeduStartDate":null,"FlivingAddress":"五华区","FeduEndDate":null,"FLearnAccount":"114","FLearnPassword":"11","FalipayAccount":null,"FbankAccount":null,"FbankPassword":null,"FheadPortrait":null,"FholdingIdCardPhoto":null,"FIdCardFrontAndBehind":null,"FotherPhoto":null,"FphotoAttestationState":null,"Fcode":null,"FschoolAreaName":"呈贡","FschoolName":"云南大学"}],"Msg":"1"}
+                    var msg = result.Msg;
+                    if (msg == '1') {
+                        var dota = result.Data[0];
+                        appcan.locStorage.setVal("userinfo", dota);
+                        userinfo = JSON.parse(appcan.locStorage.getVal("userinfo"));
+                        appcan.window.openToast('登录成功', '1000');
+                        appcan.locStorage.setVal("orderindex", 0);
+                        //appcan.window.open('index','../index/index.html');
+                        appcan.window.publish('refreshpersonnal', '');
+                        appcan.window.evaluateScript({
+                            name : 'login',
+                            scriptContent : 'windowclose()'
+                        });
+                    }
+                    if (msg == '0') {
+                        appcan.window.openToast('账号或密码输入错误', '1000');
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        /*用户登录提交*/
+        appcan.button("#submit", "ani-act", function(a, b) {
+            login();
+        })
+        appcan.button("#findpwd", "ani-act", function(a, b) {
+            appcan.window.open("findpassword", "../findpassword/findpassword.html");
+        })
+        /*用户注册提交*/
+        appcan.button("#register", "ani-act", function(a, b) {
+            appcan.window.open("register", "../register/register.html");
+        })
+        function numberNo() {
+            /*JQuery 限制文本框只能输入数字和小数点*/
+            $("#Fphone").keyup(function() {
+                $(this).val($(this).val().replace(/[^0-9.]/g, ''));
+            }).bind("paste", function() {//CTR+V事件处理
+                $(this).val($(this).val().replace(/[^0-9.]/g, ''));
+            }).css("ime-mode", "disabled");
+            //CSS设置输入法不可用
+        }
+    </script>
+
+</html>

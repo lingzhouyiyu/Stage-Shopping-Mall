@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+         <link rel="stylesheet" href="../../common/css/app.css">
+        <link rel="stylesheet" href="common/css/app.css">
+	</head>
+
+	<body class="um-vp ub " style="background-color:transparent;" ontouchstart>
+		<div id="content" class="ub-f1 ub ub-ver ub-fv ub-fh">
+			<div class="clean ub-f1"></div>
+			<div class="ub ub-ver">
+				<div class="uinn bc-bg">
+					
+					<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 umar-a phone" >
+						 0871-65693375</div>
+					<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 umar-a phone" >
+						 拨打</div>
+					<div class="clean btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 umar-a"> 取消 </div>
+				</div>
+			</div>
+		</div>
+		</div>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+        <script src="../../common/js/phone/main.js" ></script>
+        <script src="../../common/js/phone/zy_control.js" ></script>>
+	</body>
+	<script>
+		appcan.ready(function() {
+			appcan.initBounce();
+	
+			
+//			uexImageBrowser.cbSave = cbSave;
+//			uexImageBrowser.cbCropImage = cbCropImage;
+//			uexCamera.cbOpenInternal = cbOpenInternal;
+			
+		});
+		appcan.button(".phone", "btn-act", function() {
+			var phone = $(".phone").text();
+			uexCall.dial("087165693375");
+		});
+		appcan.button(".clean", "btn-act", function() {
+			appcan.window.close(-1);
+		});
+
+	</script>
+
+</html>

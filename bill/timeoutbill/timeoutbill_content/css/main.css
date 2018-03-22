@@ -1,0 +1,136 @@
+     .order_height{
+     	height: 1em;
+     	background-color: #ededed;
+     } 
+     .tixian_padding{
+     	padding-top:0.5em ;
+     	
+     }
+     .shangping_background_color{
+         background-color: #509dd0;
+     }
+      .xiaofei_background_color{
+         background-color: #96c454;
+     }
+     .bill_underline{
+         border-bottom: 1px solid #c9c9c9;
+     }
+    
+    .bill_height{
+    	height: 5em;
+    	
+    }
+    .order_height_one{
+    	height: 4.5em;
+    	
+    }
+     .order_height_two{
+    	height: 4em;
+    	
+    }
+    .bill_center_height{
+    	height: 8em;
+    	
+    }
+    
+    .bill_height_width{
+      height: 3em;
+      width: 3em;
+      font-size: 1.5em; 
+      font-weight: bolder;  	
+    }
+    .bill_height_width_end{
+    	height: 2.5em;
+      width: 5.5em;
+      border: 5px solid #000000; 
+     font-size: 1em;
+      	
+    }
+   
+    .bill_weight{
+    	font-weight: 700;
+    }
+   
+    
+   .text_color{
+   	color: #ff7670;
+   	
+   }
+   .text_color_one{
+   	color: #808080;
+   }
+    .text_color_two{
+   	color: #535353;
+   	
+   }
+   .text_color_two_1{
+   	color: #444444;
+   	
+   }
+   .text_color_three{
+   	color: #ff1d39;
+   	
+   }
+   
+   .bill_border{
+   	border:1px #FF7670 solid;
+   
+   }
+   .bill_background_color_head{
+   	background-color: #f7f7f7;
+   	
+   }
+   .bill_background_color{
+   	background-color: #f3f3f3;
+   	
+   }
+   .bill_background_color_one{
+   	background-color: #AAAAAA;
+   	height: 1.5em;
+  
+   	
+   }
+   .bill_background_color_two{
+   	background-color: #FFFFFF;
+   	
+   	
+   }
+   .bill_img{
+   	background-image:url(myImg/huabian.png);
+   	background-repeat:repeat-x;
+   	
+   }
+   .bill_padding_top{
+   	padding-top: 1em;
+   	
+   	
+   }
+   .bill_padding_right{
+   	padding-right: 1em;
+   }
+   
+   .bill_padding{
+   	padding: 0.8em;
+   	
+   }
+   
+   .mybill_width{
+   
+   width: 4.5em;
+   }
+   
+   .mybill_text_color{
+   color: #313131;
+   font-weight: bolder;
+   }
+   .mybill_padding{
+   	padding-left:1em ;
+   	
+   }
+   .mybill_magin_right{
+   	margin-right:1em ;
+   }
+   
+   .myorder_head_color{
+   	color: #ff7670;
+   }

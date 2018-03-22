@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+        <link rel="stylesheet" href="picture_info_content/css/main.css">
+
+    </head>
+
+    <body class="body-color bc-bg">
+        <div class="ub ub-ver uinn-a3 ub-fv t-gra2-font">
+            <div class="ub ub-ver uinn-at1 " id="vipphoto">
+                <div >
+                    1.银行流水和手机通讯详单，要求信息清晰可辨。
+                </div>
+                <div  class="ub picture-pad1 picture-div1 picture-text-color" >
+                    <div id="bank" class="ub ub-f1 ub-fh ub-ac ub-pc ub-ver picture-div-color picture-mar1" onclick=getphone("imgbank")>
+                        <img id="imgbank" src="picture_info_content/css/myImg/u4.png" class="ub-f1 ub ub-con "/ >
+                    </div>
+                    <div id="phone" class="ub ub-f1  ub-fh ub-ver ub-ac ub-pc picture-div-color picture-mar2" onclick=getphone("imgphone")>
+                        <img id="imgphone" src="picture_info_content/css/myImg/u12.png" class="ub-f1 ub ub-con " />
+                    </div>
+                </div>
+            </div>
+            <div class="uin uinn picture-btn picture-btn-pad">
+                <div class="btn ub ub-ac bc-text-head ulev1 ub-pc bc-btn uc-a1 picture-mar3" id="submit" >
+                    下一步 
+                </div>
+            </div>
+        </div>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+        <script src="../../common/js/yfkj.js"></script>
+    </body>
+    <script>
+        var curid = "";
+        var curpath = "";
+        var userid = getuserid();
+        appcan.ready(function() {
+            uexUploaderMgr.cbCreateUploader = cbCreateUploader;
+            uexUploaderMgr.onStatus = onStatus;
+            var userstat = getuserFauthenticationLevel();
+            if (userstat == 1) {
+                $("#vipphoto").removeClass("uhide");
+            }
+        })
+        function getphone(id) {
+            curid = id;
+            appcan.window.open({
+                name : 'setface',
+                dataType : 0,
+                data : 'setface.html',
+                aniId : 12,
+                type : 256
+            });
+        }
+
+
+        appcan.button("#submit", "ani-act", function() {
+            if (false==$("#imgbank").hasClass("updimg")) {
+				appcan.window.openToast('请上传银行流水', '1000');
+				return;
+            }
+            if (false==$("#imgphone").hasClass("updimg")) {
+				appcan.window.openToast('请上传通话详情', '1000');
+				return;
+            }
+            save();
+        })
+        function setface(path) {
+            uploadface(userid + curid);
+            curpath = path;
+        }
+
+        function uploadface(name) {
+            uexUploaderMgr.createUploader(1, Serverurl + "/User/Uploadface/" + name);
+        }
+
+        function cbCreateUploader(id, dataType, data) {
+            if (data == 0) {
+                uexUploaderMgr.uploadFile(1, curpath, "inname", 0, 800);
+            } else {
+                //appcan.window.openToast('图片上传成功!', '500');
+            }
+        }
+
+        function onStatus(id, fileSize, percent, serverPath, status) {
+            switch (status) {
+            case 0:
+                // appcan.window.openToast("", 2000, 5);
+                break;
+            case 1:
+                serverfaceurl = serverPath;
+                $("#"+curid)[0].src = serverPath + "?temp=" + Math.random();
+                $("#" + curid).addClass("updimg");
+                uexUploaderMgr.closeUploader(1);
+                break;
+            case 2:
+                uexUploaderMgr.closeUploader(1);
+                break;
+            }
+        }
+
+        function save() {
+            var updata = {
+                FotherPhoto : "",
+                FphoneDetialPho : "",
+                userid : userid
+            };
+            if ($("#imgbank").hasClass("updimg")) {
+                var src = $("#imgbank").attr("src")
+                src = src.substr(0, src.indexOf('?'));
+                updata.FotherPhoto = encodeURI(src);
+            }
+            if ($("#imgphone").hasClass("updimg")) {
+                var src = $("#imgphone").attr("src")
+                src = src.substr(0, src.indexOf('?'));
+                updata.FphoneDetialPho = encodeURI(src);
+            }
+            appcan.ajax({
+                url : Serverurl + "/user/savevip",
+                dataType : 'json',
+                type : "POST",
+                data : updata,
+                success : function(result) {
+                    if (result == '1') {
+					    var userinfo=getuerinfo();
+					    userinfo.FuserState=0;
+					    appcan.locStorage.setVal("userinfo", userinfo);
+						appcan.window.openToast('认证信息填写完成', "1000");
+						appcan.locStorage.setVal("orderindex", 3);
+						appcan.window.open("index", "../../index/index.html");
+                    }
+                    if (result == '0') {
+                        appcan.window.openToast('服务器出错!', '1000');
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+    </script>
+
+</html>

@@ -1,0 +1,58 @@
+ .bill_img {
+ 	background-image: url(myImg/huabian.png);
+ 	background-repeat: repeat-x;
+ }
+ 
+ .mybill_height {
+ 	height: 0.8em;
+ }
+ 
+.userInfo-header {
+	height: 2.6em;
+}
+
+.userInfo-border {
+	border-bottom: 1px solid #C6C6C6;
+}
+
+.userInfo-bdcolor {
+	background-color: #f5f5f5;
+}
+.password_text_red{
+	color: #ff7670;
+}
+.password_margin_small{
+	border-top: 1px solid #C6C6C6;
+	margin-top:0.7em ;
+}
+.password_margin{
+	margin-top:1.2em ;
+}
+.password_margin_big{
+	margin-top:2em ;
+}
+.password_btn{
+	margin-bottom: 1.2em;
+}
+.password_weight{
+	font-weight: 700;
+}
+.password_font_size{
+	font-size: 1.2em;
+}
+.password_padding{
+	padding-bottom:1em ;
+	padding-top: 1em;
+}
+.userInfo-input {
+	border: 0;
+	font-size: 1em;
+	outline: none;
+	color: #979797;
+}
+.bank_change{
+	border-bottom: 1px dashed #C6C6C6;
+}
+.bankchange_width {
+  	width:5em;
+  }

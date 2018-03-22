@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/app.css">
+		<link rel="stylesheet" href="mymassage_content/css/main.css">
+	</head>
+
+	<body class="ub ub-ver ub-pc ub-ac">
+		<div class="tx-c orderno umar-t">
+			<img class="" style="height:6em;" src="../../images/Nobill.png" />
+			<div class="common-font-color2 ub ub-pc umar-t">
+				<img class="ub ub-ac umar" style="height:1.2em;" src="../../images/Tips.png" /> 您还没有消息哦
+			</div>
+		</div>
+		<div class="list"></div>
+		<div id="tmp" class="uhide">
+			<div class="ub common-font-color2 umar-t mymassage_border_end item" id="0" onclick="setread(this);">
+				<div class="ub ub-ver ub-pc ub-ac" style="width: 5em;">
+					<img class="mymsg_img" src="mymassage_content/css/myImg/msg.png" />
+					<div class="readtag" class="ub ub-pc" style="color: #FF7670;font-size: 0.8em;">未读</div>
+				</div>
+				<div class="ub ub-ver bc-bg ub-f1 uinn1 ">
+					<div class="bc-bg mymsg_padding ub umar-t ulev1 common-font-color1 address-text-hidden_head FnewsType">
+
+					</div>
+					<div class="bc-bg uinn1 text_next mymassage_text">
+						<div class="address-text-hidden FnewsHeader">
+						
+						</div>
+						
+					</div>
+					<div class="ub bc-bg ub-f1 ulev-1 ub-ac uinn1 text_next mymsg_magin address-text-hidden_end FnewsContent">
+						
+					</div>
+					<div class="address-text-hidden mymsg_padding FnewsDate">
+                        
+                        </div>
+					<div class="ub mymsg_text lookdetail">
+						查看详情
+					</div>
+				</div>
+			</div>
+		</div>
+		</script>
+	</body>
+	<script type="text/javascript" src="../../common/js/jquery-1.7.1.min.js"></script>
+	<script src="../../common/js/appcan.js"></script>
+	<script src="../../common/js/appcan.control.js"></script>
+	<script src="../../common/js/yfkj.tab.js"></script>
+	<script src="../../common/js/yfkj.js"></script>
+	<script>
+		var pageno = 0;
+		var star = 0;
+		var pagesize = 10;
+		appcan.ready(function() {
+			getNews(++pageno, star);
+			appcan.frame.setBounce([0, 1], function(type) {
+				$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+			}, function(type) {
+				$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+			}, function(type) {
+				if (type == 0) {
+					pageno = 0;
+					star = 0;
+					$(".list").empty();
+				}
+				getNews(++pageno, star);
+				appcan.window.openToast('数据加载成功', "1000");
+				setTimeout(function() {
+					appcan.frame.resetBounce(type);
+				}, 1000);
+			})
+		})
+
+		function getNews(apageno, astart) {
+			var datas = {
+				Fstart: astart,
+				pageSize: pagesize,
+				currentPageNum: apageno,
+				Fphone: getphone()
+			};
+			appcan.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: Serverurl + "/user/getNews",
+				data: datas,
+				success: function(result) {
+					getuserid();
+					if(result.Data==null)
+					{
+						return;
+					}
+					if (result.Data.Data.length > 0) {
+						$(".orderno").addClass("uhide");
+						$("body").removeClass("ub-ac ub-pc");
+						var msg = result.Msg;
+						if (msg == 1) {
+							var length = result.Data.Data.length;
+							var fulltag = result.Data.fulltag;
+							var lastno = result.Data.lastno;
+							if (fulltag == 0) {
+								pageno = pageno - 1;
+							}
+							star = lastno;
+							for (var i = 0; i < length; i++) {
+								additem(result.Data.Data[i]);
+							}
+						}
+						if (msg == 0) {
+							pageno = pageno - 1;
+						}
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000');
+				}
+			});
+		}
+
+		function additem(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#tmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", data.FnewsId);
+			itemdom.find(".FnewsType").text(data.FnewsTypeName);
+			itemdom.find(".FnewsHeader").text(data.FnewsHeader);
+			itemdom.find(".FnewsContent").text(data.FnewsContent);
+			itemdom.find(".FnewsDate").text(data.FnewsDate);
+			if(data.Freadtag==0)
+			{
+				itemdom.find(".readtag").text("未读");
+			}
+			else
+			{
+				itemdom.find(".readtag").text("已读");
+				itemdom.find(".readtag").css("color","#C6C6C6");
+			}
+			if(data.FnewsType==0)
+			{
+				itemdom.find(".readtag").text("");
+			}
+			itemdom.find(".FnewsContent").attr("id", "content" + data.FnewsId);
+			itemdom.find(".lookdetail").attr("id", "btn" + data.FnewsId);
+			itemdom.find(".lookdetail").attr("onclick", "lookdetail('" + "btn" + data.FnewsId + "','" + "content" + data.FnewsId + "')");
+			list.append(itemdom);
+		}
+
+		function lookdetail(btnid, textid) {
+			if ($("#" + btnid).hasClass("selectbtn")) {
+				$("#" + btnid).removeClass().addClass("ub mymsg_text lookdetail");
+				$(".list .FnewsContent").removeClass().addClass("ub bc-bg ub-f1 ulev-1 ub-ac uinn1 text_next mymsg_magin address-text-hidden_end FnewsContent");
+			} else {
+				$("#" + btnid).removeClass().addClass("ub mymsg_text lookdetail selectbtn");
+				$(".list .FnewsContent").removeClass().addClass("ub bc-bg ub-f1 ulev-1 ub-ac uinn1 text_next mymsg_magin address-text-hidden_end FnewsContent");
+				$("#" + textid).removeClass("ub bc-bg ub-f1 ulev-1 ub-ac uinn1 text_next mymsg_magin address-text-hidden_end FnewsContent").addClass("ub bc-bg ub-f1 ulev-1 ub-ac uinn1 text_next mymsg_magin FnewsContent");
+			}
+		}
+		function setread(dom)
+		{
+			var id=$(dom).attr("id");
+			var readtag=$(".list #"+id+" .readtag").text();
+			if(readtag=="已读" || readtag=="")
+			{
+				return;
+			}
+			appcan.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: Serverurl + "/user/setreadnews",
+				data: {
+					FnewsId:id
+				},
+				success: function(result) {
+					if(result==0)
+					{
+						$(".list #"+id+" .readtag").text("已读");
+						$(".list #"+id+" .readtag").css("color","#C6C6C6");
+						var newscount=appcan.locStorage.getVal("newcount");
+						appcan.window.publish('setindexbaget','');				
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000');
+				}
+			});			
+		}
+	</script>
+
+</html>

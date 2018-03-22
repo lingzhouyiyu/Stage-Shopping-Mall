@@ -1,0 +1,173 @@
+    .myorder_head_color {
+    	color: #ff7670;
+    }
+    
+    .order_height_one {
+    	height: 4.5em;
+    }
+    
+    .bill_border_bottom {
+    	border-bottom: 1px solid #C6C6C6;
+    	margin-bottom:1em ;
+    }
+    
+    .bill_head_color {
+    	color: #ff7670;
+    }
+    
+    .bill_height {
+    	height: 5em;
+    }
+    
+    .bill_center_height {
+    	height: 8em;
+    }
+
+    .bill_height_width {
+    	height: 3em;
+    	width: 3em;
+    	margin-bottom: 0.8em;
+    	background-color: #ff7670;
+    	font-size: 1.5em;
+    	font-weight: bolder;
+    }
+    .bill_height_width-consume {
+    	height: 3em;
+    	width: 3em;
+    	margin-bottom: 0.8em;
+    	background-color: #96c454;
+    	font-size: 1.5em;
+    	font-weight: bolder;
+    }
+    .bill_height_width_end {
+    	height: 2.3em;
+    	width: 4.7em;
+    	font-size: 1em;
+    }
+    
+    .mybill_margin_left {
+    	margin-left: 0.8em;
+    }
+    
+    .bill_weight {
+    	font-weight: 700;
+    }
+    
+    .text_color {
+    	color: #ff7670;
+    }
+    
+    .text_color_one {
+    	color: #898989;
+    }
+    
+    .text_color_two {
+    	color: #535353;
+    }
+    
+    .text_color_two_1 {
+    	color: #444444;
+    }
+    
+    .text_color_three {
+    	color: #ff1d39;
+    }
+    
+    .bill_border {
+    	border: 1px #FF7670 solid;
+    }
+    
+    .bill_background_color_head {
+    	background-color: #f7f7f7;
+    }
+    
+    .bill_background_color {
+    	background-color: #F5F5F3;
+    }
+    
+    .bill_background_color_one {
+    	background-color: #AAAAAA;
+    	height: 1.5em;
+    }
+    
+    .bill_background_color_two {
+    	background-color: #FFFFFF;
+    }
+    
+    .foot_background_color {
+    	background-color: #ededed;
+    }
+    
+    .bill_img {
+    	background-image: url(myImg/huabian.png);
+    	background-repeat: repeat-x;
+    }
+    
+    .bill_padding_top {
+    	padding-top: 1em;
+    }
+    
+    .bill_top_line {
+    	border-top: 1px solid #c6c6c6;
+    	border-bottom: 1px solid #c6c6c6;
+    }
+    
+    .bill_padding {
+    	padding-top: 0.7em;
+    }
+    
+    .mybill_width {
+    	width: 4em;
+    }
+    
+    .mybill_width_one {
+    	width: 6em;
+    }
+    
+    .mybill_width_two {
+    	width: 5em;
+    }
+    
+    .mybill_text_color {
+    	color: #313131;
+    	font-weight: bolder;
+    }
+    
+    .active {
+    	width: 1.5em;
+    	height: 1.5em;
+    }
+    
+    .mybill_padding {
+    	padding-left: 1em;
+    }
+    
+    .mybill_magin_right {
+    	margin-right: 1em;
+    }
+    
+    .mybill_magin_bottom {
+    	border-bottom: 1px solid #C6C6C6;
+    }
+    
+    .mybill_height {
+    	height: 0.8em;
+    }
+    
+    .center_padding {
+    	margin-bottom: 1em;
+    	border-top:1px solid #C6C6C6 ;
+    	border-bottom: 1px solid #C6C6C6;
+    }
+    
+    .order_height {
+    	border-top: 1px solid #C6C6C6;
+    	margin-top: 1em;
+    }
+   .order-bottom{
+   	margin-top: 1em;
+   	padding-bottom: 1em;
+   }
+.gopayactive{
+	background-color: #FF7670;
+}

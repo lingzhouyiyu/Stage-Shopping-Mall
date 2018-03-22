@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="registertest_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="bc-bg input-background-color " ontouchstar>
+		<div class="first-div">
+			<div style="background-color: #FFFFFF;">
+				<div class="ub ub-ver uinn-a1" style="padding-top: 2em;">
+
+					<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac input-background-color">
+						<div class="ub ub-ac umh5 ub-f1">
+							<div class="uinput ub ub-f1">
+								<input id="Fphone" name="Fphone" placeholder="手机号在此" type="number" maxlength="20" class="ub-f1 common-font-color2">
+							</div>
+						</div>
+					</div>
+					<div class="uba b-gra3 uc-a1 c-wh ub ub-ac left umar-at1 input-background-color register-hight1">
+						<div class="uinput ub ub-f1">
+							<input id="Frcord" name="Frecord" placeholder="验证码在此" type="number" class="ub-f1 common-font-color2" />
+						</div>
+						<div id="btncheck" class="btn ub ub-ac  ub-pc bc-btn bc-text-head  uc-r1 register-hight2">
+							获取验证码
+						</div>
+					</div>
+
+					<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1 input-background-color">
+						<div class="ub ub-ac umh5 ub-f1">
+							<div class="uinput ub ub-f1">
+								<input id="Fpassword" name="Fpassword" placeholder="设置6-20位登录密码" maxlength="20" type="password" class="ub-f1 common-font-color2">
+							</div>
+						</div>
+					</div>
+					<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1 input-background-color">
+						<div class="ub ub-ac umh5 ub-f1">
+							<div class="uinput ub ub-f1">
+								<input id="rFpassword" name="rFpassword" placeholder="再次设置6-20位登录密码" maxlength="20" type="password" class="ub-f1 common-font-color2">
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1 input-background-color register-hight1">
+							<div class="ub ">
+								<textarea rows="1" cols="40" placeholder="邀请码无，可不填" class="ub ub-ac ub-pc ub-fh  textarea-wh"></textarea>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="ub ub-ver">
+			<div class="ub umar-a ub-ac" style="padding: 0.7em 0 0 1em;">
+				<div class="checkbox checked-font-size">
+					<input type="checkbox" name="checkset" id="checkset" class="uabs ub-con" checked="checked">
+					</input>
+				</div>
+				<div class="lv_title ub-f1 marg-l ub  ut-m line1" style="color: #37c6c8;">
+					<div style="color:#787875; font-weight: bolder">
+						同意
+					</div>
+					<div id="agreement" onclick="agreement()">
+						《用户注册协议》
+					</div>
+				</div>
+
+			</div>
+			<div class="uinn-at1" style="padding:1em 1em 0 1em;">
+				<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="submit">
+					立即加入
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.listview.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var Fidentifier = "";
+		var msg = "";
+		var wait = 60;
+		appcan.ready(function() {
+				//$("#Fphone").unbind("blur");
+				//用户输入框失去焦点，检验用户是否存在
+				//$("#Fphone").bind("blur", function() {
+				//checkuer($(this).val());
+				//});
+			})
+			/*计时器函数*/
+		function time(o) {
+			var tso = o;
+			if (wait == 0) {
+				o.innerHTML = "免费获取验证码";
+				wait = 60;
+				cantag = 0;
+				$(o).removeClass("disclick");
+			} else {
+				o.innerHTML = "重新发送(" + wait + ")";
+				wait--;
+				setTimeout(function() {
+					time(o)
+				}, 1000)
+			}
+		}
+		function agreement(){
+		    appcan.window.open("agreement", "../agreement/agreement.html");
+		}
+		/*验证用户是否存在*/
+		//		function checkuer() {
+		//			var parameter = {
+		//				Fphone: $("#Fphone").val() //电话密码
+		//			};
+		//			appcan.ajax({
+		//				type: "POST",
+		//				dataType: 'json',
+		//				url: Serverurl + "/user/checkUser",
+		//				data: parameter,
+		//				success: function(result) {
+		//					//appcan.window.openToast(result.Msg);
+		//					if (result.Msg == "1") {
+		//						appcan.window.openToast('该手机号已被注册！', '1000');
+		//						msg = result.Msg;
+		//						return;
+		//					}
+		//				},
+		//				error: function() {
+		//					appcan.window.openToast('服务器出错!', '1000');
+		//				}
+		//			});
+		//		}
+		/*用户注册*/
+		function register() {
+			var Fphone = $("#Fphone").val();
+			//电话
+			var Frcord = $("#Frcord").val();
+			//验证码
+			var Fpassword = $("#Fpassword").val();
+			//密码
+			var rFpassword = $("#rFpassword").val();
+			//重复密码
+			if (Fphone && /^1[3|4|5|8]\d{9}$/.test(Fphone)) {} else {
+				appcan.window.openToast("不是有效的手机号", 2000, 5);
+				return;
+			}
+			if (Fidentifier == "") {
+				appcan.window.openToast('请先获取验证码', '1000', 5);
+			}
+			if (Frcord == "") {
+				appcan.window.openToast('验证码不能为空', '1000', 5);
+				return;
+			};
+			if (Fpassword == "") {
+				appcan.window.openToast('密码不能为空', '1000', 5);
+				return;
+			};
+			if (rFpassword == "") {
+				appcan.window.openToast('再次设置密码不能为空', '1000', 5);
+				return;
+			};
+			var pwd = document.getElementById("Fpassword").value;
+			if (pwd.length < 6 || pwd.length > 20) {
+				appcan.window.openToast("密码长度不正确，请设置6-20位密码!", "1000");
+				return;
+			}
+			if (Fpassword != rFpassword) {
+				appcan.window.openToast('两次输入的密码不一致！', '1000', 5);
+				return;
+			};
+			if (msg == "1") {
+				appcan.window.openToast('该手机号已被注册！', '1000');
+				return;
+			}
+			appcan.ajax({
+				url: Serverurl + "/user/register",
+				type: "POST",
+				dataType: 'json',
+				data: {
+					"Fphone": Fphone,
+					"Fpassword": Fpassword
+				},
+				success: function(result) {
+					//appcan.window.openToast(result);
+					if (result == '1') {
+						appcan.window.evaluateScript({
+							name: 'register',
+							scriptContent: 'windowclose()'
+						});
+						appcan.window.publish('toastpassowrd', '注册成功！请登录！');
+					}
+					if (result == '2') {
+						appcan.window.openToast('该手机号已被注册！', '1000');
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast(e);
+				}
+			});
+		}
+		/*注册提交*/
+		appcan.button("#submit", "ani-act", function() {
+			if (!$("#checkset").prop("checked")) {
+				appcan.window.openToast("请阅读协议", "1000");
+				retun;
+			}
+//			if (msg == "1") {
+//				appcan.window.openToast("该手机号已被注册！", "1000");
+//				return;
+//			}
+			checkcode();
+			//验证注册码后注册
+		})
+		var cantag = 0;
+		/*获取验证码*/
+		function sendcode() {
+			var Fphone = $("#Fphone").val();
+			//电话
+			appcan.ajax({
+				url: Serverurl + "/Sms/sendcode/0?mobile=" + Fphone,
+				type: "POST",
+				dataType: 'json',
+				success: function(result) {
+					//appcan.window.openToast(result);
+					if (result != "0") {
+						appcan.window.openToast('验证码发送成功！', '1000', 5);
+						Fidentifier = result;
+						//appcan.window.openToast("登录成功！");
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000', 5);
+				}
+			});
+		}
+
+		function checkcode() {
+			var Frand_code = $("#Frcord").val();
+			appcan.ajax({
+				url: Serverurl + "/Sms/checkcode",
+				type: "POST",
+				dataType: 'json',
+				data: {
+					Frand_code: Frand_code,
+					Fidentifier: Fidentifier
+				},
+				success: function(result) {
+					//appcan.window.openToast(result);
+					if (result == "1") {
+						register();
+					} else {
+						appcan.window.openToast('验证码不正确!', '1000', 5);
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000', 5);
+				}
+			});
+		}
+		appcan.button("#btncheck", "ani-act", function() {
+			var o=this;
+			var parameter = {
+				Fphone: $("#Fphone").val() //电话密码
+			};
+			appcan.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: Serverurl + "/user/checkUser",
+				data: parameter,
+				success: function(result) {
+					//appcan.window.openToast(result.Msg);
+					if (result.Msg == "1") {
+						appcan.window.openToast('该手机号已被注册！', '1000');
+						msg = result.Msg;
+						return;
+					} else {
+						var Fphone = $("#Fphone").val();
+						if (Fphone && /^1[3|4|5|8]\d{9}$/.test(Fphone)) {} else {
+							appcan.window.openToast("不是有效的手机号", 2000, 5);
+							return;
+						}
+						if (cantag == 0) {
+							sendcode();
+							$(this).addClass("disclick");
+							time(o);
+							cantag = 1;
+						};
+					}
+				},
+				error: function() {
+					appcan.window.openToast('服务器出错!', '1000');
+				}
+			});
+		})
+	</script>
+
+</html>

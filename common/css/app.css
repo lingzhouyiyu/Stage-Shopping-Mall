@@ -1,0 +1,326 @@
+.bill_height_width-goods {
+    	height: 3em;
+    	width: 3em;
+    	margin-bottom: 0.8em;
+    	background-color: #509DD0;
+    	font-size: 1.5em;
+    	font-weight: bolder;
+    }
+.bc {
+	background-color: #3DC700;
+}
+.title_text{
+	height:1.3em;
+}
+.title_font{
+	font-size:1.2em;
+}
+.yfhead
+{
+    height:3.2em;
+}
+.bill_border_takemoney {
+	border: 2px solid #FF7670;
+}
+
+.bill_border_goods {
+	border: 2px solid #509dd0;
+}
+
+.bill_border_usemoney {
+	border: 2px solid #96c454;
+}
+
+.img_height {
+	width: 100%;
+	height: 20%;
+}
+
+.top_head {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	z-index: 1;
+	background-color: #FFFFFF;
+}
+
+.padding_top {
+	padding-top: 1.5em;
+}
+
+.common-mycricle {
+	border: 0.12em solid #FFFFFF;
+	width: 1.6em;
+	height: 1.6em;
+	font-size: 0.8em;
+	border-radius: 50%;
+}
+
+.shop-search-pad {
+	height: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin: 0;
+	border-bottom: 2px solid #e6e6e6;
+}
+
+.shop-search-pad1 {
+	border: 2px solid #e6e6e6;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	border-bottom-left-radius: 3em;
+	border-top-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	border-top-right-radius: 3em;
+}
+
+.shop-search-pad2 {
+	padding-left: 1.5em;
+}
+
+.common-search-pad {
+	padding-right: 0.5em;
+}
+
+.shop-search-pic {
+	width: 2em;
+	height: 2em;
+	background-image: url(../../../images/search.png);
+}
+
+.shop-search-input {
+	border: 0;
+	height: 2em;
+	font-size: 1em;
+	color: #a7a7a7;
+}
+
+.consumed-search-picheader {
+	width: 1.5em;
+	height: 1.5em;
+	padding-right: 1em;
+	background-image: url(../../images/search.png);
+}
+
+.shop-list-div {
+	border-bottom: 0.5em solid #f2f2f2;
+}
+
+.shop-list-div1 {
+	height: 8.5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.shop-list-div2 {
+	width: 6em;
+	height: 6em;
+}
+
+.shop-list-div3 {
+	padding-left: 0.5em;
+	height: 7em;
+}
+
+.shop-list-line {
+	height: 1.8em;
+}
+
+.shop-list-font {
+	color: #ff7670;
+}
+
+select:focus {
+	/*去掉select获得焦点时的边框*/
+	outline: none;
+	border: none;
+}
+
+select {
+	去掉select的右侧小三角 -moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.all-font-bolder {
+	/*字体加粗*/
+	font-weight: bolder;
+	color: #535353;
+}
+
+
+/*版本样式*/
+
+.clsitem {
+	border: 2px solid #bbbbbb;
+	border-radius: 0.3em;
+	height: 2em;
+	line-height: 2em;
+}
+
+.clsitemys {
+	position: relative;
+	float: left;
+	margin: 0.5em;
+}
+
+.clsitemselectdiv {
+	border-color: #ff7670;
+}
+
+.clitemimg {
+	width: 0.6em;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.clsitemselectimg {
+	display: inherit;
+}
+
+.checked-font-size {
+	font-size: 0.8em;
+}
+
+
+/*默认*/
+
+.common-font-color1 {
+	color: #626262 !important;
+}
+
+
+/*小字灰色*/
+
+.common-font-color2 {
+	color: #898989 !important;
+}
+
+
+/*大黑色*/
+
+.common-font-color3 {
+	color: #444444 !important;
+}
+
+.common-mar-search {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.common-img-search {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.common-header-hw {
+	min-width: 4em;
+	min-height: 2em;
+}
+
+.common-header-hw1 {
+	width: 1.6em;
+	height: 1.6em;
+}
+
+
+/*other_one*/
+
+.address_underline_dash {
+	border-bottom: 1px dashed #c6c6c6;
+	font-weight: bolder;
+	margin: 0 1em 0 1em;
+}
+
+.address_underline_solid {
+	border-bottom: 1px solid #c6c6c6;
+}
+
+.left_ioc {
+	border: 2px solid white !important;
+	width: 1.6em;
+	height: 1.6em;
+	font-size: 0.9em;
+	border-radius: 50%;
+}
+
+.ico_padding {
+	width: 3.5em;
+}
+
+.ioc_margin_right {
+	margin-right: 1.2em;
+}
+
+.input_padding {
+	padding: 1.5em 1em 1.5em 1em;
+}
+
+.btn-radio {
+	border: 0.12em solid #e9652c;
+	width: 1.6em;
+	height: 1.6em;
+	font-size: 0.9em;
+	border-radius: 50%;
+}
+
+input:focus {
+	outline: none;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+.bottom_margin_left {
+	margin-left: 2em;
+}
+
+.bill_margin_left {
+	margin-left: 0.8em;
+}
+
+.personal_weight {
+	font-weight: 700;
+}
+
+.address_background_color {
+	background-color: #F5F5F3;
+}
+
+.bottom_margin_left_allselect {
+	padding-left: 2.6em;
+}
+
+.personal_padding_bottom {
+	padding-bottom: 1em;
+}
+
+.ioc_margin_top {
+	margin-right: 1em;
+}
+
+
+/*    选中开始*/
+
+.ioc_img_choose {
+	height: 2em;
+	width: 2em;
+}
+
+
+/*    选中结束*/
+
+  .bill_font_size{
+	font-size: 0.9em;
+}
+.mybreak{
+    word-wrap:break-word;
+    word-break:break-all;
+}

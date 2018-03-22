@@ -1,0 +1,358 @@
+.active-img{
+   visibility: visible; 
+}
+.hidden-img{
+	visibility: hidden;
+}
+.consumed-head-pic{
+    height: 1.6em;
+    width: 1.6em;
+    
+}
+.consumed-head-catey{
+    height: 1.2em;
+    width: 2em;
+    
+}
+.ele-homeImg {
+	background-image: url('myImg/elec-ad1.png');
+}
+
+.ele-search {
+	background-image: url('myImg/ele-seach.png');
+}
+
+.ele-sort1 {
+	background-image: url('myImg/elecSort1.png');
+}
+
+.ele-sort2 {
+	background-image: url('myImg/elecSort2.png');
+}
+
+.ele-sort3 {
+	background-image: url('myImg/elecSort3.png');
+}
+
+.eleIcon1 {
+	background-image: url('myImg/re_du_sheng_qing.png');
+}
+
+.eleIcon2 {
+	background-image: url('myImg/wode-order.png');
+}
+
+.eleIcon3 {
+	background-image: url('myImg/wo_yao_huan_kuan.png');
+}
+
+.eleIcon4 {
+	background-image: url('myImg/sao_miao_zhi_fu.png');
+}
+.phonefee{
+	background-image: url('myImg/phoneval.png');
+}
+.eleIcon5 {
+	background-image: url('myImg/elec5.png');
+}
+
+.eleIcon6 {
+	background-image: url('myImg/elec6.png');
+}
+
+.eleIcon7 {
+	background-image: url('myImg/elec7.png');
+}
+
+.eleIcon8 {
+	background-image: url('myImg/elec8.png');
+}
+.uh_head{
+	height: 0.3em;
+	background: #f0f0f0;
+}
+.uh-ele1 {
+	height: 9.0625em;
+}
+
+.uh-ele2 {
+	height: 6.875em;
+}
+
+.uwh-ele1 {
+	width: 0.9em;
+	height: 0.9375em;
+}
+
+.uwh-ele2 {
+	width: 2.75em;
+	height: 2.75em;
+}
+
+.uc-a-ele1 {
+	-webkit-border-radius: 2.75em;
+	border-radius: 2.75em;
+}
+
+.c-wh-ele {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.uinput input.ulev-ele {
+	font-size: 0.8125em;
+}
+
+.umar-t-ele {
+	margin-top: 0.9em;
+}
+
+.t-gra-ele {
+	color: #aaaaaa;
+}
+
+.t-org-ele {
+	color: #f78c3e;
+}
+
+.t-gre-ele {
+	color: #3dc700;
+}
+
+.appLogo {
+	background-image: url('myImg/logo1.png');
+}
+
+.uwh-logo {
+	width: 4.4375em;
+	height: 1.875em;
+}
+
+.uinn-ele2 {
+	padding: 0.14em 0.625em;
+}
+
+.umar-ar6 {
+	margin-right: 0.46875em;
+}
+
+.umar-at1 {
+	margin-top: 0.625em;
+}
+
+.uinn-a7 {
+	padding: 0 0.625em;
+}
+
+.uinn-a11 {
+	padding: 0.625em 0;
+}
+
+.btn_wh1 {
+	width: 2em;
+	height: 2em;
+}
+
+.uinn-a1 {
+	padding: 0.625em;
+}
+
+.ufm1 {
+	font-family: Arial;
+}
+
+.ulev-app1 {
+	font-size: 0.875em;
+}
+
+.btn-b {
+	padding: 0.4em;
+	/*四个按钮的内边距*/
+}
+
+.btn-four {
+	/*四个按钮的字体和颜色*/
+	padding-top: 0.4em;
+	/*字体离图标的距离*/
+	font-size: 0.8em;
+	color: #626262;
+}
+
+.hot-shop-bg {
+	/*热卖商品最外层*/
+	padding: 0.35em;
+}
+.hot-shop-bg1 {
+	/*热卖商品最外层*/
+	padding: 0.5em 1em;
+}
+.hot-shop-font {
+	/*热卖商品四个字体*/
+	font-family: "黑体";
+	color: #626262;
+	padding-left: 0.3em;
+}
+
+.btn-fenge {
+	/*分割线的高和颜色*/
+	background-color: #F0F0F0;
+	height: 0.3em;
+}
+
+.re-big-bo {
+	/*热卖商品外层*/
+	border: 0.1em solid;
+	border-color: #E0E0E0;
+}
+
+.re-small-left {
+	/*热卖左边大盒子右边框*/
+	border-right: 0.1em solid #E3E3E3;
+}
+
+.re-small-right {
+	/*热卖右边盒子*/
+	height: 300em;
+}
+
+.ub-father-bd {
+	/*大盒子上下边框*/
+	border-top: 0.1em solid #E3E3E3;
+}
+
+.re-text-padding {
+	/*文字离边框的距离*/
+	padding: 0.4em;
+}
+.re-margin{
+	width: 4em;
+	height: 3.5em;
+}
+.re_goods{
+	width: 4.5em;
+	height: 4.5em;
+}
+.re-margin1{
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+.re-margin-left{
+	margin-left: 0.5em;
+	margin-top: 0.5em;
+}
+.re-margin-left1{
+	margin-left: 1.5em;
+	margin-top: 0.5em;
+}
+.re-hot-width{
+	width: 6em;
+}
+.re-border{
+	border-bottom: 0.1em solid  #E3E3E3;
+}
+.re-text-forfont {
+	/*热卖商品里两个盒子中字体的大小和颜色*/
+	font-size: 0.8em;
+	color: #626262;
+	
+}
+.re-text-center{
+	height: 1.3em;
+	line-height: 1.3em;
+}
+.re-hot-lineheight{
+	height: 2em;
+	line-height: 2em;
+}
+.re-big-image{
+	height: 5em;
+	margin-bottom: 0.3em;
+}
+.re-image{
+	-webkit-background-size:contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+.tj-text-forfont {
+	/*热卖商品里两个盒子中字体的大小和颜色*/
+	color: #626262;
+}
+
+.tj-text-over {
+	overflow: hidden;
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+
+.tj-ub-father-bd {
+	border-top: 0.1em solid #E3E3E3;
+}
+
+.bt-four {
+	background-image: url('../index_content/css/myImg/jiekuan.png') !important;
+}
+
+.tj-line-height {
+	height: 1.5em;
+	line-height: 1.5em;
+}
+.tj-margin{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.re-pic-pad{
+	
+}
+.re-rehight{
+	height: 1.3em;
+}
+.re-rehight-bod{
+	border-left:0.2em solid #FF5D57;
+	height: 1.3em;
+}
+.re-left-divhi{
+	height: 9em;
+}
+.tj-div-height{
+	height: 6em;
+}
+.tj-div-height1{
+	height: 4em;
+}
+.tj-fa-col{
+	color: #ff7670;
+}
+.tj-divpad-fon{
+	padding-left: 0.5em;
+}
+.tj-div-with{
+	width: 5.5em;
+	height: 6em;
+}
+.tj-div-cuxiao{
+	font-size: 0.9em;
+}
+.header-tag-hidden{
+	display: none;
+}
+.loginimg
+{
+	width: 1em;
+	margin-right: 10px;
+}
+.logintxt
+{
+	font-weight:bolder;
+}
+.loginpnl
+{
+	width: 5em;
+}
+.allbtn
+{
+padding: 0.5em 0;
+}

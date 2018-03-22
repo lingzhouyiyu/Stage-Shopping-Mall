@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="um  landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="consumed_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="bc-bg common-font-color1 bc-bg " ontouchstart>
+		<div id="" class="ub ub-ac ub-pc top_head" style="border-bottom:2px solid #e6e6e6;">
+			<div id="" class="ub shop-search-pad1 common-mar-search ub-fh ub-f1" style="height: 2.3em;">
+				<div id="searchinput" class="ub ub-ac ub-pc ub-f1 shop-search-pad2">
+					<input type="text" placeholder="搜美食、娱乐、聚会" name="" id="inputval" value="" class="ub shop-search-input ub-f1" style="" />
+				</div>
+				<div id="searchbt" class="ub ub-img ub-ac ub-pc common-search-pad">
+					<img src="../images/search.png" class="ub ub-ac ub-pc common-img-search" />
+				</div>
+			</div>
+		</div>
+		<div style="height:3em;"></div>
+		<div class="list"></div>
+		<div class="ub ub-ac ub-pc ub-ver uhide" id="nogoodstem" style="margin-top: 5em;">
+			<div class="ub ub-ac ub-pc">
+				<img src="../images/person.png" / class="ub" style="height: 4em;width: 4em;">
+			</div>
+			<div class="ub ub-ac ub-pc common-font-color2" style="margin-top: 1em;">
+				抱歉，未能找到你想要的商家
+			</div>
+			<div class="ub-f1 ub ub-ac ub-pc bc-text-head bc-btn uc-a1 " id="selfpaybtn" onclick="consumegugu()" style=" height: 2em;width:6em;margin-top: 2em;font-size: 1.2em;">
+				去逛逛
+			</div>
+		</div>
+		<div id="tmp" class="ub-fv uhide">
+			<div id="itemn1" class="ub ub-ac ub-pc shop-list-div item">
+				<div class="ub ub-f1 ub-con shop-list-div1" onclick="detailconsume('')">
+					<div class="ub ub-pc ub-ac">
+						<img src="" class="ub ub-ac ub-pc shop-list-div2 goodsimg" />
+					</div>
+					<div class="ub ub-ver ub-f1 ub-ac">
+						<div style="width: 10em">
+							<div id="" class=" ub ub-f1 umh3">
+								<div>
+									商家:
+								</div>
+								<div class="consumed-pad1 consumed-font-bold FshopName">
+									顶尖凉拌KTV
+								</div>
+							</div>
+							<div class="ub ub-f1 umh3">
+								<div id="" class="">
+									地址:
+								</div>
+								<div class=" consumed-pad1 consumed-font-bold FshopAddress">
+
+								</div>
+							</div>
+							<div class="ub ub-ac ub-f1 umh3">
+								<div id="" class="">
+									可分期数:
+								</div>
+								<div class=" consumed-pad1 consumed-font FavgNumber">
+
+								</div>
+
+							</div>
+							<div id="" class="ub ub-ac ub-f1 umh3">
+								<div id="" class="">
+									人均消费:
+								</div>
+								<div id="" class=" consumed-pad1 FaverageConsume" style="color: #FF7670;">
+
+								</div>
+								<div>
+									元
+								</div>
+							</div>
+							<div id="" class="ub ub-f1 umh3">
+								<div id="" class="ub ub-ac ub-pc">
+									<img src="consumed_content/css/myImg/phone.png" class="consumed-phone" />
+									<div id="" class="ub ub-ac">
+										:
+									</div>
+								</div>
+								<div id="" class="ub ub-ac consumed-pad1 FshopPhone">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var pageno = 0;
+		var star = 0;
+		var pagesize = 10;
+		appcan.ready(function() {
+			
+			//搜索框输入刷新列表
+			appcan.window.subscribe('searchconsume', function(msg) {
+			    
+				pageno = 0;
+				star = 0;
+				$(".list").empty();
+				findConsumeList(++pageno, star);
+				
+			});
+			appcan.window.subscribe('guguconsume', function(msg) {
+               
+                $("#inputval").val('');
+                pageno = 0;
+                star = 0;
+                $(".list").empty();
+                findConsumeList(++pageno, star);
+                
+            });
+			findConsumeList(++pageno, star);
+			appcan.frame.setBounce([0, 1], function(type) {
+				$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+			}, function(type) {
+				$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+			}, function(type) {
+				if (type == 0) {
+					pageno = 0;
+					star = 0;
+					$(".list").empty();
+				}
+				findConsumeList(++pageno, star);
+				setTimeout(function() {
+					appcan.frame.resetBounce(type);
+				}, 1000);
+			})
+		})
+        function consumegugu() {
+          
+            appcan.window.publish('guguconsume', '');
+        }
+		function findConsumeList(apageno, astart) {
+			//          var catid = "";
+			//          if (appcan.locStorage.getVal("shopcatid") != null) {
+			//              catid = appcan.locStorage.getVal("shopcatid");
+			//          }
+			var datas = {
+				Fstart: astart,
+				pageSize: pagesize,
+				currentPageNum: apageno,
+				keywords: $("#inputval").val()
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/findConsumeList",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					var msg = result.Msg;
+					if (msg == 1) {
+						//$("#nogoodstem").addClass("uhide");
+						var length = result.Data.Data.length;
+						var fulltag = result.Data.fulltag;
+						var lastno = result.Data.lastno;
+						if (fulltag == 0) {
+							pageno = pageno - 1;
+						}
+						star = lastno;
+						for (var i = 0; i < length; i++) {
+							additem(result.Data.Data[i]);
+							//加载账单
+						}
+						//appcan.window.openToast('数据加载成功', '1000');
+					}
+					
+					if (msg == 0) {
+						pageno = pageno - 1;
+						$("#nogoodstem").removeClass("uhide");
+					}
+					
+					if($(".list .item").length == 0){
+					    $("#nogoodstem").removeClass("uhide");
+					}else{
+					    $("#nogoodstem").addClass("uhide");
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast("服务器出错", "1000");
+				}
+			});
+		}
+		
+		function additem(data) //加载订单
+		{
+			var list = $(".list");
+			var clonedom = $("#tmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FshoperId);
+			itemdom.find(".FshopName").text(data.FshopName);
+			itemdom.find(".FshopAddress").text(data.FshopAddress);
+			itemdom.find(".FavgNumber").text(data.FavgNumber);
+			itemdom.find(".FshopPhone").text(data.FshopPhone);
+			itemdom.find(".FaverageConsume").text(data.FaverageConsume);
+			if ((data.Fphoto).split(',')[0] == null) {
+				itemdom.find(".goodsimg").attr("src", '');
+			}
+			itemdom.find(".goodsimg").attr("src", (data.Fphoto).split(',')[0]);
+			itemdom.find(".shop-list-div1").attr("onclick", "detailconsume('" + data.FshoperId + "')");
+			list.append(itemdom);
+		}
+
+		function detailconsume(id) {
+			
+			var shopdatas = {
+				FshoperId: id
+				//FavgNumber: $("#item" + id + " .FavgNumber").text()
+//				FshopName: $("#item" + id + " .FshopName").text(),
+//				FshopAddress: $("#item" + id + " .FshopAddress").text(),
+//				FaverageConsume: $("#item" + id + " .FaverageConsume").text(),
+//				FshopPhone: $("#item" + id + " .FshopPhone").text(),
+//				
+			};
+			appcan.locStorage.setVal("shopinfo", shopdatas);
+			appcan.window.open("seller_consume", "../shoping/seller_consume/seller_consume.html");
+		}
+		appcan.button("#searchbt", "ani-act", function() {
+			appcan.window.publish('searchconsume', '');
+		})
+		appcan.button("#submit", "ani-act", function() {
+			$("form").submit();
+		})
+	</script>
+
+</html>

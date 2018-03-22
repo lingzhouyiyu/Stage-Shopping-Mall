@@ -1,0 +1,79 @@
+.help_border {
+	border: 3px solid #d3d3d3;
+	height: 2.3em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-bottom-left-radius: 0.2em;
+	border-top-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+}
+
+.help_head_height {
+	height: 2.2em;
+	border: none;
+}
+.help_width{
+width: 5em;
+}
+.help_margin_top{
+margin: 1em 0 1em 0;
+}
+
+.help_border_left {
+	border-left: 1px #A0A0A0 solid;
+	height: 10em;
+	margin-top: 0.3em;
+}
+
+.help_qq {
+	width: 3em;
+	height: 2em;
+	border: 2px solid #649f12;
+	color: #649f12;
+}
+.help_img {
+	width: 3em;
+	height: 3em;
+}
+
+.help_phone {
+	width: 3em;
+	height: 2em;
+	border: 2px solid #f76500;
+	color: #f76500;
+}
+
+.help_tips {
+	margin-top: 0.8em;
+	height: 4em;
+	color: #f76500;
+	background-color: #fff38f;
+}
+.help_tips_img {
+	width:2em;
+	height: 2em;
+}
+
+.help_center_height {
+	background-color: #f0f0f0;
+	height: 0.5em;
+}
+
+.help_border_center {
+	border: 2px solid #c6c6c6;
+	border-left: none;
+	border-right: none;
+}
+
+.help_border_center_one {
+	border: 2px solid #c6c6c6;
+	border-right: none;
+	padding-left: 0.5em;
+	height: 5em;
+}
+.help_border_center_left{
+  padding-left: 0.5em;
+  height: 5em;
+  border-left: 2px solid #c6c6c6;
+}

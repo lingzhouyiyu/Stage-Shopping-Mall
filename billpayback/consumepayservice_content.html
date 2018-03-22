@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+		<link rel="stylesheet" href="overpayback/overpayback_content/css/main.css">
+	</head>
+
+	<body class=" bc-bg order-body-color bc-bg">
+		<div class="ub ub-ver order-gig-color">
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize" style="padding-top: 0.6em;">
+				<div class="ub ub-f2 ub-ac ub-con">
+					<div class="order-font-left common-font-color1">
+						支付项目：
+					</div>
+
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-name-text bill_font_size">
+					<div class="ub ub-ac ub-pc  uc-a3 payback_border_money common-font-color2 projectsate " style="padding-left: 0.5em;padding-right: 0.5em;">
+                        分期消费
+					</div>
+				</div>
+			</div>
+
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize timeoutitem" style="padding-bottom: 0.6em;">
+				<div class="ub ub-f2 ub-ac  ub-con">
+					<div class="order-font-left common-font-color1">
+						服务费:
+					</div>
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-bond-text_two">
+					￥
+					<div class="servicemoney" id="servicemoney">
+						0.00
+					</div>
+					元
+				</div>
+			</div>
+
+		</div>
+		<div class="ub ub-f1 order-line"> </div>
+		<!--<div style="height: 1em;border-image: url(payback_content/css/myImg/border.png);">-->
+
+		</div>
+		<!--<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;color: white;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="overpayback/overpayback_content/css/myImg/weixin.png" class="ub ub-ac ub-pc order-less-img" />
+					</div>
+
+				</div>
+				<div class="ub ub-f4 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						微信支付
+					</div>
+					<div class="order-less-font">
+						推荐安装微信5.0及以上的版本使用
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('0')">
+					<img id="chooseImg0" class="choose_img" src="overpayback/overpayback_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>-->
+        
+		<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;color: white;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="overpayback/overpayback_content/css/myImg/yinhangka.png" class="ub ub-ac ub-pc order-less-img1" />
+					</div>
+
+				</div>
+
+				<div class="ub ub-f1 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						银行卡支付
+					</div>
+					<div class="order-less-font">
+						支付需银行卡已开通网上银行
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('1')">
+					<img id="chooseImg1" class="choose_img" src="overpayback/overpayback_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="overpayback/overpayback_content/css/myImg/zhifubao.png" class="ub ub-ac ub-pc order-less-img" />
+					</div>
+
+				</div>
+
+				<div class="ub ub-f4 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						支付宝支付
+					</div>
+					<div class="order-less-font">
+						推荐有支付宝账号的用户使用
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('2')">
+					<img id="chooseImg2" class="choose_img" src="overpayback/overpayback_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ac order-less-font order-notice">
+			如有金额支付错误，请联系我们客服！
+		</div>
+		<!--确认支付开始-->
+		<div class="order-btn">
+			<div class="btn ub ub-ac bc-text-head ulev1 ub-pc bc-btn uc-a1 " id="submit">
+				确认支付
+			</div>
+		</div>
+
+		<button type="submit" class="uinvisible"></button>
+		<!--确认支付结束-->
+		<div id="footer" class=""></div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.listview.js"></script>
+		<script src="../common/js/countUp.min.js"></script>
+		<script src="../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		        var paymethord = "";
+		var chooseId = 0;
+        var partner = "2088021960677244";
+         var seller = "258240663@qq.com";
+         var rsaPrivate = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBANoBWmWt2FRL54teUX5qKJTOntUG/h5IefstxjP+QqKbFW8xoTmTkiQ9xqmnLHALoHzQYhpr1Ui4TapIx+BLrtDst1QhV+Te/r11JX41ok30fQ5FXbK+ABQh4S+W4ynfrJ0wgZus94AY1uRW+My6WbkOKLJvaiBXvw5BOYXV1HBTAgMBAAECgYEAr4Q/X3WjodqqxM5fFkQqAASKZECI/6CidNPZq6qdw4TQsQFoKI7jLkJ+W8C4Sk1SHKs5EMSYpz+bZ+nI4pCMYTOwWXCUNp9bluwTttsckeJlwMpsa19gUfhJap7KnI9N7MzfiUKpWpsrW5AOUVLOK43i9SF1yM+MMTN0Tzx84GECQQD8tkY+39gnff896iilkVriJ6yR500zSWGTnNM5VaxBIaO+UX12fm/OPH/HADsuwDQ0jjO6+oQkEhE44HacDQw/AkEA3Nd6hYAldolPWB04L52HvE2kYhoMccvdOqn2cB6P/RUiMAIEAJ/uF+vjwoR80CD9LJiFKlb9qICF39GBuWFm7QJAMk1B3EAIMYw14ygZ4SL2uS92fTBSQJQptQ0xSidQe0Jr6nUkCRMPxDhsorrcDOk7Ov7XMy+sX9Ws0ep0EYnTVwJBAKQ70zApBrNKlikvQbOXcXRGQXN7b7nJJHMWJuFmuSo7ZztQpG1agpRjpvPn13Joth9OJepA209OlUDH67NTjlkCQGUfLiI8veHsENneXVVNvLiTtRsfoDsJSWQWeVaZCYkpBg1Rl2UOwem18Nw30KaKDnpelhJoqJL4buk1NzvJVyA=";
+         var rsaPublic = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB";                                                                                                                                  
+         var notifyUrl = Serverurl+"/";		
+         var fee = "0.00";
+         var subject = "手续费";
+         var body ="支付提现手续费";
+         var num = 200155550;
+         var totalmoney;
+         var servicemoney;
+         var ownermoney;
+         var paybillId = '';
+         var projectsate = '';
+         var now = new  Date();
+		var num = now.getTime();
+		appcan.ready(function() {
+			 uexUnionPay.cbStartPay = unionpayover;
+				paybillId = JSON.parse(appcan.locStorage.getVal("paybillId"));
+				returnMOney()
+				uexAliPay.onStatus = paySuccess;
+                uexWidgetOne.cbError = payFailed;
+				//动态数据
+				
+			})
+		chooseitem('1');
+
+        function setInfo(){
+            uexAliPay.setPayInfo(partner, seller, rsaPrivate, rsaPublic, notifyUrl);
+        }
+    function pay(subject,body,fee,num){
+        setInfo();
+        uexAliPay.pay(num, subject, body, fee);
+    }
+    function paySuccess(status, des){
+        if(status == 0){
+            updatestate();
+        }    	
+
+        //updatestate();
+    }
+    function payFailed(opCode, errorCode, des){
+
+    }   
+		function chooseitem(id) {
+			chooseId = id;
+			//alert(chooseId);
+			$(".choose_img").attr("src", "overpayback/overpayback_content/css/myImg/chooseno.png");
+			$("#chooseImg" + id).attr("src", "overpayback/overpayback_content/css/myImg/choose.png");
+		}
+		appcan.button("#submit", "btn-act", function() {
+           if(chooseId == 0){//微信支付
+
+           }else if(chooseId == 1){//银行卡支付
+               UnionPay();
+           }else if(chooseId == 2){//支付宝支付
+                 var subject =getuerinfo().Fname + "支付手续费";
+                 var body ="支付本金";
+                 //var fee = "0.01";
+                // var fee = Number($("#servicemoney").text().trim());
+                var fee = 0.01;
+                // var num =new Date().getTime();
+                 pay(subject,body,fee,num);  
+           }
+           
+		})
+		//读取表头数据
+			function returnMOney() {
+				appcan.ajax({
+					url: Serverurl + "/user/getConsumeFee",
+					type: "POST",
+					dataType: 'json',
+					data: {
+						FuserId: getuserid(),
+						FbillId:paybillId
+					},
+					success: function(result) {
+						fee = result.servicemoney;
+						$(".servicemoney").text(result.servicemoney); //服务费
+						options = {  
+				useEasing: true,
+				  useGrouping: true,
+				  separator: ',',
+				  decimal: '.',
+				  prefix: '',
+				  suffix: ''
+			};
+			count1 = new CountUp(".totalmoney", 0, result.totalmoney, 2, 1, options);
+			count1.start();
+			
+			count2 = new CountUp(".servicemoney", 0, result.servicemoney, 2, 1, options);
+			count2.start();
+			
+			count3 = new CountUp(".ownermoney", 0, result.ownermoney, 2, 1, options);
+			count3.start();
+					
+					},
+					error: function(e) {
+						appcan.window.openToast('服务器出错!', '1000');
+					}
+				});
+			}
+			function updatestate(){
+			    appcan.ajax({
+                    url: Serverurl + "/user/updateConsumeState",
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        FuserId: getuserid(),
+                        FbillId:paybillId,
+                        Fpayoffmethod:chooseId
+                    },
+                    success: function(result) {
+                        if( result.Msg == '1'){
+                            appcan.window.publish('consumepay', '');
+                            appcan.locStorage.setVal("orderindex", 2);
+                            appcan.window.open("order", "../myorder/order.html");
+                        }
+                     appcan.window.evaluateScript({
+                        name : 'payservice',
+                        scriptContent : 'windowclose()'
+                    });  
+                    },
+                    error: function(e) {
+                        appcan.window.openToast('服务器出错!', '1000');
+                    }
+                });
+			}
+			
+				//银联支付
+		     function unionpayover(data){
+            var json = JSON.parse(data);
+            if(json.payResult==0)
+            {
+                //alert("支付成功");
+                  updatestate();
+            }
+            else
+            {
+              //  alert("支付失败");
+            }
+        }
+		function UnionPay() {
+			//var now = new  Date();
+			//var num = now.getTime();
+			var txnTime = now.Format("yyyyMMddhhmmss");
+			
+			 //  var fee = Number($("#servicemoney").text().trim())*100;
+			 var fee = 0.01*100;
+			appcan.ajax({
+				url: Serverurl + '/user/unionpay',
+				dataType: 'json',
+				type: "POST",
+				data: {
+					orderId: num,
+					txnTime: txnTime,
+					txnAmt: fee
+				},
+				success: function(data) {
+                    var msg = data.Msg;
+                    if(msg == 0) {
+                        var tx = data.Data;
+                        var params = {
+                            orderInfo: tx,
+                            mode: "00"
+                        };
+                        var data = JSON.stringify(params);
+                        uexUnionPay.startPay(data);
+                    }
+				},
+				error: function(e) {
+				}
+			});
+		}
+		Date.prototype.Format = function(fmt) { //author: meizz
+			var o = {
+				"M+": this.getMonth() + 1, //月份
+				"d+": this.getDate(), //日
+				"h+": this.getHours(), //小时
+				"m+": this.getMinutes(), //分
+				"s+": this.getSeconds(), //秒
+				"q+": Math.floor((this.getMonth() + 3) / 3), //季度
+				"S": this.getMilliseconds() //毫秒
+			};
+			if(/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+			for(var k in o)
+				if(new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			return fmt;
+		}
+	</script>
+
+</html>

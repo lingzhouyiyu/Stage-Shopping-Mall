@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		 <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        
+        <link rel="stylesheet" href="../common/css/app.css">
+		<link rel="stylesheet" href="about_content/css/main.css">
+
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver uinn-a3 ub-fv">
+			
+			<div class="ub ub-ver uinn uinn-at1">
+				
+
+
+					<div class="ub ub-ver">
+						<div class="ub ub-pc ub-ac ">
+							<img style="height: 8em;" src="about/css/myImg/two.png" ;>
+						</div>
+
+					</div>
+					<div class="ub ub-ver" style=" margin-top: 0.5em;">
+
+						<div class="ub-f1 ub ub-pc ub-ac" style="color: darkgray;">
+
+							<p>
+							    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;妙分期是由东远资本推出的针对昆明本土地区的大型分期消费购物平台，分期涵盖：电子数码、家电等实物商品分期和餐饮、娱乐、整形美容、驾照培训等消费分期。目前，以手机移动端（妙分期APP）的形式为昆明本地学生、白领及社会各界人士提供全方位的购物便利；其加盟商家主要以昆明本土商家为主，送货快、到货快（昆明市区内一天到货）也成为妙分期商城的一大亮点。    妙分期秉承“信用改变生活，梦想触手可及”的理念，通过最简单便捷的流程和用心的服务，打造卓越极致的用户体验。
+							</p>
+						</div>
+
+						<div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc" style="margin-top: 3em; color: darkgray;">
+
+					<u>隐私声明</u>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/appcan.js"></script>
+		<script src="../js/appcan.control.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			appcan.initBounce();
+		})
+		appcan.button("#submit", "ani-act", function() {
+			$("form").submit();
+		})
+		$("form").on('submit', function() {
+			appcan.request.postForm($("form"), function() {
+				appcan.window.alert({
+					title: "提醒",
+					content: "您已经提交了表单:)",
+					buttons: '确定',
+					callback: function(err, data, dataType, optId) {
+						console.log(err, data, dataType, optId);
+					}
+				});
+			}, function(err) {
+			});
+			return false;
+		});
+	</script>
+
+</html>

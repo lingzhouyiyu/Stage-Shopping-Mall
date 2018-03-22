@@ -1,0 +1,84 @@
+.b-gra3{
+	border-color:#d8d8d8;
+}
+.uinn-a6{
+	padding:1em 0.65em 0 0.65em;
+}
+.t-gra4{
+	color:#8c8c8c;
+}
+.uinn-a1{
+    padding:0.625em;
+}
+.uinn-a7{
+    padding:0 0.625em;
+}
+.c-wh
+{
+    background-color:#FFF;
+}
+.umar-at1{
+    margin-top:0.625em;
+}
+.uinn-at1{
+    padding-top:1em;
+}
+.left
+{
+	padding-left: 0.625em;
+}
+.input-background-color{
+	background-color: #F5F5F3;
+}
+.yaoqingmawu-text-color{
+	color: #FAB2AD;
+}
+.first-div{
+	padding:1.8em 0.6em 0 0.6em;
+	background-color: #F5F5F3;
+}
+.disclick{
+    color: #E3E3E3;
+}
+.left-jiantou-font-size{
+    font-size: 1.0625em;
+}
+
+.old-css{
+	border: 0.12em solid #D7D7D7; 
+	width:1.6em; 
+	height: 1.6em;
+	font-size: 0.8em; 
+	border-radius: 50%;
+}
+.new-css{
+	border: 0.12em solid #D7D7D7; 
+	width:1.6em; 
+	height: 1.6em;
+	font-size: 0.8em; 
+	border-radius: 50%;
+	background-color: #24C0B3;
+}
+.textarea-wh{
+	margin: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    line-height: 1.2em;
+    background: none;
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    color: #FF7670;
+}
+.register-hight1{
+	height: 3em;
+}
+.register-hight2{
+	height: 2.68em;
+}
+textarea::-webkit-input-placeholder {  
+	color: #ff7670;
+}
+textarea:-moz-placeholder {  color: #ff7670;}

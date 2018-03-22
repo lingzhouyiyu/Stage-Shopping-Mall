@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../bill/bill_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="ub ub-ver ub-pc ub-ac bill_weight bill_background_color mybreak">
+		<div class="tx-c orderno umar-t">
+			<img class="" style="height:6em;" src="../images/Nobill.png" />
+			<div class="common-font-color2 ub ub-pc umar-t">
+				<img class="ub ub-ac umar-r" style="height:1.2em;" src="../images/Tips.png" /> 您还没有账单哦
+			</div>
+		</div>
+		<div class="list"></div>
+		<!--   提现模板-->
+		<div id="tmp" class="ub-fv uhide">
+			<div class="bill_background_color_two center_padding item" id="mybill">
+				<div class="ub ub-ac mybill_padding bill_font_size">
+					<div class="ub ub-f1 umh5 ub-ac text_color_one">
+						账单号：
+						<div class="ub FbillNumber">
+
+						</div>
+					</div>
+					<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+					</div>
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-pc ub-ac bill_center_height">
+					<div class="ub ub-f1 bc-text-head umar-l">
+						<div class="ub bc-text-head bill_height_width ub-ac ub-pc ">
+							提现
+						</div>
+
+						<div class="ub ub-f1 ub-ver uinn1">
+							<div class="ub ub-f1 text_color_one umh4">
+								账单名称：
+								<div class="text_color_two FWithdrawalsName">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 text_color_one umh4">
+								下单时间：
+								<div class="text_color_two FWithdrawalTime">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 umh4">
+								<div class="text_color_one">
+									提现金额：
+								</div>
+								<div class="text_color_two_1 ub itembtn">
+									￥
+									<div class="text_color_two FwithdrawMoney">
+
+									</div>
+									<div class="text_color_two_1 umar-l">
+										元
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-ac bill_height mybill_padding">
+					<div class="ub ub-f1 ub-ver">
+						<div class="ub ub-ver ub-f1 umh5 text_color_one ulev0">
+							<div class="ub text_color_one umh4">
+								已还账单：
+								<div class="ub">
+
+									<div class="ub passcount">
+										0
+									</div>
+									<div>
+										/
+									</div>
+									<div class="ub Fvalue">
+										0
+									</div>
+									期
+								</div>
+							</div>
+
+							<div class="ub ub-f1 ">
+								<div class=" text_color_one">
+									共计还款：
+								</div>
+								<div class="common-font-color2 ub" id="">
+									￥
+									<div class="ub FrepaymentMoney">
+										0.00
+									</div>
+									<div>
+
+									</div>元
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub  mybill_magin_right text_color_one">
+						<div class="ub bill_font_size uhide bill_border_takemoney ub-f1 bill_height_width_end ub-pc ub-ac umar-r us uc-a1">
+
+						</div>
+						<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-l us uc-a1 subbtn deletebtn" id="" onclick="deleteBill(this);">
+							删除记录
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--   消费模板-->
+		<div id="consumetmp" class="ub-fv uhide">
+			<div class="bill_background_color_two center_padding item" id="mybill">
+				<div class="ub ub-ac mybill_padding bill_font_size">
+					<div class="ub ub-f1 umh5 ub-ac text_color_one">
+						账单号：
+						<div class="ub FbillNumber">
+
+						</div>
+					</div>
+					<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+					</div>
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-pc ub-ac bill_center_height">
+					<div class="ub ub-f1 bc-text-head umar-l">
+						<div class="ub bc-text-head bill_height_width-consume ub-ac ub-pc ">
+							消费
+						</div>
+
+						<div class="ub ub-f1 ub-ver uinn1">
+							<div class="ub ub-f1 text_color_one umh4">
+								账单名称：
+								<div class="text_color_two FWithdrawalsName mybreak">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 text_color_one umh4">
+								下单时间：
+								<div class="text_color_two FWithdrawalTime">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 umh4">
+								<div class="text_color_one">
+									消费金额：
+								</div>
+								<div class="text_color_two_1 ub itembtn">
+									￥
+									<div class="text_color_two FwithdrawMoney">
+
+									</div>
+									<div class="text_color_two_1 umar-l">
+										元
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-ac bill_height mybill_padding">
+					<div class="ub ub-f1 ub-ver">
+						<div class="ub ub-ver ub-f1 umh5 text_color_one ulev0">
+							<div class="ub text_color_one umh4">
+								已还账单：
+								<div class="ub">
+
+									<div class="ub passcount">
+										0
+									</div>
+									<div>
+										/
+									</div>
+									<div class="ub Fvalue">
+										0
+									</div>
+									期
+								</div>
+							</div>
+
+							<div class="ub ub-f1 ">
+								<div class=" text_color_one">
+									共计还款：
+								</div>
+								<div class="common-font-color2 ub" id="">
+									￥
+									<div class="ub FrepaymentMoney">
+										0.00
+									</div>
+									<div>
+
+									</div>元
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub  mybill_magin_right text_color_one">
+						<div class="ub bill_font_size uhide bill_border_takemoney ub-f1 bill_height_width_end ub-pc ub-ac umar-r us uc-a1">
+
+						</div>
+						<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-l us uc-a1 subbtn deletebtn" id="" onclick="deleteBill(this);">
+							删除记录
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--消费自己付-->
+		<div id="consumeselfpay" class="ub-fv uhide">
+			<div class="bill_background_color_two center_padding item" id="mybill">
+				<div class="ub ub-ac mybill_padding bill_font_size">
+					<div class="ub ub-f1 umh5 ub-ac text_color_one">
+						账单号：
+						<div class="ub FbillNumber">
+
+						</div>
+					</div>
+					<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+					</div>
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-pc ub-ac bill_center_height">
+					<div class="ub ub-f1 bc-text-head umar-l">
+						<div class="ub bc-text-head bill_height_width-consume ub-ac ub-pc ">
+							消费
+						</div>
+
+						<div class="ub ub-f1 ub-ver uinn1">
+							<div class="ub ub-f1 text_color_one umh4 ">
+								账单名称：
+								<div class="text_color_two FWithdrawalsName mybreak">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 text_color_one umh4">
+								下单时间：
+								<div class="text_color_two FWithdrawalTime">
+
+								</div>
+							</div>
+							<div class="ub ub-f1 umh4">
+								<div class="text_color_one">
+									消费金额：
+								</div>
+								<div class="text_color_two_1 ub itembtn">
+									￥
+									<div class="text_color_two FwithdrawMoney">
+
+									</div>
+									<div class="text_color_two_1 umar-l">
+										元
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-ac ub-pe bill_height mybill_padding">
+					<div class="ub ub-ac  mybill_magin_right text_color_one">
+						<div class="ub bill_font_size uhide bill_border_takemoney ub-f1 bill_height_width_end ub-pc ub-ac umar-r us uc-a1">
+
+						</div>
+						<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-l us uc-a1 subbtn deletebtn" id="" onclick="deleteBill(this);">
+							删除记录
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--   商品模板-->
+		<div id="goodstmp" class="ub-fv uhide">
+			<div class="bill_background_color_two center_padding item" id="mybill">
+				<div class="ub ub-ac mybill_padding bill_font_size">
+					<div class="ub ub-f1 umh5 ub-ac text_color_one">
+						账单号：
+						<div class="ub FbillNumber">
+
+						</div>
+					</div>
+					<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+					</div>
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-pc ub-ac" style="margin-top: 1em;">
+                        <div class="ub bc-text-head umar-l">
+                            <div class="ub  uinn bill_padding_top">
+                                <div class="ub bc-text-head bill_height_width-goods ub-ac ub-pc bc-head">
+                                    商品
+                                </div>
+                            </div>
+                            <div class="ub ub-f1 ub-ver uinn1">
+                                <div class="ub ub-f1 text_color_one umh7">
+                                    <div>
+                                        商品名称：
+                                    </div>
+                                    <div class="ub ub-f1 FWithdrawalsName mybreak">
+                                       
+                                    </div>
+                                </div>
+                                <div class="ub ub-f1 text_color_one umh7">
+                                    下单时间：
+                                    <div class="text_color_two FWithdrawalTime">
+
+                                    </div>
+                                </div>
+                                <div class="ub ub-f1 umh7">
+                                    <div class="text_color_one">
+                                        商品金额：
+                                    </div>
+                                    <div class="text_color_two ub">
+                                        ￥
+                                        <div class="FwithdrawMoney">
+
+                                        </div>
+                                        元
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ub ub-f1 ub-ver ub-ae mybill_height_right"></div>
+                    </div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-ac bill_height mybill_padding">
+					<div class="ub ub-f1 ub-ver">
+						<div class="ub ub-ver ub-f1 umh5 text_color_one ulev0">
+							<div class="ub text_color_one umh4">
+								已还账单：
+								<div class="ub">
+
+									<div class="ub passcount">
+										0
+									</div>
+									<div>
+										/
+									</div>
+									<div class="ub Fvalue">
+										0
+									</div>
+									期
+								</div>
+							</div>
+
+							<div class="ub ub-f1 ">
+								<div class=" text_color_one">
+									共计还款：
+								</div>
+								<div class="common-font-color2 ub" id="">
+									￥
+									<div class="ub FrepaymentMoney">
+										0.00
+									</div>
+									<div>
+
+									</div>元
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub  mybill_magin_right text_color_one">
+						<div class="ub bill_font_size uhide bill_border_takemoney ub-f1 bill_height_width_end ub-pc ub-ac umar-r us uc-a1">
+
+						</div>
+						<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-l us uc-a1 subbtn deletebtn" id="" onclick="deleteBill(this);">
+							删除记录
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商品自己付-->
+		<div id="goodSelfpay" class="ub-fv uhide">
+			<div class="bill_background_color_two center_padding item" id="mybill">
+				<div class="ub ub-ac mybill_padding bill_font_size">
+					<div class="ub ub-f1 umh5 ub-ac text_color_one">
+						账单号：
+						<div class="ub FbillNumber">
+
+						</div>
+					</div>
+					<div class="ub text_color mybill_magin_right" id="FexamineState">
+
+					</div>
+				</div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-pc ub-ac" style="margin-top: 1em;">
+                        <div class="ub bc-text-head umar-l">
+                            <div class="ub  uinn bill_padding_top">
+                                <div class="ub bc-text-head bill_height_width-goods ub-ac ub-pc bc-head">
+                                    商品
+                                </div>
+                            </div>
+                            <div class="ub ub-f1 ub-ver uinn1">
+                                <div class="ub ub-f1 text_color_one umh7">
+                                    <div>
+                                        商品名称：
+                                    </div>
+                                    <div class="ub ub-f1 FWithdrawalsName mybreak">
+                                       
+                                    </div>
+                                </div>
+                                <div class="ub ub-f1 text_color_one umh7">
+                                    下单时间：
+                                    <div class="text_color_two FWithdrawalTime">
+
+                                    </div>
+                                </div>
+                                <div class="ub ub-f1 umh7">
+                                    <div class="text_color_one">
+                                        商品金额：
+                                    </div>
+                                    <div class="text_color_two ub">
+                                        ￥
+                                        <div class="FwithdrawMoney">
+
+                                        </div>
+                                        元
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ub ub-f1 ub-ver ub-ae mybill_height_right"></div>
+                    </div>
+				<div class="address_underline_dash">
+				</div>
+				<div class="ub ub-ac ub-pe bill_height mybill_padding">
+					<div class="ub ub-ac  mybill_magin_right text_color_one">
+						<div class="ub bill_font_size uhide bill_border_takemoney ub-f1 bill_height_width_end ub-pc ub-ac umar-r us uc-a1">
+
+						</div>
+						<div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac umar-l us uc-a1 subbtn deletebtn" id="" onclick="deleteBill(this);">
+							删除记录
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/jquery-1.7.1.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/yfkj.js"></script>
+	<script>
+		var FexamineStatecode = {
+			"5": "已完成还款"
+		}
+		var pageno = 0;
+		var star = 0;
+		var pagesize = 10;
+		FbillCost = '0';
+		FbillId = '0';
+		billId = '';
+		btnid = '';
+		var btn;
+		var allbtn;
+		appcan.ready(function() {
+				appcan.window.subscribe('mybill1', function(msg) {
+					pageno = 0;
+					star = 0;
+					$(".list").empty();
+					findBillInfoHasInTime(++pageno, star);
+				});
+				appcan.window.subscribe('flashmove', function(msg) {
+					pageno = 0;
+					star = 0;
+					$(".list").empty();
+					findBillInfoHasInTime(++pageno, star);
+				});
+				findBillInfoHasInTime(++pageno, star);
+				appcan.frame.setBounce([0, 1], function(type) {
+					$("#pullstatus" + type).text(!type ? "开始下拉" : "开始上拖");
+				}, function(type) {
+					$("#pullstatus" + type).text(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+				}, function(type) {
+					if (type == 0) {
+						pageno = 0;
+						star = 0;
+						$(".list").empty();
+					}
+					findBillInfoHasInTime(++pageno, star);
+					appcan.window.openToast('数据加载成功', '1000');
+					setTimeout(function() {
+						appcan.frame.resetBounce(type);
+					}, 1000);
+				})
+			})
+			//加載訂單信息
+		function findBillInfoHasInTime(apageno, astart) {
+			var datas = {
+				FuserId: getuserid(),
+				Fstart: astart,
+				pageSize: pagesize,
+				currentPageNum: apageno
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/findBillInfoHasInTime",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					if (result.Data.Data.length > 0) {
+						$(".orderno").addClass("uhide");
+						$("body").removeClass("ub-ac ub-pc");
+					}
+					var msg = result.Msg;
+					
+					if (msg == 1) {
+						var length = result.Data.Data.length;
+						
+						var fulltag = result.Data.fulltag;
+						var lastno = result.Data.lastno;
+						if (fulltag == 0) {
+							pageno = pageno - 1;
+						}
+						star = lastno;
+						for (var i = 0; i < length; i++) {
+						 //  alert(result.Data.Data[i].t_consumetotaldetial);
+							if (result.Data.Data[i].t_consumetotaldetial == 't_detailtotalbill') {
+								additem(result.Data.Data[i]); //加载提现账单	
+							} else if (result.Data.Data[i].t_consumetotaldetial == 't_consumetotaldetial') {
+								consumeadditem(result.Data.Data[i]); //加载消费账单	
+							} else if (result.Data.Data[i].t_consumetotaldetial == 't_consumetotalselfpay') {
+								consumeselfpay(result.Data.Data[i]); //加载消费自己付账单
+							} else if (result.Data.Data[i].t_consumetotaldetial == 't_ordertotalselfpay') {
+								goodselfpay(result.Data.Data[i]); //加载商品自己付账单
+							} else if (result.Data.Data[i].t_consumetotaldetial == 't_ordertotaltatial') {
+								goodsadditem(result.Data.Data[i]); //加载商品付账单
+							}
+						}
+					}
+					if (msg == 0) {
+						pageno = pageno - 1;
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast("服务器出错", "1000");
+				}
+			});
+		}
+		//提现DOM
+		function additem(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#tmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FconsumeId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+			itemdom.find("#FexamineState").text(data.FexamineState);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+			itemdom.find(".FbillCost").text(data.FbillCost);
+			itemdom.find(".FrepaymentMoney").text(data.totalmoney.toFixed(2));
+			itemdom.find(".Fvalue").text(data.passcount);
+			itemdom.find(".passcount").text(data.passcount);
+			itemdom.find("#FexamineState").text(FexamineStatecode[data.FexamineState]);
+			itemdom.find(".subbtn").attr("id", data.FconsumeId);
+			itemdom.find("#tmp").attr("id", data.FconsumeId);
+			itemdom.find(".deletebtn").attr("onclick", "deleteOldBill('" + data.FconsumeId + "','" + data.t_consumetotaldetial + "')");
+			billId = data.FbillId;
+			list.append(itemdom);
+		}
+		//消费DOM
+		function consumeadditem(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#consumetmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FconsumeId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+			itemdom.find("#FexamineState").text(data.FexamineState);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+			itemdom.find(".FbillCost").text(data.FbillCost);
+			itemdom.find(".FrepaymentMoney").text(data.totalmoney.toFixed(2));
+			itemdom.find(".Fvalue").text(data.passcount);
+			itemdom.find(".passcount").text(data.passcount);
+			itemdom.find("#FexamineState").text(FexamineStatecode[data.FexamineState]);
+			itemdom.find(".subbtn").attr("id", data.FconsumeId);
+			itemdom.find("#tmp").attr("id", data.FconsumeId);
+			itemdom.find(".deletebtn").attr("onclick", "deleteOldBill('" + data.FconsumeId + "','" + data.t_consumetotaldetial + "')");
+			billId = data.FbillId;
+			list.append(itemdom);
+		}
+		//		消费自己付DOM
+		function consumeselfpay(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#consumeselfpay").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FconsumeId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+			itemdom.find("#FexamineState").text(data.FexamineState);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+			itemdom.find("#FexamineState").text('交易成功');
+			itemdom.find(".subbtn").attr("id", data.FconsumeId);
+			itemdom.find("#tmp").attr("id", data.FconsumeId);
+			itemdom.find(".deletebtn").attr("onclick", "deleteOldBill('" + data.FconsumeId + "','" + data.t_consumetotaldetial + "')");
+			billId = data.FbillId;
+			list.append(itemdom);
+		}
+		//商品DOM
+		function goodsadditem(data) //加载账单
+		{
+		   
+			var list = $(".list");
+			var clonedom = $("#goodstmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FconsumeId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+			itemdom.find("#FexamineState").text(data.FexamineState);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+			itemdom.find(".FbillCost").text(data.FbillCost);
+			itemdom.find(".FrepaymentMoney").text(data.totalmoney.toFixed(2));
+			itemdom.find(".Fvalue").text(data.passcount);
+			itemdom.find(".passcount").text(data.passcount);
+			itemdom.find("#FexamineState").text("已完成还款");
+			itemdom.find(".subbtn").attr("id", data.FconsumeId);
+			itemdom.find("#tmp").attr("id", data.FconsumeId);
+			itemdom.find(".deletebtn").attr("onclick", "deleteOldBill('" + data.FconsumeId + "','" + data.t_consumetotaldetial + "')");
+			billId = data.FbillId;
+			list.append(itemdom);
+		}
+		//		商品自己付DOM
+		function goodselfpay(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#goodSelfpay").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", "item" + data.FconsumeId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+			itemdom.find("#FexamineState").text(data.FexamineState);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+			itemdom.find("#FexamineState").text('交易成功');
+			itemdom.find(".subbtn").attr("id", data.FconsumeId);
+			itemdom.find("#tmp").attr("id", data.FconsumeId);
+			itemdom.find(".deletebtn").attr("onclick", "deleteOldBill('" + data.FconsumeId + "','" + data.t_consumetotaldetial + "')");
+			billId = data.FbillId;
+			list.append(itemdom);
+		}
+		//往期删除订单
+		function deleteOldBill(id, seletable) {
+		   
+			appcan.window.alert({
+				title: "提示",
+				content: "是否确定删除订单？",
+				buttons: ['取消', '确定'],
+				callback: function(err, data, dataType, optId) {
+					if (data == 1) {
+						appcan.ajax({
+							url: Serverurl + "/user/deleteBill",
+							type: "POST",
+							dataType: 'json',
+							data: {
+								FuserId: getuserid(),
+								FbillId: id,
+								deletestates: seletable
+							},
+							success: function(result) {
+								if (result == '1') {
+									//var id = $(dom).attr("id");
+									$("#item" + id).remove();
+									appcan.window.openToast('账单删除成功', '1000');
+								}
+								if (result == '0') {
+									appcan.window.openToast('账单删除失败', '1000');
+								}
+							},
+							error: function(e) {
+								appcan.window.openToast("服务器出错", "1000");
+							}
+						});
+					}
+				}
+			});
+		}
+	</script>
+	</body>
+
+</html>

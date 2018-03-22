@@ -1,0 +1,246 @@
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/app.css">
+		<link rel="stylesheet" href="goodseting_content/css/main.css">
+
+	</head>
+
+	<body class="bc-bg" ontouchstart>
+		<div class="myfadiv">
+			<div class="ub myheader">
+				<div class="ub ub-ac ub-pc uc-a3 myheader-pic ub-img">
+					<img id="firstimg" src="goodseting_content/css/myImg/test.jpg" class="ub ub-ac ub-pc myimge" />
+				</div>
+				<div class="ub ub-ver myheader-mar ub-f1">
+					<div id="goods_name" class="myheader-right-text">
+						
+					</div>
+					<div class="ub myprice">
+						<div id="">
+							￥
+						</div>
+						<div id="goodsprice">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="lists mybgmar ub ub-ver" id="forlist">
+
+		</div>
+		<div class="tmp mybgmar uhide">
+			<div id="goodscolor" class="list itemclear" yftype="checkbox" style="color: #535353;">
+				<div class="title titlemar">
+					顏色
+				</div>
+				<div class="items">
+
+				</div>
+			</div>
+			<!--<div id="memory" class="list itemclear" yftype="radio">
+				<div class="title titlemar">
+					內存
+				</div>
+				<div class="items">
+					<div class="item" onclick="itemclick(this)">
+						<div class="itemname" yfprice=100>16G</div>
+						<img class="itemimg" src="../../images/checked.png" class="clitemimg" />
+					</div>
+					<div class="item" onclick="itemclick(this)">
+						<div class="itemname" yfprice=100>32G</div>
+						<img class="itemimg" src="../../images/checked.png" class="clitemimg" />
+					</div>
+					<div class="item" onclick="itemclick(this)">
+						<div class="itemname" yfprice=100>64G</div>
+						<img class="itemimg" src="../../images/checked.png" class="clitemimg" />
+					</div>
+				</div>
+			</div>
+			<div id="version" class="list itemclear" yftype="radio">
+				<div class="title titlemar">
+					营运商
+				</div>
+				<div class="items">
+					<div class="item" onclick="itemclick(this)">
+						<div class="itemname" yfprice=100>全网通</div>
+						<img class="itemimg" src="../../images/checked.png" class="clitemimg" />
+					</div>
+				</div>
+			</div>-->
+
+		</div>
+		<div class="uin uinn" style="clear: both;margin-top: 6em;">
+			<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="register" style="background-color: #FF7670;">
+				确定
+			</div>
+		</div>
+		<script src="../../common/js/appcan.js"></script>
+		<script src="../../common/js/appcan.control.js"></script>
+		<script src="../../common/js/yfkj.js"></script>
+	</body>
+	<script>
+	goodsinfo = JSON.parse(appcan.locStorage.getVal("goodsinfo"));
+	firstimg=appcan.locStorage.getVal("firstimg");
+		var values = 0;
+		var names = "";
+		var totalmoney = 0;
+		appcan.ready(function() {
+		    $("#firstimg").attr("src", Serverurl+firstimg);
+			//$("#goods_name").text(goodsinfo.goods_name);
+			//$("#goodsprice").text(goodsinfo.shop_price);
+			getGoodsDetailsInfo();
+			getGoodsType();
+			appcan.window.subscribe('toastpassowrd', function(msg) {
+				appcan.window.openToast(msg, '1000');
+			});
+		});
+		//查询商品信息
+        function getGoodsDetailsInfo(){
+             var datas = {
+                goods_id : goodsinfo.goods_id
+            };
+            appcan.ajax({
+                url : Serverurl + "/user/getGoodsDetailsInfo",
+                type : "POST",
+                dataType : 'json',
+                data : datas,
+                success : function(result) {
+                    var data = result.Data[0];
+                    var msg = result.Msg;
+                    if (result.Msg == '1') {
+                        //Fmoney = Number(data.Fusemoney);
+                         $("#goods_name").text(data.goods_name);
+                         $("#goodsprice").text(data.shop_price);
+                       //  $(".goods_brief").text(data.goods_brief);
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '500');
+                }
+            });
+        }
+		//获取颜色版本
+		function getGoodsType() {
+		    goodsinfo = JSON.parse(appcan.locStorage.getVal("goodsinfo"));
+			var datas = {
+				goods_id: goodsinfo.goods_id
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/getGoodsType",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					var data = result.Data;
+					var length = data.length;
+					for (var i = 0; i < length; i++) {
+						loadlist(data[i]);
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '500');
+				}
+			});
+		}
+
+		function loadlist(data) {
+			var haslist = false; //列表是否存在
+			var list = null;
+			if ($(".lists #attr" + data.attr_id).length > 0) {
+				haslist = true;
+			}
+			if (haslist) {
+				list = $(".lists #attr" + data.attr_id);
+			} else {
+				list = addlist(data.attr_id);
+			}
+			list.find(".title").text(data.attr_name);
+			if (data.attr_type == 2) {
+				list.attr("yftype", "radio");
+			} else if (data.attr_type == 1) {
+				list.attr("yftype", "checkbox");
+			}
+			var items = list.find(".items");
+			var item = '<div class="item" onclick="itemclick(this)">' +
+				'<div class="itemname" yfprice=' + data.attr_price + '>' + data.attr_value + '</div>' +
+				'<img class="itemimg" src="../../images/checked.png" class="clitemimg" />' +
+				'</div>';
+			items.append(item);
+		}
+
+		function addlist(attr_id) {
+			var list = $(".tmp .list").clone();
+			list.attr("id", "attr" + attr_id);
+			var lists = $(".lists");
+			lists.append(list);
+			return list;
+		}
+
+		function itemclick(dom) {
+			values = 0;
+			names = "";
+			totalmoney = 0;
+			var list = $(dom).parent().parent();
+			var items = $(dom).parent();
+			var type = list.attr("yftype");
+			var active = $(dom).hasClass("itemactive");
+			if (type == "checkbox") {} else if (type == "radio") {
+				items.find(".item").removeClass("itemactive");
+				items.find(".item img").css("display", "none");
+			}
+			if (active) {
+				$(dom).removeClass("itemactive");
+				$(dom).find("img").css("display", "none");
+			} else {
+				$(dom).addClass("itemactive");
+				$(dom).find("img").css("display", "inherit");
+			}
+			getvalues("forlist");
+		}
+
+		function getvalues(lists) {
+			var lists = $("#" + lists);
+			var activeitems = lists.find(".itemactive");
+			activeitems.each(function(i, item) {
+				names = names  + $(item).find(".itemname").text() + '+';
+				values = values + Number($(item).find(".itemname").attr("yfprice"));
+			});
+			var goodsprice = Number(goodsinfo.shop_price);
+			totalmoney = values + goodsprice;
+			$("#goodsprice").text(totalmoney.toFixed(2));
+		}
+		appcan.button("#register", "ani-act", function(a, b) {
+			var can = 0;
+			$.each($(".lists .list"), function(i, item) {
+				if ($(item).find(".itemactive").length <= 0) {
+					appcan.window.openToast('请选择【' + $(item).find(".title").text() + '】', '1000');
+					can = 1;
+					return false;
+				}
+			});
+			if (can == 0) {
+				var lastnames = names.substring(0,names.length-1);
+				appcan.locStorage.setVal("lastnames",lastnames);
+				appcan.locStorage.setVal("totalmoney", totalmoney.toFixed(2));
+				appcan.window.publish('goodseting', '');
+				appcan.window.evaluateScript({
+					name: 'goodseting',
+					scriptContent: 'windowclose()'
+				});
+			}
+		})
+	</script>
+
+</html>

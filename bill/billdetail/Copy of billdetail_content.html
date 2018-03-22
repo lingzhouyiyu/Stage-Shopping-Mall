@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="um uoflandscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/app.css">
+		<link rel="stylesheet" href="billdetail_content/css/main.css">
+		<link rel="stylesheet" href="../bill_content/css/main.css" />
+	</head>
+
+	<body class="ub ub-pc ub-ver bill_weight foot_background_color">
+		<div class="tx-c orderno umar-t">
+			<img class="" style="height:6em;" src="../../images/Nobill.png" />
+			<div class="common-font-color2 ub ub-pc umar-t">
+				<img class="ub ub-ac umar-r" style="height:1.2em;" src="../../images/Tips.png" /> 您还没有订单哦
+			</div>
+		</div>
+		<div class="list">
+		</div>
+		<div id="tmp" class="uhide">
+			<div class="bill_top_line item" id="0">
+				<div class="order_height bill_underline"></div>
+				<div class="ub ub-ver bill_background_color_two">
+					<div class="ub ub-ac">
+						<div class="ub ub-f1 umh5 ub-ac text_color_one mybill_padding bill_font_size">
+							订单号：
+							<div name="" class="ub FbillNumber">
+							</div>
+						</div>
+						<div class="ub text_color mybill_magin_right FexamineState">
+							待还款
+						</div>
+					</div>
+					<div class="address_underline_dash">
+					</div>
+					<div class="ub ub-pc ub-ac bill_center_height">
+						<div class="ub bc-text-head umar-l">
+							<div class="ub ub-f1 uinn bill_padding_top">
+								<div class="ub bc-text-head bill_height_width ub-ac ub-pc bc-head">
+									提现
+								</div>
+							</div>
+							<div class="ub ub-f1 ub-ver uinn1">
+								<div class="ub ub-f1 text_color_one umh7">
+									账单名称：
+									<div class="text_color_two FWithdrawalsName">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 text_color_one umh7">
+									账单到期：
+									<div class="text_color_two FWithdrawalTime">
+
+									</div>
+								</div>
+								<div class="ub ub-f1 umh7">
+									<div class="text_color_one">
+										提现金额：
+									</div>
+									<div class="text_color_two ub">
+										￥
+										<div class="FwithdrawMoney">
+
+										</div>
+										元
+									</div>
+
+								</div>
+								<div class="ub ub-f1 umh7">
+									<div class="text_color_one mybill_magin_right">
+										服务费：
+									</div>
+									<div class="text_color_two ub">
+										￥
+										<div class="FbillCost">
+
+										</div>
+										元
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="ub ub-f1 ub-ver ub-ae mybill_height_right">
+						</div>
+					</div>
+					<div class="address_underline_dash">
+					</div>
+					<div class="ub ub-ac">
+						<div class="radiobtn ub ub-f1 bottom_margin_left" onclick="checkradioclick(this);" id="">
+							<img src="../../images/chooseno.gif" class="ico active ub ub-ac ub-pc ioc_img_choose ioc_margin_top" id="chooseId0" />
+						</div>
+						<div class="ub  ub-ac order_height_one text_color_one ulev0 mybill_magin_right">
+							<div class="ub ub-f1 ub-pc ub-ac text_color_one ulev0">
+								共:
+								<div class="ub umar-l">
+									0
+								</div>
+								<div class="ub">
+									/
+								</div>
+								<div class="ub Fvalue">
+									0
+								</div>
+								<div class="ub umar-l">
+									期
+								</div>
+							</div>
+							<div class="ub ub-f1 ub-ac ub-pc">
+								<div class="bill_margin_left text_color_one umar-r">
+									每期付款:
+								</div>
+								<div class="common-font-color2 ub">
+									￥
+									<div id="money" class="ub FrepaymentMoney">
+									</div>
+									<div>
+
+									</div>元
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ac uhide chooseall">
+			<div class="ub ub-f1 umh5 ub-ac">
+				<div class="ub ub-ac bottom_margin_left" onclick="allchooseradio('allchoose');">
+					<img src="../../images/chooseno.gif" class="active ioc_img_choose ioc_margin_top allitem" id="allchoose" />
+				</div>
+				<div class="text_color_two_1">
+					全选
+				</div>
+				<div class="ub ub-f1 myorder_head_color ">
+					<div class="ub  umar-r" id="">
+						￥
+						<div id="totalchoose">4000.00</div>
+					</div>
+					<div class="ub">
+						元
+					</div>
+				</div>
+			</div>
+			<div class="ub text_color mybill_magin_right">
+				<div class="btn ub ulev0 ub-ac bc-text-head ub-pc bc-btn uc-a1 mybill_width" id="register" onclick="">
+					还款
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../common/js/jquery-1.7.1.min.js"></script>
+	<script src="../../common/js/appcan.js"></script>
+	<script src="../../common/js/appcan.control.js"></script>
+	<script src="../../common/js/yfkj.js"></script>
+	<script>
+		var FexamineStatecode = {
+			"0": "待审核",
+			"1": "待支付",
+			"2": "转账成功",
+			"3": "分期中",
+			"4": "已完成还款",
+			"5": "已逾期"
+		}
+		var state = '1';
+		var pageno = 0;
+		var star = 0;
+		var pagesize = 3;
+		FbillCost = '0';
+		FbillId = '0';
+		var choose = '';
+		var billId = 0;
+		var total = 0.00;
+		//立即还款
+		appcan.button("#register", "ani-act", function(a, b) {
+			appcan.window.open({
+				name: "overpayback",
+				dataType: 0,
+				aniId: 9,
+				data: "../../billpayback/overpayback.html"
+			});
+		})
+		//appcan.locStorage.setVal("userstate", state);
+		firstPayId = appcan.locStorage.getVal("firstPayId");
+		appcan.ready(function() {
+				fastPayMoneyBill(++pageno, star);
+				appcan.frame.setBounce([0, 1], function(type) {
+					$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+				}, function(type) {
+					$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+				}, function(type) {
+					if (type == 0) {
+						pageno = 0;
+						star = 0;
+						$(".list").empty();
+					}
+					fastPayMoneyBill(++pageno, star);
+					appcan.window.openToast('数据加载成功', "1000");
+					setTimeout(function() {
+						appcan.frame.resetBounce(type);
+					}, 1000);
+				})
+			})
+			//加載訂單信息
+		function fastPayMoneyBill(apageno, astart) {
+			var datas = {
+				FuserId: getuserid(),
+				Fstart: astart,
+				pageSize: pagesize,
+				currentPageNum: apageno,
+				FbillId:382
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/fastPayMoneyBillInf ",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					if (result.Data.Data.length > 0) {
+						$(".orderno").addClass("uhide");
+						$("body").removeClass("ub-ac ub-pc");
+						$(".chooseall").removeClass("uhide");
+					}
+					var msg = result.Msg;
+					if (msg == 1) {
+						var length = result.Data.Data.length;
+						var fulltag = result.Data.fulltag;
+						var lastno = result.Data.lastno;
+						if (fulltag == 0) {
+							pageno = pageno - 1;
+						}
+						star = lastno;
+						for (var i = 0; i < length; i++) {
+							additem(result.Data.Data[i]); //加载账单
+							var billId = result.Data.Data[i].FbillNumber;
+							total = result.Data.Data[i].FrepaymentMoney + total;
+							if (i == 0) {
+								checkradioclick($("#" + result.Data.Data[i].FbillNumber));
+							}
+						}
+					}
+					if (msg == 0) {
+						pageno = pageno - 1;
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast("服务器出错", "1000");
+				}
+			});
+		}
+
+		function additem(data) //加载账单
+		{
+			var list = $(".list");
+			var clonedom = $("#tmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("id", data.FbillId);
+			itemdom.find(".FbillNumber").text(data.FbillNumber);
+			itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+			itemdom.find(".FWithdrawalTime").text(data.FWithdrawalTime);
+			itemdom.find("#FexamineState").text(FexamineStatecode[data.FexamineState]);
+			itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney);
+			itemdom.find(".FbillCost").text(data.FbillCost);
+			itemdom.find(".FrepaymentMoney").text(data.FrepaymentMoney);
+			itemdom.find(".FrepaymentMoney").attr("id", "money" + data.FbillNumber);
+			//itemdom.find("#FexamineState").text(a1);
+			itemdom.find(".Fvalue").text(data.Fvalue);
+			itemdom.find(".Fnumber").text(data.Fnumber);
+			itemdom.find(".radiobtn").attr("id", data.FbillNumber);
+			itemdom.find(".ico").attr("id", "chooseId" + data.FbillNumber);
+			list.append(itemdom);
+		}
+		//单选择按钮
+		function checkradioclick(dom) {
+			var id = "chooseId" + $(dom).attr("id");
+			billId = id;
+			if ($("#" + id).hasClass('checkradio')) {
+				$("#" + id).attr("src", "../../images/chooseno.gif");
+				$("#" + id).removeClass('checkradio');
+			} else {
+				$("#" + id).attr("src", "../../images/choose.gif");
+				$("#" + id).addClass('checkradio');
+				$("#allchoose").attr("src", "../../images/chooseno.gif");
+			}
+			var lists = $(".list .checkradio");
+			var values = 0;
+			lists.each(function(i, item) {
+				var id = $(item).attr("id");
+				id = id.substr(8, id.length - 8);
+				var value = $("#money" + id).text();
+				values = values + parseFloat(value);
+			});
+			$("#totalchoose").text(values.toFixed(2));
+		};
+		//全选按钮 
+		function allchooseradio(id) {
+			if ($("#" + id).hasClass('allitem')) {
+				$("#" + id).attr("src", "../../images/choose.gif");
+				$(".ioc_img_choose").attr("src", "../../images/choose.gif");
+				$("#" + id).removeClass('allitem');
+				$("#totalchoose").text(total.toFixed(2));
+			} else {
+				$("#" + id).attr("src", "../../images/chooseno.gif");
+				$(".ioc_img_choose").attr("src", "../../images/chooseno.gif");
+				$("#" + id).addClass('allitem');
+				$("#totalchoose").text(0.00);
+			}
+		};
+	</script>
+
+</html>

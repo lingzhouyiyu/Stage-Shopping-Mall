@@ -1,0 +1,86 @@
+.b-gra{
+	border-color:#b7b7b7;
+}
+.t-gra
+{
+	color:#a1a1a1;
+}
+.addfont{
+	font-weight:bold;
+}
+.t-blu
+{
+	color:#177fc7;
+}
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.respwd{
+	background-image:url('myImg/pwd.png');
+}
+.resuser{
+	background-image:url('myImg/user.png');
+}
+.logo{
+	background-image:url('myImg/logo.png');
+}
+.umhw{
+	min-height:1em;
+	min-width:1em;
+}
+.umhw1{
+	min-height:3.16em;
+	min-width:11.5em;
+}
+.umhw2{
+	min-height:1.6em;
+	min-width:1.6em;
+}
+.ulab .uinput
+{
+	margin-left:3px
+}
+.pnlgroup
+{
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 1.6em;
+    padding-bottom: 0.8em;
+    background-color: #FFFFFF;
+    margin-bottom: 0.5em;
+    margin-left:0.5em;
+    margin-right: 0.5em;
+    border-radius: 0.3em;
+   // border-image: -webkit-gradient(linear,center top,center bottom,from(#ccc), to(#000)) 21 100 30 21 repeat repeat;
+
+}
+.pnlphoneinput
+{
+    border-bottom: 1px #CCCCCA solid;
+}
+.pnlinputs{
+    border: 1px #CCCCCA solid;
+    background-color: #F6F6F4;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+}
+.myuinput input, .myuinput textarea {
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    padding: .2em 0;
+    line-height: 1.2em;
+    background: none;
+    text-decoration: none;
+    font-size: 0.6em;
+    display: block;
+}
+.mypassword{
+	  background: rgba(0,0,0,0.3);
+}   
+

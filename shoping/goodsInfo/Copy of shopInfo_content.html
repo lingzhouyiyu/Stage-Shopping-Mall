@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+        <link rel="stylesheet" href="goodsInfo_content/css/main.css">
+        <link rel="stylesheet" href="../../common/css/app.css">
+    </head>
+
+    <body class=" bc-bg shop-content-fontallcol " ontouchstart>
+        <div class="ub ub-ver ub-fv">
+            <div class="seller-header-border bc-bg">
+                <div id="" class="seller-content-picpad">
+                    <img src="../../images/111.jpg" style="width: 100%;" class="ub ub-ac ub-pc" />
+                </div>
+            </div>
+            <div id="" class="ub ub-ver seller-content-pad ">
+                <div id="" class="ub ub-f1 ub-ac  seller-content-divheight">
+                    <div id="goods_name" class="seller-content-font1 seller-content-font2">
+
+                    </div>
+                </div>
+                <div id="" class="ub ub-f1 ub-ac  seller-content-divheight">
+                    <div id="" class="ub">
+                        售价:
+                    </div>
+
+                    <div id="" class="ub   seller-content-font2 seller-content-mar3">
+                        <div>
+                            ￥
+                        </div>
+                        <div id="shop_price">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="seller-content-div1"></div>
+            <div class="seller-content-pad2">
+                版本:
+            </div>
+            <div id="versions">
+                <div id="clsitem1" class="clsitem clsitemys" onclick="clsitemclick('versions','clsitem1')">
+                    <div style="margin-left: 0.5em; margin-right: 0.5em;">
+                        金色16G
+                    </div>
+                    <img src="../../images/checked.png" class="clitemimg" />
+                </div>
+                <div id="clsitem2" class="clsitem clsitemys" onclick="clsitemclick('versions','clsitem2')">
+                    <div style="margin-left: 1em; margin-right: 1em;">
+                        金色64G
+                    </div>
+                    <img src="../../images/checked.png" class="clitemimg" />
+                </div>
+                <div id="clsitem3" class="clsitem clsitemys" onclick="clsitemclick('versions','clsitem3')">
+                    <div style="margin-left: 1em; margin-right: 1em;">
+                        金色128G
+                    </div>
+                    <img src="../../images/checked.png" class="clitemimg" />
+                </div>
+                <div id="clsitem4" class="clsitem clsitemys" onclick="clsitemclick('versions','clsitem4')">
+                    <div style="margin-left: 1em; margin-right: 1em;">
+                        银色16G
+                    </div>
+                    <img src="../../images/checked.png" class="clitemimg" />
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="seller-content-div1" style="margin-top: 1em;"></div>
+            <div class="ub seller-content-method">
+                <div class="ub ub-ver ub-ac ub-pc ">
+                    <div class="ub ub-ac  seller-content-heiw1 seller-content-mar1">
+                        购买方式:
+                    </div>
+                    <div class="ub ub-ac  seller-content-heiw1 seller-content-mar1">
+                        分期月数:
+                    </div>
+
+                </div>
+                <div class="ub ub-ver seller-content-mar">
+                    <div class="ub ub-pj seller-content-mar1" id="mode">
+                        <div id="mode1" class="clsitem" onclick="clsitemclick('mode','mode1')">
+                            <div style="margin-left: 1em; margin-right: 1em;" myid="1">
+                                分期付
+                            </div>
+                            <img src="../../images/checked.png" class="clitemimg" />
+                        </div>
+                        <div id="mode2" class="clsitem seller-content-mar" onclick="clsitemclick('mode','mode2')">
+                            <div style="margin-left: 1em; margin-right: 1em;" myid="2">
+                                自己付
+                            </div>
+                            <img src="../../images/checked.png" class="clitemimg" />
+                        </div>
+                    </div>
+                    <div id="" class="ub ub-ac ub-pc  seller-content-hei1  seller-content-bod2 seller-content-mar1">
+                        <select id="selectmonth" class="ub ub-f1 uc-a1  seller-content-select">
+                            <option>24个月</option>
+                            <option>12个月</option>
+                            <option>6个月</option>
+                            <option>24个月</option>
+                            <option>12个月</option>
+                            <option>6个月</option>
+                            <option>24个月</option>
+                            <option>12个月</option>
+                            <option>6个月</option>
+                            <option>24个月</option>
+                            <option>12个月</option>
+                            <option>6个月</option>
+                        </select>
+                        <div id="selectioc" class="ub ub-ac ub-pc ub-fv  fa fa-sort-down" onclick="selectionclick();" style="width: 2em;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ub seller-content-pad5">
+                <div class="ub ub-ac  seller-content-heiw1 seller-content-mar1">
+                    月供:
+                </div>
+                <div class="ub ub-ac  seller-content-heiw1 seller-content-mar seller-content-mar1">
+                    <span class="seller-content-textcolor">￥50.00</span>x
+                    <div id="">
+                        24
+                    </div>
+                </div>
+            </div>
+            <div class="ub seller-content-pad5">
+                <div class="ub  seller-content-heiw1 seller-content-mar1">
+                    保证金:
+                </div>
+                <div class="ub seller-content-heiw1 seller-content-mar seller-content-mar1">
+                    <span class="seller-content-textcolor">￥1000.00</span>&nbsp;元
+                </div>
+            </div>
+            <div class="ub seller-content-padcen seller-content-mar6">
+                <div class="ub">
+                    <img src="goodsInfo_content/css/myImg/worn.png" class="seller-content-imge1" />
+                </div>
+                <div class="ub ub-ac ub-f1 seller-content-textcolor seller-content-mar" style="width: 100%;">
+                    若您的毕业时间早于2018年7月24日请减少分期数
+                </div>
+            </div>
+            <div class="ub ub-ver seller-content-bgc">
+                <div class="ub seller-foot ub-ac ">
+                    <div class="checkbox checked-font-size">
+                        <input type="checkbox" name="checkset" id="checkset" class="uabs ub-con" checked="checked">
+                        </input>
+                    </div>
+                    <div class="lv_title ub-f1 marg-l ub  ut-m line1" style="color: #57CCBE;">
+                        <div style="color:#787875; font-weight: bold;">
+                            同意
+                        </div>
+                        <div>
+                            《服务与隐私协议》
+                        </div>
+                    </div>
+
+                </div>
+                <div class="uinn-at1 seller-content-mar7" style="padding:1em 1em 0 1em;">
+                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="submit" onclick="register()">
+                        立即提交审核
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+    </body>
+    <script>
+        FeveryRate = 0;
+        FserviceRate = 0;
+        goodsinfo = JSON.parse(appcan.locStorage.getVal("goodsinfo"));
+        appcan.ready(function() {
+            $("#goods_name").text(goodsinfo.goods_name);
+            $("#shop_price").text(goodsinfo.shop_price);
+
+            appcan.initBounce();
+        })
+        //下拉选择和选中取值
+            function findmonthInfo(value) { //加载分期月数信息
+                var datas = {
+                    FpointsId: goodsinfo.FavgNumber,//此处由消费列表传来
+                   
+                };
+                appcan.ajax({
+                    url: Serverurl + "/user/findMonthForConsume",
+                    type: "POST",
+                    dataType: 'json',
+                    data: datas,
+                    success: function(result) {
+                        var data = result.Data;
+                        loadselect("selectmonth", value, data);
+                    },
+                    error: function(e) {
+                        appcan.window.openToast('服务器出错!', '500');
+                    }
+                });
+            }
+
+            function loadselect(id, value, data) { //加载月数
+                $("#" + id).append("<option value='-1'>请选择分期月数</option>");
+                $.each(data, function(i, item) {
+                    Fvalue = item.Fvalue;
+                    FpointsName = item.FpointsName;
+                    $("#" + id).append("<option value='" + Fvalue + "'>" + item.FpointsName + "</option>");
+                });
+                selectchoose(id, value);
+            }
+
+            function selectMonth(id, value) {
+                $("#" + id + " option[selected='select'").attr("selected", false);
+                $("#" + id + " option[value=" + value + "]").attr("selected", true);
+            }
+
+            function getselectvalue(id) {
+                var index = $("#" + id).get(0).selectedIndex;
+                var value = $("#" + id).get(0).options[index].value;
+                return value;
+            }
+
+            function selectchoose(id, value) {
+                $("#" + id + " option[selected='select'").attr("selected", false);
+                $("#" + id + " option[value=" + value + "]").attr("selected", true);
+            }
+            //下拉选择和选中取值结束
+            //服务费利率、月手续费利率查询
+            function findRate() {
+                appcan.ajax({
+                    url: Serverurl + "/user/findRate",
+                    type: "POST",
+                    dataType: 'json',
+                    success: function(result) {
+                        var data = result.Data[0];
+                        FeveryRate = data.FeveryRate;
+                        FserviceRate = data.FserviceRate;
+                    },
+                    error: function(e) {
+                        appcan.window.openToast('服务器出错!', '500');
+                    }
+                });
+            }
+            
+            //查询可消费金额
+            function findConsumedMoney() {
+                var datas = {
+                    FuserId: getuserid()                     
+                };
+                appcan.ajax({
+                    url: Serverurl + "/user/findConsumedMoney",
+                    type: "POST",
+                    dataType: 'json',
+                    data: datas,
+                    success: function(result) {
+                        var data = result.Data[0];
+                        if (result.Msg == '1') {
+                            Fmoney = data.Fusemoney;
+                        }
+                    },
+                    error: function(e) {
+                        appcan.window.openToast('服务器出错!', '500');
+                    }
+                });
+            }
+            
+            //点击月数动态计算月供和保证金
+            function onmonthchange() {
+                var takeservicemoney = $("#FwithdrawMoney").val() * FserviceRate; //消费总手续费
+                //月供
+                var cost = ($("#FwithdrawMoney").val()) / (getselectvalue('selectmonth')) + ($("#FwithdrawMoney").val()) * FeveryRate;
+                $("#Fbond").text(takeservicemoney.toFixed(2)); //提现手续费赋值
+                $("#Fmoneymonth").text(cost.toFixed(2)); //月供
+                $("#monthvalue").text(getselectvalue('selectmonth')); //分期月数
+            }
+        appcan.button("#submit ", "ani-act ", function() {
+            $("form ").submit();
+        })
+        appcan.button("#selectioc", "ani-act", function() {
+            //          $(this).prev('select').trigger('click');
+            open($(this).prev('select'));
+        })
+        function open(elem) {
+            if (document.createEvent) {
+                var e = document.createEvent("MouseEvents");
+                e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                elem[0].dispatchEvent(e);
+            } else if (element.fireEvent) {
+                elem[0].fireEvent("onmousedown");
+            }
+        }
+
+        clsitemclick("versions", "clsitem1");
+        clsitemclick("mode", "mode1");
+
+        function clsitemclick(pid, id) {
+            $("#" + pid + " .clsitem").removeClass("clsitemselectdiv");
+            $("#" + pid + " .clsitem img").removeClass("clsitemselectimg");
+            $("#" + id).addClass("clsitemselectdiv");
+            console.log($("#" + id + " img"));
+            $("#" + id + " img").addClass("clsitemselectimg");
+        }
+
+        function getclsitemvalue(pid) {
+            appcan.window.openToast($("#" + pid + " .clsitemselectdiv div").attr("myid"));
+        }
+
+
+        appcan.button("#submit", "ani-act", function(a, b) {
+            //			appcan.window.open("register", "../register/register.html");
+        })
+    </script>
+
+</html>

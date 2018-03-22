@@ -1,0 +1,12 @@
+.my_color{ background: #eaeceb; word-break: break-all;  word-wrap: break-word; }
+.title{ color: #333333; font-size: 1.25em; height: 2.5em;}
+.pact_num{ padding-right: 0.8em; color: #333333;}
+span,.num{ color: #FF7670;}
+.line_height{ line-height: 1.8em; padding-left: 0.8em; padding-right: 0.8em; color: #4c4c4c;}
+.sdetial{ margin-top: 0.6em; margin-bottom: 0.5em; line-height: 1.5em; padding-left: 0.8em; padding-right: 0.8em; color: #4c4c4c;}
+.ntitle{ font-size: 1.2em;}
+.arnm{padding-left: 0.8em; padding-right: 0.8em; line-height: 1.5em; color: #4c4c4c; }
+.arnb{ margin-bottom: 0.6em;}
+#ttitle{ color: #333333;}
+.bootm{margin-bottom: 2em;  margin-bottom: 4em;}
+

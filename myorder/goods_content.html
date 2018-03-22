@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../common/css/app.css">
+        <link rel="stylesheet" href="myorder_content/css/main.css">
+    </head>
+
+    <body class="ub ub-ver ub-pc ub-ac bill_weight bill_background_color ">
+        <div class="tx-c orderno umar-t">
+            <img class="" style="height:6em;" src="../images/Nobill.png" />
+            <div class="common-font-color2 ub ub-pc umar-t">
+                <img class="ub ub-ac umar" style="height:1.2em;" src="../images/Tips.png" /> 您还没有订单哦
+            </div>
+        </div>
+        <div class="list"></div>
+        <div id="tmp" class="ub-fv uhide">
+            <div class="bill_top_line item" id="itemn1">
+                <div class="order_height bill_underline"></div>
+                <div class="ub ub-ver bill_background_color_two">
+                    <div class="ub ub-ac">
+                        <div class="ub ub-f1 umh5 ub-ac text_color_one mybill_padding bill_font_size">
+                            订单号：
+                            <div name="" class="ub FbillNumber">
+
+                            </div>
+                        </div>
+                        <div class="ub text_color mybill_magin_right FexamineState">
+                            待审核
+                        </div>
+                    </div>
+                    <div class="address_underline_dash"></div>
+                    <div class="ub" style="padding: 1em;">
+                        <div class="ub ub-ac ub-pc">
+                            <div class="ub ub-ac ub-pc bill_height_width-goods" style="color: #FFFFFF;">
+                                商品
+                            </div>
+                        </div>
+                        <div class="ub ub-ver ub-f1" style="padding-left: 1em;padding-right: 0.5em;">
+                            <div class="ub" style="margin-bottom: 0.5em;">
+                                <div class="ub ub-f1  text_color_two FWithdrawalsName mybreak" id="">
+
+                                </div>
+                            </div>
+                             <div class="ub ub-ac myordermar">
+                                <div class="myname text_color_one mymar-r">
+                                    配置:
+                                </div>
+                                <div class="ub text_color_two Fgoodseting" id="">
+
+                                </div>
+                            </div>
+                            <div class="ub ub-ac myordermar">
+                                <div class="myname text_color_one mymar-r">
+                                    下单时间:
+                                </div>
+                                <div class="ub text_color_two FWithdrawalTime" id="">
+
+                                </div>
+                            </div>
+                            <div class="ub ub-ac myordermar">
+                                <div class="myname text_color_one mymar-r">
+                                    商品金额:
+                                </div>
+                                <div class="ub text_color_two" id="">
+                                    <div>
+                                        ￥
+                                    </div>
+                                    <div class="FwithdrawMoney">
+
+                                    </div>
+                                    <div>
+                                        元
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ub ub-ac myordermar">
+                                <div class="myname text_color_one" style="margin-right: 1.5em;">
+                                    服务费:
+                                </div>
+                                <div class="ub text_color_two" id="">
+                                    <div>
+                                        ￥
+                                    </div>
+                                    <div class="FbillCost">
+
+                                    </div>
+                                    <div>
+                                        元
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="address_underline_dash"></div>
+                    <div class="ub ub-ac">
+                        <div class="ub ub-f1 ub-pe order_height_one text_color_one ulev0 mybill_magin_right">
+                            <div class="ub ub-ac text_color_two" id="">
+                                <div class="umar-r">
+                                    共
+                                </div>
+                                <div class="umar-r Fvalue">
+
+                                </div>
+                                期
+                                <div class="myorder_margin_left text_color_one">
+                                    每期付款:
+                                </div>
+                                <div class="umar-l ub">
+                                    ￥
+                                    <div class="FrepaymentMoney"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address_underline_dash"></div>
+                    <div>
+                        <div class="ub ub-ver ordersend text_color_one uhide" style="padding-left: 1em;padding-top: 1em;color: #535353;">
+                            <div class="ub text_color_one">
+                                <div>
+                                    快递单号：
+                                </div>
+                                <div class="Fwldh">
+                                    
+                                </div>
+                            </div>
+                            <div class="ub text_color_one" style="padding-top: 0.5em;">
+                                <div>
+                                    快递公司：
+                                </div>
+                                <div class="Fwlgs">
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="btns0" style="display:none">
+                            <div class="ub ub-f1 ub-pe ub-ac text_color_one  order_height_two">
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right helpbtn">
+                                    <div class="ub ub-f1 ub-pc" onclick="help();">
+                                        查看帮助
+                                    </div>
+                                </div>
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right subbtn" id="n1" onclick="cancleBill('')">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        取消订单
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="btns2" style="display: none">
+                            <div class="ub ub-f1 ub-pe ub-ac text_color_one  order_height_two">
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right payServicebtn">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        支付补差
+                                    </div>
+                                </div>
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right subbtn" id="n1" onclick="cancleBill('')">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        取消订单
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="btns3" style="display: none">
+                            <div class="ub ub-f1 ub-pe ub-ac text_color_one  order_height_two">
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right payServicebtn" onclick="help()">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        查看帮助
+                                    </div>
+                                </div>
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right payServicebtn" onclick="help()">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        联系客服
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="btns4" style="display: none">
+                            <div class="ub ub-f1 ub-pe ub-ac text_color_one  order_height_two" style="display: none">
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right confirmeBill" id="n1" stat=0 onclick="lookBill('')">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        确认收货
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="btns5" style="display: none">
+                            <div class="ub ub-f1 ub-pe ub-ac text_color_one  order_height_two" style="display: none">
+
+                                <div class="ub bill_font_size bill_border_takemoney bill_height_width_end ub-pc ub-ac uc-a1 mybill_magin_right lookBill" id="n1" stat=0 onclick="lookBill('')">
+                                    <div class="ub ub-f1 ub-pc ">
+                                        查看账单
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../common/js/appcan.js"></script>
+        <script src="../common/js/appcan.control.js"></script>
+        <script src="../common/js/yfkj.js"></script>
+        <script>
+            //提取登录时用户Id
+            FbillCost = '0';
+            FbillId = '0';
+            var pageno = 0;
+            var star = 0;
+            var pagesize = 10;
+            var billId;
+            appcan.ready(function() {
+                appcan.window.subscribe('order1', function(msg) {
+                    pageno = 0;
+                    star = 0;
+                    $(".list").empty();
+                    findBillInfo(++pageno, star);
+                });
+                //确认收货刷新
+                appcan.window.subscribe('confirmgoods', function(msg) {
+                    pageno = 0;
+                    star = 0;
+                    $(".list").empty();
+                    findBillInfo(++pageno, star);
+                });
+                findBillInfo(++pageno, star);
+                appcan.frame.setBounce([0, 1], function(type) {
+                    $("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+                }, function(type) {
+                    $("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+                }, function(type) {
+                    if (type == 0) {
+                        pageno = 0;
+                        star = 0;
+                        $(".list").empty();
+                    }
+                    findBillInfo(++pageno, star);
+                    setTimeout(function() {
+                        appcan.frame.resetBounce(type);
+                    }, 1000);
+                })
+                appcan.window.subscribe('myorder', function(msg) {
+                    pageno = 0;
+                    star = 0;
+                    $(".list").empty();
+                    findBillInfo(++pageno, star);
+                });
+            })
+            //去
+            appcan.button("#bill", "ani-act", function(a, b) {
+                appcan.locStorage.setVal("billindex", 0);
+                appcan.window.open("billdetail", "../bill/billdetail/bill_detail.html");
+            })
+            //加載訂單信息
+            function findBillInfo(apageno, astart) {
+                var datas = {
+                    FuserId : getuserid(),
+                    ///FuserId: 66,
+                    Fstart : astart,
+                    pageSize : pagesize,
+                    currentPageNum : apageno
+                };
+                appcan.ajax({
+                    url : Serverurl + "/user/getOrderInfo",
+                    type : "POST",
+                    dataType : 'json',
+                    data : datas,
+                    success : function(result) {
+                        if (result.Data.Data.length > 0) {
+                            $(".orderno").addClass("uhide");
+                            $("body").removeClass("ub-ac ub-pc");
+                        }
+                        var msg = result.Msg;
+                        if (msg == 1) {
+                            var length = result.Data.Data.length;
+                            var fulltag = result.Data.fulltag;
+                            var lastno = result.Data.lastno;
+                            if (fulltag == 0) {
+                                pageno = pageno - 1;
+                            }
+                            star = lastno;
+                            for (var i = 0; i < length; i++) {
+                                additem(result.Data.Data[i]);
+                                //加载账单
+                            }
+                            appcan.window.openToast('数据加载成功', '1000');
+                        }
+                        if (msg == 0) {
+                            pageno = pageno - 1;
+                        }
+                    },
+                    error : function(e) {
+                        appcan.window.openToast("服务器出错", "1000");
+                    }
+                });
+            }
+
+            function additem(data)//加载订单
+            {
+                //alert(data.Fgoodseting);
+                var list = $(".list");
+                var clonedom = $("#tmp").clone();
+                var itemdom = clonedom.find(".item");
+                itemdom.attr("id", "item" + data.ForderId);
+                itemdom.find(".FbillNumber").text(data.FbillNumber);
+                itemdom.find(".FWithdrawalsName").text(data.FWithdrawalsName);
+                itemdom.find(".Fgoodseting").text(data.Fgoodseting);
+                itemdom.find(".FWithdrawalTime").text((data.FWithdrawalTime).substr(0, 10));
+                //itemdom.find(".FexamineState").text(data.FexamineState);
+                itemdom.find(".FwithdrawMoney").text(data.FwithdrawMoney.toFixed(2));
+                itemdom.find(".FbillCost").text(data.FbillCost.toFixed(2));
+                itemdom.find(".FrepaymentMoney").text(data.FrepaymentMoney.toFixed(2));
+
+                if (data.Fvalue == null || data.Fvalue == '') {
+                    itemdom.find(".Fvalue").text('0');
+                }
+                itemdom.find(".Fvalue").text(data.Fvalue);
+                itemdom.find(".Fwlgs").text(data.Fwlgs);
+                itemdom.find(".Fwldh").text(data.Fwldh);
+                itemdom.find(".subbtn").attr("id", data.ForderId);
+                var stat = data.FexamineState;
+                itemdom.find("#btns" + data.FexamineState).css("display", "inherit")
+                if (stat == 0) {
+                    itemdom.find(".lookBill").attr("onclick", "help()");
+                    //查看帮助
+                    itemdom.find(".subbtn").attr("onclick", "cancleBill('" + data.ForderId + "')");
+                    itemdom.find(".FexamineState").text("待审核");
+                }
+                if (stat == 2) {
+                    itemdom.find(".subbtn").attr("onclick", "cancleBill('" + data.ForderId + "')");
+                    //取消订单
+                    itemdom.find(".payServicebtn").attr("onclick", "payServiceBill('" + data.ForderId + "')");
+                    //支付手续费
+                    itemdom.find(".FexamineState").text("审核成功(待支付)");
+                }
+                if (stat == 3) {
+                    itemdom.find(".lookBill").attr("onclick", "help()");
+                    //查看帮助
+                    itemdom.find(".lookTime").attr("onclick", "lookTime('" + data.ForderId + "')");
+                    //联系客服
+                    itemdom.find(".FexamineState").text("待发货");
+                }
+                if (stat == 4) {
+                    itemdom.find(".confirmeBill").attr("onclick", "ConfirmReceipt('" + data.ForderId + "')");
+                    //确认收货
+                    itemdom.find(".FexamineState").text("已发货");
+                     itemdom.find(".ordersend").removeClass("uhide");
+                }
+                if (stat == 5) {
+                    itemdom.find(".lookBill").attr("onclick", "lookBill('" + data.ForderId + "')");
+                    //查看账单
+                    itemdom.find(".FexamineState").text("交易成功");
+                    itemdom.find(".ordersend").removeClass("uhide");
+                }
+                itemdom.find("#tmp").attr("id", data.ForderId);
+                billId = data.FbillId;
+                list.append(itemdom);
+            }
+
+            //取消订单
+            function cancleBill(id) {
+                appcan.window.alert({
+                    title : "提示",
+                    content : "是否确定取消订单？",
+                    buttons : ['取消', '确定'],
+                    callback : function(err, data, dataType, optId) {
+                        if (data == 1) {
+                            appcan.ajax({
+                                url : Serverurl + "/user/cancleGoodsBill",
+                                type : "POST",
+                                dataType : 'json',
+                                data : {
+                                    FuserId : getuserid(),
+                                    FbillId : id,
+                                },
+                                success : function(result) {
+                                    if (result == '1') {
+                                        $("#item" + id).remove();
+                                        appcan.window.openToast('订单取消成功', '1000');
+                                    }
+                                    if (result == '0') {
+                                        appcan.window.openToast('订单删除失败', '1000');
+                                    }
+                                },
+                                error : function(e) {
+                                    appcan.window.openToast("服务器出错", "1000");
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+
+            //确认收货
+            function ConfirmReceipt(payorderId) {
+                appcan.window.alert({
+                    title : "提示",
+                    content : "确定收货？",
+                    buttons : ['取消', '确定'],
+                    callback : function(err, data, dataType, optId) {
+                        if (data == 1) {
+                            appcan.ajax({
+                                url : Serverurl + "/user/ConfirmReceipt",
+                                type : "POST",
+                                dataType : 'json',
+                                data : {
+                                    FuserId : getuserid(),
+                                    FbillId : payorderId
+                                },
+                                success : function(result) {
+                                    if (result.Msg == "1") {
+                                        appcan.window.publish('confirmgoods', '');
+                                    }
+                                    //appcan.window.publish("myorder","");
+                                },
+                                error : function(e) {
+                                    appcan.window.openToast('服务器出错!', '1000');
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+
+            //查看帮助
+            function help() {
+                appcan.window.open("help", "../personal/help/help.html");
+            }
+
+            //查看到账时间
+            function looctime() {
+                appcan.window.open("help", "../personal/help/help.html");
+            }
+
+            //查看账单
+            function lookBill(pid) {
+                appcan.locStorage.setVal("billindex", 0);
+                appcan.window.open("bill1", "../bill/bill.html");
+            }
+
+            //支付手续费
+            function payServiceBill(sid) {
+                appcan.locStorage.setVal("payorderId", sid);
+                //appcan.locStorage.setVal("projectsate", '0');
+                appcan.window.open("shpayservice", "../billpayback/shpayservice.html");
+            }
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta http-equiv="expires" content="-1" />
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+		<link rel="stylesheet" href="takemoney_content/css/main.css">
+	</head>
+
+	<body class="bc-bg">
+		<div class="ub ub-ver">
+			<div class="ub ub-f1 ub-pc bc-text-head bc-head">
+				<!--<div class="ub ub-ac ub-pc takemoney_padding_top ulev2">
+					妙分期
+				</div>-->
+				<div class="ub ub-pc personal_padding_bottom takemoney_text_font_min">
+					<div class="ub ub-ver ub-ac ub-pc">
+						<div class="takemoney_head_padding umar-t umar-r">
+							可提现金额:
+						</div>
+						<div class="umar-t umar-l">
+							每期最低还款
+						</div>
+						<div class="ub ub-ac ub-pc takemoney_margin_right umar-t">
+							<div class="ub ub-f1 tx-c" id="paybackmonth">
+								0.00
+								<div class="ub">
+									&nbsp;元
+								</div>
+							</div>
+							<div>
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="takemoney_text_font takemoney_margin_bottom ub" id="Frestmoney">
+						0
+					</div>
+					<div class="ub ub-ver ub-ac ub-pc">
+						<div class="ub takemoney_head_padding umar-t umar-r">
+							<div class="ub" id="decimalval">
+								.00
+							</div>
+
+							<div>
+								&nbsp;元
+							</div>
+						</div>
+						<div class="umar-t umar-l">
+							贷款期限
+						</div>
+						<div class="ub ub-ac ub-pc takemoney_margin_right umar-t">
+							<div class="ub tx-c" id="FpointsName">
+								0
+							</div>
+							<div>
+								&nbsp;个月
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="takemoney_main_height">
+			</div>
+			<div class="">
+				<div class="ub ub-f1 takemoney_center_height">
+					<div class="ub ub-pe ub-ac takemoney_margin_right_all">
+						<div class="takemoney_width_center common-font-color1">
+							提现金额
+						</div>
+					</div>
+					<div class="ub ub-f1 takemoney_margin_right">
+						<div class=" ub ub-f1 ub-ac common-font-color2">
+							<input class="ub ub-f1 ub-ac ub-pc uc-a3 uinn1 ulev-1 takemoney_input_border" placeholder="输入提现金额" maxlength="7" id="takemoney" onkeyup="onmoneychange()" />
+						</div>
+					</div>
+				</div>
+				<div class="takemoney_underline_solid personal_head_color_one">
+				</div>
+				<div class="ub takemoney_center_height">
+					<div class="ub takemoney_center_height">
+						<div class="ub ub-pe ub-ac takemoney_margin_right_all">
+							<div class="takemoney_width_center common-font-color3">
+								分期月数
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ac ub-pc takemoney_margin_right_one sc-bg">
+						<select id="selectmonth" class="ub ub-f1 ulev-1 common-font-color2 takemoney_choose" onchange="onmonthchange();">
+
+						</select>
+						<div id="selectioc" class="ub ub-ac ub-pe">
+							<div class="fa fa-angle-right fa-2x uinn1 takemoney_ioc_color "></div>
+						</div>
+					</div>
+				</div>
+				<div class="takemoney_underline_solid personal_head_color_one">
+				</div>
+				<div class="ub takemoney_center_height">
+					<div class="ub ub-pe ub-ac takemoney_margin_right_all">
+						<div class="takemoney_width_center common-font-color3">
+							提现手续费
+						</div>
+					</div>
+					<div class="ub ub-f1 takemoney_margin_right_one">
+						<div class=" ub ub-f1 ub-ac takemoney_text_color">
+							￥
+							<div id="Fbond">
+								0.00
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="takemoney_underline_solid personal_head_color_one">
+				</div>
+				<div class="ub takemoney_center_height">
+					<div class="ub ub-pe ub-ac takemoney_margin_right_all">
+						<div class="takemoney_width_center common-font-color3">
+							每月还款
+						</div>
+					</div>
+					<div class="ub ub-f1 takemoney_margin_right_one">
+						<div class=" ub ub-f1 ub-ac takemoney_text_color">
+							￥
+							<div id="Fmoneymonth">
+								0.00
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" personal_head_color_one takemoney_main_height">
+			</div>
+			<div class="ub ub-ver takemoney_center_height takemoney_center_height_one">
+				<div class="ub ub-ac takemoney_margin_right_all takemoney_center_height_two">
+					<div class="ub ub-f1 takemoney_width_center common-font-color3">
+						提现至
+
+					</div>
+				</div>
+				<div class="ub ub-f1 takemoney_margin_right takemoney_text_font_min ">
+					<div class="ub uc-a3 ub-ac ub-pc takemoney_border chooseclass" id="choosetype0" onclick="choosetype('0')">
+						银行卡
+					</div>
+					<div class="ub takemoney_margin_right_all">
+						<div class="ub ub-ac ub-pc uc-a3 takemoney_border chooseclass" id="choosetype1" onclick="choosetype('1')">
+							支付宝
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" personal_head_color_one takemoney_main_height">
+			</div>
+			<div class="ub ub-ac takemoney_center_height common-font-color3">
+				<div class="takemoney_margin_right_all item" id="bank">
+					<div class="ub ub-ac">
+						<div>
+							银行卡
+						</div>
+						<div>
+							账号
+						</div>
+						<div class="takemoney_margin_right_all" id="bankcard">
+
+						</div>
+					</div>
+				</div>
+				<div class="takemoney_margin_right_all uhide item" id="alipay">
+					<div class="ub ub-ac">
+						<div class="ub">
+							<div>
+								支付宝
+							</div>
+							<div>
+								账号
+							</div>
+						</div>
+						<div class="ub takemoney_margin_right_all" id="alipaycard">
+
+						</div>
+					</div>
+				</div>
+				<!--<div class="ub ub-f1">
+					<div class=" ub ub-f1 ub-ac ub-pe">
+						<div class="fa fa-angle-right fa-2x uinn1 takemoney_ioc_color "></div>
+					</div>
+				</div>-->
+			</div>
+			<div class="ub ub-f1 ub-ac takemoney_center_height_three takemoney_round_padding">
+				<div class="ub ub-f1">
+					<div class="ub ub-ac ub-pc ub-ver takemoney_foot_round">
+						<div class="ub">
+							申请
+						</div>
+						<div class="">
+							提现
+						</div>
+					</div>
+					<div class="ub-f1 ub">
+						<div class="ub ub-f1 ub-ac ub-pc">
+							<div class="fa fa-angle-right fa-2x uinn3 takemoney_ioc_color personal_weight"></div>
+						</div>
+					</div>
+					<div class="ub ub-ac ub-pc ub-ver takemoney_foot_round">
+						<div>
+							提现
+						</div>
+						<div class="">
+							审核
+						</div>
+					</div>
+					<div class="ub ub-f1">
+						<div class=" ub ub-f1 ub-ac ub-pc">
+							<div class="fa fa-angle-right fa-2x uinn3 takemoney_ioc_color personal_weight"></div>
+						</div>
+					</div>
+					<div class="ub ub-ac ub-pc ub-ver takemoney_foot_round">
+						<div>
+							支付
+						</div>
+						<div class="">
+							保证金
+						</div>
+					</div>
+					<div class="ub ub-f1">
+						<div class=" ub ub-f1 ub-ac ub-pc">
+							<div class="fa fa-angle-right fa-2x uinn3 takemoney_ioc_color personal_weight"></div>
+						</div>
+					</div>
+					<div class="ub ub-ac ub-pc ub-ver takemoney_foot_round">
+						<div>
+							银行卡
+						</div>
+						<div class="">
+							转账
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ub-f1 ">
+				<div class="umh5 ub ub-ac takemoney_margin_right_all common-font-color3 ">
+					秒分期提现说明
+				</div>
+				<div class="takemoney_underline_solid personal_head_color_one">
+				</div>
+				<div class="common-font-color2 takemoney_margin_right_all takemoney_top_end_padding">
+					用户妙分期账户需要绑定实名银行卡，并且与本人学籍认证一致，否则无法及时到账。
+					<br/> 支付宝提现请输入支付宝账号，如账号错误导致转账错误，自行承担后果。
+					<br/> 妙分期申请金额支持500或4000范围。
+					<br/> 妙分期转账成功后，账单即刻生效，请及时还款.
+					<br/>
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ver address_background_color">
+				<div class="ub umar-a ub-ac input_padding_one takemoney_margin_right_one">
+					<div class="checkbox checked-font-size">
+						<input type="checkbox" checked="checked" name="checkset" id="checkset" class="uabs ub-con">
+						</input>
+					</div>
+					<div class="ub-f1 ub ">
+						<div class="takemoney_font_agree">
+							同意
+						</div>
+						<div class="takemoney_foot_agree">
+							《服务与隐私协议》
+						</div>
+					</div>
+
+				</div>
+				<div class="ub-f1 input_padding takemoney_padding_bottom ">
+					<div class="btn ub ulev1 ub-ac bc-text-head ub-pc bc-btn uc-a1 umar-b" id="submit">
+						立即提交审核
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script src="../common/js/jquery-1.7.1.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/countUp.min.js"></script>
+	<script src="../common/js/yfkj.js"></script>
+	<script>
+		var tmoneytype = "0";
+		Count = 0;
+		Frestmomeny = 0;
+		FeveryRate = 0;
+		FserviceRate = 0;
+		Fvalue = 0;
+		FpointsName = '';
+		appcan.ready(function() {
+				appcan.initBounce();
+				appcan.window.subscribe('1', function(msg) {
+					findInfoForWithdrawals(getuserid());
+				});
+				numberno();
+				findRate(); //加载利率
+				findmonthInfo(1);
+				findInfoForWithdrawals();
+			})
+			//提交审核按钮
+		function checkset() {
+			if (!$("#checkset").prop("checked")) {
+				appcan.window.openToast("请阅读协议", "500");
+				return;
+			}
+		}
+		appcan.button("#submit", "ani-act", function(a, b) {
+			//同意按鈕
+			checkset();
+			examineInfo();
+		})
+
+		function numberno() {
+			/*JQuery 限制文本框只能输入数字和小数点*/
+			$("#takemoney").keyup(function() {
+				$(this).val($(this).val().replace(/[^0-9.]/g, ''));
+			}).bind("paste", function() { //CTR+V事件处理    
+				$(this).val($(this).val().replace(/[^0-9.]/g, ''));
+			}).css("ime-mode", "disabled"); //CSS设置输入法不可用    
+		}
+
+		function takemoney(Frestmoney) {
+			options = {  
+				useEasing: true,
+				  useGrouping: true,
+				  separator: '',
+				  decimal: '.',
+				decimals: '0',
+				  prefix: '',
+				  suffix: ''
+			};
+			count = new CountUp("Frestmoney", 0, Frestmoney, 0, 1.5, options);
+			//(id,0到888数字变化，0到1.5秒变化时间)
+			count.start();
+		}
+		appcan.button("#selectioc", "ani-act", function() {
+			//$(this).prev('select').trigger('click');
+			open($(this).prev('select'));
+		})
+
+		function open(elem) {
+			if (document.createEvent) {
+				var e = document.createEvent("MouseEvents");
+				e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				elem[0].dispatchEvent(e);
+			} else if (element.fireEvent) {
+				elem[0].fireEvent("onmousedown");
+			}
+		}
+
+		function choosetype(id) {
+			tmoneytype = id;
+			$(".chooseclass").removeClass('takemoney_border_color').addClass('takemoney_border');
+			$("#choosetype" + id).removeClass('takemoney_border').addClass('takemoney_border_color');
+			var i = $("#choosetype" + id).selector;
+			if (i == '#choosetype0') {
+				$("#bank").removeClass('uhide');
+				$("#bankcard").removeClass('uhide');
+				$("#alipay").addClass('uhide');
+			} else {
+				$("#bank").addClass('uhide');
+				$("#alipay").removeClass('uhide');
+			}
+		}
+		//计算服务费
+		function onmoneychange() {
+			var Frest =parseFloat($("#Frestmoney").text()).toFixed(2); ; //可提现金额
+			if (Frest > "0") {
+				onmonthchange();
+			}
+			else {
+				appcan.window.openToast("可提现金额不足", "500");
+				return;
+			}
+			var takemoney = $("#takemoney").val() * FserviceRate; //提现总手续费
+			var cost = ($("#takemoney").val()) / (getselectvalue('selectmonth')) + ($("#takemoney").val()) * FeveryRate;
+			$("#Fbond").text(takemoney.toFixed(2)); //提现手续费赋值
+			$("#paybackmonth").text(cost.toFixed(2)); //每期最低还款
+			$("#Fmoneymonth").text(cost.toFixed(2)); //每月还款
+			$("#FpointsName").text(getselectvalue('selectmonth')); //贷款期限
+		}
+		//月数动态事件
+		function onmonthchange() {
+			var cost = ($("#takemoney").val()) / (getselectvalue('selectmonth')) + ($("#takemoney").val()) * FeveryRate;
+			//计算前台页面金额数据
+			$("#paybackmonth").text(cost.toFixed(2)); //每期最低还款
+			$("#Fmoneymonth").text(cost.toFixed(2)); //每月还款
+			$("#FpointsName").text(getselectvalue('selectmonth')); //贷款期限
+			$("#Fbond").text((($("#takemoney").val()) * FserviceRate).toFixed(2)); //提现服务费
+		}
+
+		function findInfoForWithdrawals() //银行和支付宝账号加载
+		{
+			var datas = {
+				FuserId: getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/findInfoForWithdrawals",
+				type: "post",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					var userinfo = result.Data[0];
+					FuserId = getuserid(); //用户ID
+					$("#alipaycard").text(userinfo.FalipayAccount); //支付宝号
+					$("#bankcard").text(userinfo.FbankAccount); //银行号码
+					choosetype(0); //选择提现至的类型
+					var num = userinfo.Frestmomeny;
+					takemoney(userinfo.Frestmomeny); //提现总额度
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '500');
+				}
+			});
+		}
+		//服务费利率、月手续费利率查询
+		function findRate() {
+			appcan.ajax({
+				url: Serverurl + "/user/findRate",
+				type: "POST",
+				dataType: 'json',
+				success: function(result) {
+					var data = result.Data[0];
+					FeveryRate = data.FeveryRate;
+					FserviceRate = data.FserviceRate;
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '500');
+				}
+			});
+		}
+		//下拉选择和选中取值
+		function findmonthInfo(value) { //加载分期月数信息
+			appcan.ajax({
+				url: Serverurl + "/user/findMonth",
+				type: "POST",
+				dataType: 'json',
+				success: function(result) {
+					var data = result.Data;
+					loadselect("selectmonth", value, data);
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '500');
+				}
+			});
+		}
+
+		function loadselect(id, value, data) { //加载月数
+			$("#" + id).append("<option value='1'>请选择分期月数</option>");
+			$.each(data, function(i, item) {
+				Fvalue = item.Fvalue;
+				FpointsName = item.FpointsName;
+				$("#" + id).append("<option value='" + Fvalue + "'>" + item.FpointsName + "</option>");
+			});
+			selectchoose(id, value);
+		}
+
+		function selectMonth(id, value) {
+			$("#" + id + " option[selected='select'").attr("selected", false);
+			$("#" + id + " option[value=" + value + "]").attr("selected", true);
+		}
+
+		function getselectvalue(id) {
+			var index = $("#" + id).get(0).selectedIndex;
+			var value = $("#" + id).get(0).options[index].value;
+			return value;
+		}
+
+		function selectchoose(id, value) {
+			$("#" + id + " option[selected='select'").attr("selected", false);
+			$("#" + id + " option[value=" + value + "]").attr("selected", true);
+		}
+		//下拉选择和选中取值结束
+		function examineInfo() { //提交到后台的数据
+			if ($("#takemoney").val() == "") {
+				appcan.window.openToast("请输入提现金额", "500");
+				return;
+			}
+			if ($("#choosetype0").text() == "") {
+				appcan.window.openToast("请选择提现至类型", "500");
+				return;
+			}
+			if (getselectvalue('selectmonth') < 0) {
+				appcan.window.openToast("请选择分期月数", "500");
+				return;
+			}
+			var datas = {
+				FwithdrawMoney: $("#takemoney").val(), //提现金额
+				FpointsId: getselectvalue('selectmonth'), //分期月数
+				choosetype: choosetype(tmoneytype), //选择的提现类型
+				FuserId: getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/examineInfo",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					if (result == '1') {
+						appcan.window.openToast('提现信息提交成功', '500');
+						appcan.locStorage.setVal("orderindex", 0);
+						takemoney(userinfo.Frestmomeny); //提现总额度
+						appcan.window.open("myorder", "../myorder/order.html");
+					}
+					else(result=='2')
+					{
+						appcan.window.openToast('提现信息提交成功', '500');
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '500');
+				}
+			});
+		}
+		//获取提现金额
+		//       var takemoney = $("#takemoney").val()
+		//       appcan.locStorage.setVal("takemoney", takemoney);
+	</script>
+
+</html>

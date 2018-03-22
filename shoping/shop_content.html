@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="shop_content/css/main.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+	</head>
+
+	<body class="bc-bg common-font-color1 mybreak" ontouchstart>
+		<div id="" class="ub ub-ac ub-pc top_head" style="border-bottom:2px solid #e6e6e6;">
+			<div id="" class="ub shop-search-pad1 common-mar-search ub-fh ub-f1" style="height: 2.3em;">
+				<div id="" class="ub ub-ac ub-pc ub-f1 shop-search-pad2">
+					<input type="text" placeholder="大家都在搜iphone6s" name="" id="seaarchval" value="" class="ub shop-search-input ub-f1" style="" />
+				</div>
+				<div id="searchbtn" class="ub ub-img ub-ac ub-pc common-search-pad">
+					<img src="../images/search.png" class="ub ub-ac ub-pc common-img-search" />
+				</div>
+			</div>
+		</div>
+		<div style="height:3em;"></div>
+		<div class="list">
+
+		</div>
+		<div class="ub ub-ac ub-pc ub-ver uhide" id="nogoodstem" style="margin-top: 5em;">
+			<div class="ub ub-ac ub-pc">
+				<img src="../images/person.png" / class="ub" style="height: 4em;width: 4em;">
+			</div>
+			<div class="ub ub-ac ub-pc common-font-color2" style="margin-top: 1em;">
+				抱歉，未能找到你想要的商品
+			</div>
+			<div class="ub-f1 ub ub-ac ub-pc bc-text-head bc-btn uc-a1 " id="selfpaybtn" onclick="guguclick()" style=" height: 2em;width:6em;margin-top: 2em;font-size: 1.2em;">
+				去逛逛
+			</div>
+		</div>
+		<div id="tmp" class="ub ub-ver uinn-a3 ub-fv uhide">
+			<div id="itemn1" class="ub ub-ac ub-pc shop-list-div item" FshoperId = ''>
+				<div class="ub ub-f1 ub-con shop-list-div1 "  style="margin-top: 0.5em;height: 7em;">
+					<div class="ub">
+						<img src="shop_content/css/myImg/test.jpg" class="shop-list-div2 goodsimg" />
+					</div>
+					<div class="ub ub-ver ub-f1 shop-list-div2">
+						<div class=" ub ub-ac shop-list-font1 goods_name">
+
+						</div>
+						<div class="ub ub-ac shop-list-line">
+							<div class="">
+								售价:
+							</div>
+							<div class="ub ub-ac shop-list-line shop-div-pad2">
+								<div>
+									￥
+								</div>
+								<div class="shop_price">
+									33
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-ac">
+							<div>
+								月供:
+							</div>
+							<div class="ub ub-ac shop-div-pad2">
+								<div class="shop-list-font">
+									￥
+								</div>
+								<div class="shop-list-font Fmoneymonth">
+									0
+								</div>
+								<div>
+									x
+								</div>
+								<div class="FavgNumber">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var pageno = 0;
+		var star = 0;
+		var pagesize = 10;
+		appcan.ready(function() {
+		    findConsumeList(++pageno, star);
+			//点击全部，清空搜索框
+			appcan.window.subscribe('clearinput', function(msg) {
+				$("#seaarchval").val('');
+			});
+			
+			//点击去逛逛刷新列表
+			appcan.window.subscribe('gugu', function(msg) {
+				$("#seaarchval").val('');
+				appcan.locStorage.setVal("shopcatid", '');
+				pageno = 0;
+				star = 0;
+				$(".list").empty();
+				findConsumeList(++pageno, star);
+			});
+			//搜索框放大镜点击事件
+			appcan.button("#searchbtn", "ani-act", function() {
+					appcan.window.publish('searchinput', '');
+				})
+				//搜索框输入刷新列表
+			appcan.window.subscribe('searchinput', function(msg) {
+				pageno = 0;
+				star = 0;
+				$(".list").empty();
+				findConsumeList(++pageno, star);
+			});
+			//findConsumeList(++pageno, star);
+			appcan.frame.setBounce([0, 1], function(type) {
+				$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+			}, function(type) {
+				$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+			}, function(type) {
+				if (type == 0) {
+					pageno = 0;
+					star = 0;
+					$(".list").empty();
+				}
+				findConsumeList(++pageno, star);
+				setTimeout(function() {
+					appcan.frame.resetBounce(type);
+				}, 1000);
+			})
+		})
+		//去逛逛点击事件
+			function guguclick() {
+			   
+				appcan.window.publish('gugu', '');
+			}
+		function findConsumeList(apageno, astart) {
+			if(appcan.locStorage.getVal("shopcatid") == null){
+			    appcan.locStorage.setVal("shopcatid", '');
+			}
+			var datas = {
+				keywords: $("#seaarchval").val(),
+				FuserId: getuserid(),
+				Fstart: astart,
+				pageSize: pagesize,
+				currentPageNum: apageno,
+				cat_id: appcan.locStorage.getVal("shopcatid")
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/getGoodsList",
+				type: "POST",
+				dataType: 'json',
+				data: datas,
+				success: function(result) {
+					var msg = result.Msg;
+					if (msg == 1) {
+						var length = result.Data.Data.length;
+						var fulltag = result.Data.fulltag;
+						var lastno = result.Data.lastno;
+						if (fulltag == 0) {
+							pageno = pageno - 1;
+						}
+						star = lastno;
+						for (var i = 0; i < length; i++) {
+							additem(result.Data.Data[i]);
+							//加载账单
+						}
+					}
+					if (msg == 0) {
+						pageno = pageno - 1;
+						$("#nogoodstem").removeClass("uhide");
+					}
+					if ($(".list .item").length == 0) {
+						$("#nogoodstem").removeClass("uhide");
+					} else {
+						$("#nogoodstem").addClass("uhide");
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast("服务器出错", "1000");
+				}
+			});
+		}
+
+		function additem(data) //加载订单
+		{
+			
+			var list = $(".list");
+			var clonedom = $("#tmp").clone();
+			var itemdom = clonedom.find(".item");
+			itemdom.attr("goods_brief", data.goods_brief);
+			itemdom.attr("FshoperId", data.FshoperId);
+			itemdom.attr("id", "item" + data.goods_id);
+			itemdom.find(".goods_name").text(data.goods_name);
+			itemdom.find(".shop_price").text(data.shop_price.toFixed(2));
+			itemdom.find(".FavgNumber").text(data.FavgNumber);
+			itemdom.find(".Fmoneymonth").text(data.Fmoneymonth.toFixed(2));
+			itemdom.find(".goodsimg").attr("src", Serverurl + data.goods_img);
+			itemdom.find(".shop-list-div1").attr("onclick", "detailgoods('" + data.goods_id + "')");
+			list.append(itemdom);
+		}
+
+		function detailgoods(sid) {
+			//alert($(".list #item" + sid ).attr("FshoperId"));
+			var shopdatas = {
+			    FshoperId:$(".list #item" + sid ).attr("FshoperId"),
+				goods_id: sid,
+				goods_name: $(".list #item" + sid + " .goods_name").text(),
+				shop_price: $(".list #item" + sid + " .shop_price").text(),
+				FavgNumber: $(".list #item" + sid + " .FavgNumber").text(),
+				goods_brief: $(".list #item" + sid).attr("goods_brief")
+			};
+			appcan.locStorage.setVal("goodsinfo", shopdatas);
+			
+			appcan.window.open("shopInfo", "../shoping/goodsInfo/shopInfo.html");
+		}
+		//      function detailgoods(sid) {
+		//          alert(sid);
+		//          var shopdatas = {
+		//              goods_id : sid,
+		//              goods_name : $("#item" + sid + " .goods_name").text(),
+		//              shop_price : $("#item" + sid + " .shop_price").text(),
+		//              FavgNumber:$("#item" + sid + " .FavgNumber").text()
+		//          };
+		//          appcan.locStorage.setVal("goodsinfo", shopdatas);
+		//      
+		//          appcan.window.open("shopInfo", "../shoping/goodsInfo/shopInfo.html");
+		//      }
+		appcan.button("#submit", "ani-act", function() {
+			$("form").submit();
+		})
+	</script>
+
+</html>

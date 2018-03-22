@@ -1,0 +1,115 @@
+ .ioc_personal_color {
+ 	color: #bcbcbc;
+ 	width: 1em;；
+ }
+ .personal_margin_right{
+ 	padding-left: 2em;
+ 	
+ }
+ .personal_weight {
+   	font-weight: 700;
+   }
+ .img_width{
+ 	
+ 	width:3em;
+ }
+ .personal_head_img {
+ 	width: 2.3em;
+ 	height: 2.8em;
+ 	
+ }
+ .personal_head_img_one {
+ 	width: 5em;
+ 	height: 5em;
+ 	margin-top: 0.2em;
+ } 
+ .personal_height {
+ 	height: 1.5em;
+ }
+ .personal_padding_top{
+ 	padding-top:2em ;
+ 	
+ }
+ .personal_height_one {
+ 	height: 3.5em;
+ 	
+ }
+ .personal_height_two {
+ 	height: 5em;
+ 	
+ }
+ 
+ .personal_border_left {
+		border-left: 1px white solid;
+		height: 3.5em;
+		padding-left: 0.3em;
+		
+	}
+	
+ .personal_head_color {
+ 	background-color: #ff958f;
+ }
+ 
+ .personal_head_color_one {
+ 	background-color: #f3f3f3;
+ }
+ .personal_text_color{
+ 	color: #626262;
+ }
+ .personal_text_color_one{
+ 	color: #9e9e9e;
+ }
+ .personal_text_color_20{
+ 	color: #707070;
+ }
+ .personal_text_color_two{
+ 	color: #898989;
+ }
+ .personal_text_color_three{
+ 	color: #131313;
+ }
+ 
+ .ioc_personal_color {
+ 	color: #b2b2b2;
+ }
+ 
+ .personal_margin {
+ 	margin-left: 1.2em;
+ }
+ .personal_margin_one {
+ 	margin-left: 1.3em;
+ }
+ .personal_margin_top {
+ 	padding-top:0.5em ;
+ }
+ .umwt {
+    width: 2.8em;
+}
+.personal_ioc_bil{
+	width: 2em;
+	height: 2em;
+}
+.personal_ioc_bil_one{
+	width: 1.7em;
+	height: 2em;
+}
+.personal_ioc_order{
+	width: 2em;
+	height: 2em;
+}
+.personal_ioc_class{
+	width: 1.4em;
+	height: 1.5em;
+}
+.personal_ioc_class_other{
+	width: 1.3em;
+	height: 1.5em;
+}
+.personal_ioc_class_one{
+	width: 1.6em;
+	height: 1.3em;
+}
+.personal_ioc_class_help{
+	width: 1.6em;
+	height: 1.6em;
+}

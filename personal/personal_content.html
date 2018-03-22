@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta http-equiv="expires" content="-1" />
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../personal/personal_content/css/main.css">
+        <link rel="stylesheet" href="../common/css/app.css">
+    </head>
+
+    <body class="ub ub-ver bc-bg">
+        <div class="ub ub-ver">
+            <div class="ub ub-ver bc-head" >
+                <div class="ub ub-ver ub-ac ub-pc" onclick="topclick()">
+                    <!--头像-->
+                    <div class="ub">
+                        <img class="ub-f1 personal_head_img_one" src="personal_content/css/myImg/bg.png" />
+                    </div>
+                    <!--结束-->
+                    <div class="ub ub-f1 ub-ver  ub-ac ub-pc ">
+                        <div class="ub bc-text-head personal_height uhide" id="itemstate">
+                            您的额度申请
+                            <div class="ub ub-f1" id="FexamineStateEnd">
+                                未完成
+                            </div>
+                        </div>
+                        <div class="ub ub-f1 bc-text-head personal_height">
+                            <div id="Fname" class="ub-f1 uinn-a1 umar-r">
+
+                            </div>
+                            <div id="FexamineState uhide" class="uhide ub-f1 uinn-a1">
+                                马上登录
+                            </div>
+                        </div>
+                        <div class="ub ub-f1 ulev-1 bc-text-head personal_padding_bottom">
+                            <div class="ub-f1 umar-r" id="Faddress">
+
+                            </div>
+                            <div class="umar-l" id="Fphone">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ac bc-text-head personal_head_color">
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver uinn5">
+                        总额度
+                        <div class="ub personal_margin_top Ftotalbill">
+                            0.00
+                        </div>
+                    </div>
+                    <div class="personal_border_left"></div>
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver uinn5">
+                        已用额度
+                        <div class="ub personal_margin_top Fhasbill">
+                            0.00
+                        </div>
+                    </div>
+                    <div class="personal_border_left"></div>
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver uinn5">
+                        可用额度
+                        <div class="ub personal_margin_top Fusemoney">
+                            0.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_head_color_one umh1">
+
+            </div>
+            <div class="ub ub-ver">
+                <div class="ub ub-ac personal_margin_one personal_height_one personal_text_color" id="btn1">
+                    <div class="ub ub-f1 ">
+                        <div class="umwt personal_margin_top">
+                            <img class="personal_ioc_bil" src="../personal/personal_content/css/myImg/benyue.png" />
+                        </div>
+                        <div class="ub ub-ac">
+                            我的账单
+                        </div>
+                    </div>
+                    <div id="btn1">
+                        全部
+                        <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color umar-l"></div>
+                    </div>
+                </div>
+                <div class="address_underline_solid "></div>
+                <div class="ub ub-f1 tx-c personal_height_two ">
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver">
+                        <div class="personal_margin_top umw3 uinn common-font-color2" id="totalmoney">
+                            0.00
+                        </div>
+                        <div class="ub ub-ac personal_text_color_one">
+                            本月待还
+                        </div>
+                    </div>
+
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver">
+                        <div class="ub personal_margin_top umw3 uinn personal_text_color_20 ">
+                            每月
+                            <div class="FrepaymentDay">
+                                1
+                            </div>
+                            号
+                        </div>
+                        <div class="personal_text_color_one">
+                            还款日
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver">
+                        <div class="personal_margin_top umw3 uinn common-font-color2" id="totalNum">
+                            0
+                        </div>
+                        <div class="personal_text_color_one">
+                            消费笔数
+                        </div>
+                    </div>
+                </div>
+                <div class="address_underline_solid personal_head_color_one"></div>
+            </div>
+            <div class="address_underline_solid  personal_head_color_one umh1"></div>
+            <div class="ub ub-ver uinn3">
+                <div class="ub ub-ac personal_margin personal personal_height_one personal_text_color" id="btn2">
+                    <div class="ub ub-f1">
+                        <div class="umwt personal_margin_top">
+                            <img class="personal_ioc_bil_one" src="../personal/personal_content/css/myImg/wode-order.png" />
+                        </div>
+                        <div class="ub ub-ac">
+                            我的订单
+                        </div>
+                    </div>
+                    <div>
+                        全部
+                        <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color umar-l"></div>
+                    </div>
+                </div>
+                <div class="address_underline_solid uinn3"></div>
+                <div class="ub ub-f1 tx-c personal_height_two ">
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver" id="btn3">
+                        <div class="personal_margin_top">
+                            <img class="personal_ioc_order" src="../personal/personal_content/css/myImg/tixian.png" />
+                        </div>
+                        <div class="uinn personal_text_color_one">
+                            提现订单
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver" id="btn4">
+                        <div class="personal_margin_top">
+                            <img class="personal_ioc_order" src="../personal/personal_content/css/myImg/shangcheng.png" />
+                        </div>
+                        <div class="uinn personal_text_color_one">
+                            商城订单
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-pc ub-ac ub-ver" id="btn5">
+                        <div class="personal_margin_top">
+                            <img class="personal_ioc_order" src="../personal/personal_content/css/myImg/xiaofei.png" />
+                        </div>
+                        <div class="uinn personal_text_color_one">
+                            消费订单
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_head_color_one"></div>
+        </div>
+        <div class="address_underline_solid personal_head_color_one umh1"></div>
+        <div class="ub ub-f1 ub-ver personal_text_color_two">
+            <div class="uinput ub ub-ac personal_margin_one personal_height_one">
+                <div class="ub ub-f1" id="tixianInfo">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_other" src="../personal/personal_content/css/myImg/kuai_su_ti_xian.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        快速提现
+                    </div>
+                </div>
+                <div class="ub ub-ac personal_margin_right">
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="uinput ub ub-ac personal_margin_one personal_height_one">
+                <div class="ub ub-f1" id="huankuanInfo">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_other" src="../personal/personal_content/css/myImg/wo_yao_huan_kuan.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        我要还款
+                    </div>
+                </div>
+                <div class="ub ub-ac personal_margin_right">
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="uinput ub ub-ac personal_margin_one personal_height_one">
+                <div class="ub ub-f1" id="userInfo">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_other" src="../personal/personal_content/css/myImg/ziliao.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        我的资料
+                    </div>
+                </div>
+                <div class="ub ub-ac personal_margin_right">
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div id="updatepassword" class="ub ub-ac personal_margin_one personal_height_one">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_other" src="../personal/personal_content/css/myImg/mima.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        密码管理
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div id="messagecenter" class="ub ub-ac personal_margin_one personal_height_one">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_help" src="../personal/personal_content/css/myImg/xiaoxi.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        消息中心
+                    </div>
+                </div>
+                <div class="ub ub-ac">
+                    <div class="ub ub-ac ub-pc" id="baget" style="background-color: #ff7670;color: white;font-size: 0.8em;border-radius: 50%;width: 1.2em; height: 1.2em;"></div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one confirmorder">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class" src="../personal/personal_content/css/myImg/shouhuo.png" />
+                    </div>
+                    <div class="ub ub-ac ">
+                        商品收货
+                    </div>
+                </div>
+                <div class=" personal_margin_right">
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one" id="share">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class" src="../personal/personal_content/css/myImg/fenxiang.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        分享给朋友
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one" id="bankchange">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_one" src="../personal/personal_content/css/myImg/zhifubao.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        绑定银行卡支付宝
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one" id="help">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_help" src="../personal/personal_content/css/myImg/bangzhu.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        帮助
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one" onclick="getphone();">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class" src="../personal/personal_content/css/myImg/kefu.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        客服电话
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid personal_margin"></div>
+            <div class="ub ub-ac personal_margin_one personal_height_one mfqInfo">
+                <div class="ub ub-f1">
+                    <div class="umw3 ub ub-ac">
+                        <img class="personal_ioc_class_one" src="../personal/personal_content/css/myImg/miaofenqi.png" />
+                    </div>
+                    <div class="ub ub-ac">
+                        关于妙分期
+                    </div>
+                </div>
+                <div>
+                    <div class="ub-f1 fa fa-angle-right ulev2 ioc_personal_color"></div>
+                </div>
+            </div>
+            <div class="address_underline_solid uinn3"></div>
+            <div class="uinn-at1 input_padding personal_head_color_one">
+                <div class="btn ub ulev-3 ub-ac bc-text-head ub-pc bc-btn uc-a1" id="submit">
+                    退出登录
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="../common/js/jquery-1.7.1.min.js"></script>
+    <script src="../common/js/appcan.js"></script>
+    <script src="../common/js/appcan.control.js"></script>
+    <script src="../common/js/yfkj.js"></script>
+    <script>
+        var FexamineState = "普通认证";
+        var HFexamineState = "高级认证";
+        var DFexamineState = "等待认证";
+        var FexamineStateEnd = "已完成";
+        var loginNo = "未登录";
+        appcan.ready(function() {
+            uexWidgetOne.cbCleanCache = cbCleanCache;
+            appcan.frame.setBounce([0, 1], function(type) {
+            }, function(type) {
+            }, function(type) {
+                if (type == 0) {
+                    getuserinfo();
+                    findUserInfoForMy(getuserid());
+                    getCountresume();
+                    getCount();
+                }
+                setTimeout(function() {
+                    appcan.frame.resetBounce(type);
+                }, 1000);
+            })
+            //personstate();
+            findUserInfoForMy(getuserid());
+            getCountresume();
+            getCount();
+            appcan.window.subscribe('3', function(msg) {
+                getuserinfo();
+                findUserInfoForMy(getuserid());
+                getCountresume();
+                getCount();
+            });
+            appcan.window.subscribe('setuserbaget', function(msg) {
+                setbaget();
+            });
+            setbaget();
+            uexWeiXin.cbIsWXAppInstalled = function(opCode, dataType, data) {
+                if (data == 0) {
+                } else {
+                    appcan.window.openToast('没有安装微信!', '1000');
+                }
+            }
+            uexWeiXin.cbShareLinkContent = function(data) {
+                appcan.window.openToast('分享成功!', '1000');
+            }
+            uexWeiXin.cbRegisterApp = function(opCode, dataType, data) {
+                var json = {
+                    thumbImg : 'res://icon.png', //(必选)缩略图地址Url(大小必须小于32k)
+                    wedpageUrl : 'http://admin.miaofq.com/share', //(必选)链接的地址
+                    scene : 1, //(必选)发送的目标场景 0-会话场景 1-朋友圈场景
+                    title : '妙分期', //(必选)链接的标题
+                    description : '妙分期' //(必选)描述
+                }
+                uexWeiXin.shareLinkContent(JSON.stringify(json));
+            }
+        });
+
+        function topclick() {
+            getuserinfo();
+        }
+
+        //快速提现点击事件
+        appcan.button("#tixianInfo", "ani-act", function(a, b) {
+
+            appcan.window.open("takemoney", "../takemoney/takemoney.html");
+            appcan.window.publish('takemoney', '');
+            //              appcan.window.publish('move', '1');
+        })//我要还款点击事件
+        appcan.button("#huankuanInfo", "ani-act", function(a, b) {
+            // if (cheackstat() == 0) {
+            // return;
+            // }
+            //appcan.locStorage.setVal("orderindex", 1);
+            appcan.locStorage.setVal("billindex", 0);
+            appcan.window.open({
+                name : "bill",
+                dataType : 0,
+                aniId : 9,
+                data : "../bill/bill.html"
+            });
+        })
+        //退出登录
+        appcan.button("#submit", "ani-act", function(a, b) {
+            appcan.locStorage.setVal("userinfo", null);
+            appcan.window.publish('loginbtnini', '');
+            findUserInfoForMy("");
+            appcan.window.publish('move', '0');
+            uexWidgetOne.cleanCache();
+
+            //appcan.window.open("index", "../index/index.html");
+        })
+        function cbCleanCache(opId, dataType, data) {
+         
+        }
+
+        // 本月账单点击事件
+        appcan.button("#btn1", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.locStorage.setVal("billindex", 0);
+            appcan.window.open({
+                name : "bill",
+                dataType : 0,
+                aniId : 9,
+                data : "../bill/bill.html"
+            });
+        })
+        //我的订单点击事件
+        appcan.button("#btn2", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              appcan.locStorage.setVal("beformsg", "refreshpersonnal")
+            //              return;
+            //          }
+            appcan.locStorage.setVal("orderindex", 0);
+            appcan.locStorage.setVal("footindex", 3);
+            appcan.window.open({
+                name : "bill",
+                dataType : 0,
+                aniId : 9,
+                data : "../myorder/order.html"
+            });
+        })
+        //提现点击事件
+        appcan.button("#btn3", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.locStorage.setVal("orderindex", 0);
+            appcan.window.open({
+                name : "order",
+                dataType : 0,
+                aniId : 9,
+                data : "../myorder/order.html"
+            });
+        })
+        //商城点击事件
+        appcan.button("#btn5", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.locStorage.setVal("orderindex", 2);
+            appcan.window.open({
+                name : "order",
+                dataType : 0,
+                aniId : 9,
+                data : "../myorder/order.html"
+            });
+        })
+        //商城点击事件
+        appcan.button(".confirmorder", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.locStorage.setVal("orderindex", 1);
+            appcan.window.open({
+                name : "order",
+                dataType : 0,
+                aniId : 9,
+                data : "../myorder/order.html"
+            });
+        })
+        //消费点击事件
+        appcan.button("#btn4", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.locStorage.setVal("orderindex", 1);
+            appcan.window.open({
+                name : "order",
+                dataType : 0,
+                aniId : 9,
+                data : "../myorder/order.html"
+            });
+        })
+        //帮助点击事件
+        appcan.button("#help", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.window.open("help", "../personal/help/help.html");
+        })
+        //用户资料点击事件
+        appcan.button("#userInfo", "ani-act", function(a, b) {
+            //          if (cheackstat() == 0) {
+            //              return;
+            //          }
+            appcan.window.open("userInfo", "../personal/userInfo/userInfo.html");
+        })
+        //个人登录状态判断
+        function personstate(username) {
+            var userinfo = getuserid();
+            var useralevel = getuserFauthenticationLevel();
+            var userstat = getuserstat();
+            if (userinfo == "-1") {//没有登录
+                $("#FexamineState").text("马上登录");
+            } else//登录成功
+            {
+                if (useralevel == 0) {
+                    if (userstat == -1) {
+                        $("#FexamineState").text("未认证");
+                    } else {
+                        $("#FexamineState").text("等待认证");
+                    }
+                } else if (useralevel == 1) {
+                    if (userstat == -1) {
+                        $("#FexamineState").text("普通认证");
+                        $("#FexamineStateEnd").text(FexamineStateEnd);
+                    } else {
+                        $("#FexamineState").text("等待认证");
+                    }
+                    //已完成
+                } else if (useralevel == 2) {
+                    $("#FexamineState").text("高级认证");
+                    $("#FexamineStateEnd").text(FexamineStateEnd);
+                    //已完成
+                }
+            }
+        }
+
+        //加载个人信息
+        function findUserInfoForMy(id) {
+            appcan.ajax({
+                url : Serverurl + "/user/findUserInfoForMy",
+                type : "POST",
+                dataType : 'json',
+                data : {
+                    FuserId : getuserid()
+                },
+                success : function(result) {
+                    if (result.Data.length > 0) {
+                        var data = result.Data[0];
+                        $("#Fname").text(data.Fname);
+                        $("#Faddress").text(data.Faddress);
+                        $("#Fphone").text(data.Fphone);
+                        $(".Ftotalbill").text(data.Ftotalbill.toFixed(2));
+                        $(".Fhasbill").text(data.Fhasbill.toFixed(2));
+                        $(".Fusemoney").text(data.Fusemoney.toFixed(2));
+                        $("#FexamineState").text(FexamineState);
+                        $("#FexamineStateEnd").text(FexamineStateEnd);
+                        if (data.FrepaymentDay == "-1") {
+                            $(".FrepaymentDay").text("");
+                            //还款金额日期
+                        } else {
+                            $(".FrepaymentDay").text(data.FrepaymentDay);
+                        }
+                        getCountresume(getuserid());
+                        getCount(getuserid());
+                        personstate(data.Fname);
+                    } else {
+                        $("#Fname").text("");
+                        $("#Faddress").text("");
+                        $("#Fphone").text("");
+                        $(".Ftotalbill").text("0.00");
+                        $(".Fhasbill").text("0.00");
+                        $(".Fusemoney").text("0.00");
+                        $("#FexamineStateEnd").text("马上登录");
+                        $(".FrepaymentDay").text("");
+                        //还款金额日期
+                        $("#totalcountresum").text("0");
+                        $("#totalNum").text("0");
+                        $("#totalmoney").text("0.00");
+                        personstate("");
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        //加载消费笔数信息
+        function getCountresume(id) {
+            appcan.ajax({
+                url : Serverurl + "/user/getCountresume",
+                type : "POST",
+                dataType : 'json',
+                data : {
+                    FuserId : getuserid()
+                },
+                success : function(result) {
+                    var data = result.Data[0];
+                    $("#totalNum").text(data.totalcountresum);
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        //查询本月待还款金额
+        function getCount(id) {
+            appcan.ajax({
+                url : Serverurl + "/user/getMonthMOney",
+                type : "POST",
+                dataType : 'json',
+                data : {
+                    FuserId : getuserid()
+                },
+                success : function(result) {
+                    msg = result.Msg;
+                    if (msg == 1) {
+                        var data = result.Data[0];
+                        //$("#totalNum").text(data.totalNum);
+                        $("#totalmoney").text(data.totalmoney);
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        function getuserinfo() {
+            appcan.ajax({
+                url : Serverurl + "/user/getuserinfo",
+                dataType : 'json',
+                type : "POST",
+                data : {
+                    "Fuserid" : getuserid(),
+                    "Fpassword" : getuserpassword()
+                },
+                success : function(result) {
+                    var msg = result.Msg;
+                    if (msg == '1') {
+                        var dota = result.Data[0];
+                        appcan.locStorage.setVal("userinfo", dota);
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        //拨打客服电话
+        function getphone() {
+            // curid = id;
+            appcan.window.open({
+                name : 'setphone',
+                dataType : 0,
+                data : '../personal/other/setphone.html',
+                aniId : 12,
+                type : 256
+            });
+        }
+
+        function getuserinfo() {
+            appcan.ajax({
+                url : Serverurl + "/user/getuserinfo",
+                dataType : 'json',
+                type : "POST",
+                data : {
+                    "Fuserid" : getuserid(),
+                    "Fpassword" : getuserpassword()
+                },
+                success : function(result) {
+                    var msg = result.Msg;
+                    if (msg == '1') {
+                        var dota = result.Data[0];
+                        appcan.locStorage.setVal("userinfo", dota);
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        //我的资料点击事件
+        appcan.button("#userInfo", "ani-act", function(a, b) {
+            //if (cheackstat() == 0) {
+            //appcan.locStorage.setVal("beformsg", "refreshpersonnal")
+            //return;
+            //}
+            appcan.window.open({
+                name : "userInfo",
+                dataType : 0,
+                aniId : 9,
+                data : "../personal/userInfo/userInfo.html"
+            });
+        })
+        //关于妙分期点击事件
+        appcan.button(".mfqInfo", "ani-act", function(a, b) {
+            appcan.window.open({
+                name : "userInfo",
+                dataType : 0,
+                aniId : 9,
+                data : "../about/about.html"
+            });
+        })
+        //密码管理点击事件
+        appcan.button("#updatepassword", "ani-act", function(a, b) {
+            appcan.window.open({
+                name : "password",
+                dataType : 0,
+                aniId : 9,
+                data : "../personal/password/password.html"
+            });
+        })
+        //消息中心点击事件
+        appcan.button("#messagecenter", "ani-act", function(a, b) {
+            appcan.window.open({
+                name : "mymassage",
+                dataType : 0,
+                aniId : 9,
+                data : "../personal/mymassage/mymassage.html"
+            });
+        })
+        //绑定银行卡支付宝点击事件
+        appcan.button("#bankchange", "ani-act", function(a, b) {
+            //if (cheackstat() == 0) {
+            //appcan.locStorage.setVal("beformsg", "refreshpersonnal")
+            //return;
+            //}
+            appcan.window.open({
+                name : "bankchange",
+                dataType : 0,
+                aniId : 9,
+                data : "../personal/bankchange/bankchange.html"
+            });
+        })
+        appcan.button("#share", "ani-act", function(a, b) {
+            uexWeiXin.registerApp("wx54931eedbd68ea33");
+            uexWeiXin.isWXAppInstalled();
+        })
+        function setbaget() {
+            var newscount = appcan.locStorage.getVal("newcount");
+            if (newscount > 0) {
+                $("#baget").removeClass("uhide");
+                $("#baget").text(newscount);
+            } else {
+                $("#baget").addClass("uhide");
+            }
+        }
+    </script>
+
+</html>

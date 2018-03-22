@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+		<link rel="stylesheet" href="address_content/css/main.css">
+	</head>
+
+	<body class="ub bc-bg">
+		<div class="ub ub-f1 ub-ver ">
+			<div class="ub address_height myaddress">
+				<div class="ub  ub-ac address_width text_font common-font-color3">
+					姓名
+				</div>
+				<div class="ub ub-f1 ub-ac  uinn1" id="username">
+					<input class="ub ub-f1 text_color ulev1" placeholder="" id="Fname" />
+				</div>
+			</div>
+			<div class="address_underline_dash"></div>
+			<div class="ub ub-ac address_height myaddress">
+				<div class="ub  ub-ac  address_width text_font common-font-color3">
+					手机号
+				</div>
+				<div class="ub ub-f1 uinn1" id="Fphone" style="color: #FF7670;font-size: 1.2em;">
+
+				</div>
+			</div>
+			<div class="address_underline_dash"></div>
+			<div class="ub address_height myaddress">
+				<div class="ub  ub-ac  address_width text_font common-font-color3">
+					选择地区
+				</div>
+				<div class="ub ub-f1 uinn1">
+					<div class=" ub ub-f1 ub-ac text_color" id="area" style="font-size: 1.2em;">
+
+					</div>
+				</div>
+			</div>
+			<div class="address_underline_dash"></div>
+			<div class="ub address_height_one myaddress" style="margin-top: 0.5em;">
+				<div class="ub  address_width text_font common-font-color3">
+					详细地址
+				</div>
+				<div class="ub ub-f1 ub-ac address_detail uinn1">
+					<textarea class="ub ub-f1 text_color address_textarea uof" style="height: 6em;" onfocus="if(value=='请输入详细的地址具体到寝室号或者门牌号'){value=''}" onblur="if (value ==''){value='请输入详细的地址具体到寝室号或者门牌号'}" id="Faddress">请输入详细的地址具体到寝室号或者门牌号</textarea>
+				</div>
+			</div>
+			<div class="ub-f1 uinn address_background_color address_btn">
+				<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="register">
+					立即下单
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../common/js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="../common/js/appcan.js"></script>
+		<script type="text/javascript" src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script>
+			appcan.button("#register", "ani-act", function(a, b) {
+//			    alert(appcan.locStorage.getVal("fsubtag"));
+//			    
+//				if (getsubstate() != 0) {
+//					return;
+//				}
+//				offsubstate();
+				downOrder();
+				//appcan.window.open("register", "../register/register.html");
+			})
+			appcan.ready(function() {
+				getAddressInfo();
+				appcan.initBounce();
+			})
+
+			function billsubmit() {
+				var phone = $("#register").val();
+				if (phone && /^1[3|4|5|8]\d{9}$/.test(phone)) {} else {
+					appcan.window.openToast("您输入手机号码有误", "1000");
+				}
+			}
+			//加载收货地址信息
+			function getAddressInfo() {
+				var datas = {
+					FuserId: getuserid()
+				};
+				appcan.ajax({
+					url: Serverurl + "/user/getAddressInfo",
+					type: "POST",
+					dataType: 'json',
+					data: datas,
+					success: function(result) {
+						var userinfo = result.Data[0];
+						$("#Fname").val(userinfo.Fname);
+						$("#Fphone").text(userinfo.Fphone);
+						$("#area").text(userinfo.FschoolAreaName);
+					},
+					error: function(e) {
+						appcan.window.openToast("服务器出错", "1000");
+					}
+				});
+			}
+			//数据提交后台
+			function downOrder() {
+				if (($("#Faddress").val()).trim() == "请输入详细的地址具体到寝室号或者门牌号" || $("#Faddress").val() == '') {
+					appcan.window.openToast("请输入详细地址", "1000");
+					return;
+				}
+				var Forderaddress = {
+					Faddress: $("#Faddress").val(),
+					Fname: $("#Fname").val(),
+					Fphone: $("#Fphone").text(),
+					area: $("#area").text()
+				}
+				appcan.locStorage.setVal("Forderaddress", Forderaddress);
+				var addressInfo = JSON.parse(appcan.locStorage.getVal("Forderaddress"));
+				appcan.window.publish('Forderaddress', '');
+				appcan.window.evaluateScript({
+					name: 'address',
+					scriptContent: 'windowclose()'
+				});
+			}
+		</script>
+	</body>
+
+</html>

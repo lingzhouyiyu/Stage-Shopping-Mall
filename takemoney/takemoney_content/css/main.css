@@ -1,0 +1,173 @@
+  ::-webkit-input-placeholder {
+  	/* WebKit browsers */
+  	color:  #898989;
+  }
+  
+  :-moz-placeholder {
+  	/* Mozilla Firefox 4 to 18 */
+  	color:  #898989;
+  }
+  
+  ::-moz-placeholder {
+  	/* Mozilla Firefox 19+ */
+  	color:  #898989;
+  }
+  
+  :-ms-input-placeholder {
+  	/* Internet Explorer 10+ */
+  	color:  #898989;
+  }
+  
+  .ioc_personal_color {
+  	color: #bcbcbc;
+  	width: 1em;
+  	；
+  }
+  
+  .takemoney_padding_top {
+  	padding-top: 2em;
+  }
+  
+  .takemoney_text_font {
+  	font-size: 3.5em;
+  }
+   .takemoney_text_font_min {
+  	font-size: 0.95em;
+  }
+  
+  .takemoney_margin_right {
+  	padding-left: 0.5em;
+  }
+  
+  
+  .takemoney_margin_right_all {
+  	padding-left: 1.2em;
+  }
+  
+  .takemoney_margin_right_one {
+  	padding-left: 1em;
+  }
+  .takemoney_choose{
+  	border: none;
+  	background-color: #FFFFFE;
+  }
+  .takemoney_center_height {
+  	height: 3.5em;
+  }
+  
+  .takemoney_text_color {
+  	color: #ff7670;
+  }
+  
+  .takemoney_main_text_color {
+  	color: #313131;
+  }
+  
+  .takemoney_border_color{
+  	height: 2em;
+  	width: 6em;
+  	border: 2px solid #ff9600 ;
+  	color:#ff9600 ;
+  }
+  .takemoney_border {
+  	height: 2em;
+  	width: 6em;
+  	border: 2px solid #bcbcbc;
+  	color: #626262;
+  	
+  }
+ 
+  .takemoney_input_border {
+  	height: 2.5em;
+  	margin-right: 1em;
+  	border: 2px solid #ff9600;
+  	color:  #898989;
+  }
+  
+  .takemoney_ioc_color {
+  	color: #bcbcbc;
+  }
+  
+  .takemoney_text_color_one {
+  	color: #535353;
+  }
+  
+  .takemoney_head_padding {
+  	padding-top: 2em;
+  }
+  
+  .takemoney_width_center {
+  	width: 5.5em;
+  }
+  .takemoney_width_head {
+  	width: 5em;
+  }
+  
+  .takemoney_main_height {
+  	height: 0.5em;
+  	background-color: #f5f5f3;
+  }
+  
+  .takemoney_center_height_one {
+  	height: 7em;
+  }
+  
+  .takemoney_center_height_two {
+  	height: 3.5em;
+  }
+  
+  .takemoney_center_height_three {
+  	height: 8em;
+  	background-color: #efeff4;
+  }
+  
+  .takemoney_center_width {
+  	width: 2em;
+  }
+  
+  .takemoney_foot_round {
+  	border-radius: 100%;
+  	border: 1px solid #2cc7db;
+  	height: 3.6em;
+  	width: 3.6em;
+  	color: #2cc7db;
+  }
+  
+  .takemoney_font_agree {
+  	color: #787875;
+  	font-family: 黑体;
+  }
+  
+  .takemoney_foot_agree {
+  	color: #57CCBE;
+  }
+  
+ 
+  .takemoney_underline_solid {
+  	border-bottom: 2px solid #efeff4;
+  }
+  
+  .takemoney_top_end_padding {
+  	padding-top: 1em;
+  	padding-right: 1em;
+  	font-size: 0.95em;
+  	padding-bottom: 1em;
+  	color: #7d7d7d;
+  }
+  .takemoney_padding_bottom{
+  	padding-bottom: 1.5em;
+  }
+  .takemoney_round_padding{
+  	padding-left: 0.5em;
+  	padding-right: 0.5em;
+  	
+  }
+  /*.takemoney_margin_bottom{
+  	margin-bottom: 1em;
+  }*/
+ 
+ .takemoney_display{
+ 	display: none;
+ 	
+ }
+  

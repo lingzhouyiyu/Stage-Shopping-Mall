@@ -1,0 +1,92 @@
+  ::-webkit-input-placeholder {
+  	/* WebKit browsers */
+  	color: #ff7670;
+  }
+  
+  :-moz-placeholder {
+  	/* Mozilla Firefox 4 to 18 */
+  	color: #ff7670;
+  }
+  
+  ::-moz-placeholder {
+  	/* Mozilla Firefox 19+ */
+  	color: #ff7670;
+  }
+  
+  :-ms-input-placeholder {
+  	/* Internet Explorer 10+ */
+  	color: #ff7670;
+  }
+  .left_ioc {
+  	width: 1.5em;
+  	height: 1.5em;
+  	border: 4px #FFFFFF solid;
+  	border-radius: 60%;
+  }
+  
+  
+  .address_detail{
+  	height: 6.4em;
+  	margin-right: 0.5em;
+  	font-size: 1em;
+  }
+  
+  .address_textarea{
+  	font-size: 1.2em;
+  	margin-right: 1em;	
+  }
+  .address_ioc_color {
+  	color: #c7c7cc;
+  }
+  
+  .address_input {
+  	padding: 1em;
+  }
+  .address_btn{
+  	padding-top: 2.5em;
+  }
+  
+  .address_width {
+  	width: 4.5em;
+  }
+  
+  .address_width_one{
+        width: 80%;
+  }
+  
+  .address_height {
+  	height: 3em;
+  }
+   .address_height_one {
+  	height: 5em;
+  	margin-bottom: 1em;
+  }
+ 
+  
+  .text_color {
+  	border: none;
+  	color: #ff736c;
+  }
+  
+  .text_font {
+  	font-size: 1.3em;
+  }
+  
+  .adress_height_width {
+  	height: 5em;
+  	width: 4.5em;
+  }
+  
+  .address_underline_dash {
+  	border-bottom: 0.1em dashed #c6c6c6;
+  }
+  
+  .address_underline_solid {
+  	border-bottom: 0.1em solid #c6c6c6;
+  }
+  .address_background_color{
+  	background-color: #f5f5f3;
+  }
+.myaddress{
+    padding-left: 0.5em;
+}

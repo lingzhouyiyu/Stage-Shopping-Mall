@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../common/css/ui-box.css">
+        <link rel="stylesheet" href="../../common/css/ui-base.css">
+        <link rel="stylesheet" href="../../common/css/ui-color.css">
+        <link rel="stylesheet" href="../../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../../common/css/app.css" />
+        <link rel="stylesheet" href="../personal_content/css/main.css" />
+        <link rel="stylesheet" href="password_content/css/main.css">
+    </head>
+
+    <body class="userInfo-bdcolor ub ub-ver">
+        <div class="ub ub-ver">
+            <div class="ub bc-bg userInfo-header userInfo-border ub-ac ub-pc common-font-color1 password_font_size">
+                修改登录密码
+            </div>
+            <div class="ub bc-bg password_margin_small">
+                <div class="ub ub-f1 ub-ac userInfo-header common-font-color2 ulev0 personal_margin_one">
+                    <input name="" placeholder="请输入原登录密码" type="password" class="ub ub-ac userInfo-input" id="oldpassword"/>
+                </div>
+            </div>
+            <div class="ub">
+                <div id="forgetpassword" class="ub ub-ac userInfo-header password_text_red bill_font_size personal_margin_two">
+                    忘记原登录密码
+                </div>
+            </div>
+            <div class="ub bc-bg">
+                <div class="ub ub-f1 ub-ac userInfo-header umar-t common-font-color2 ulev0 personal_margin_one">
+                    <input name="" placeholder="请输入新登录密码,6-16位字符或数字" type="password" class="ub ub-ac userInfo-input" id="password"/>
+                </div>
+            </div>
+            <div class="ub bc-bg password_margin">
+                <div class="ub ub-f1 ub-ac userInfo-header umar-t common-font-color2 ulev0 personal_margin_one">
+                    <input name="" placeholder="请再输入一次" type="password" class="ub ub-ac userInfo-input" id="repassword"/>
+                </div>
+            </div>
+            <div class="uinn password_padding">
+                <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="updatepaw">
+                    确认修改
+                </div>
+            </div>
+        </div>
+
+        <script src="../../common/js/jquery-1.7.1.min.js"></script>
+        <script src="../../common/js/appcan.js"></script>
+        <script src="../../common/js/appcan.control.js"></script>
+        <script src="../../common/js/yfkj.js"></script>
+    </body>
+    <script>
+        var msg = "";
+        appcan.ready(function() {
+            $("#oldpassword").unbind("blur");
+            //用户输入框失去焦点，检验用户是否存在
+            $("#oldpassword").bind("blur", function() {
+
+                checkpassword($(this).val());
+            });
+
+            appcan.initBounce();
+
+        });
+        /*验证原密码是否正确*/
+        function checkpassword(Fpassword) {
+            var parameter = {
+                FuserId : getuserid(),
+                Fpassword : Fpassword //原密码
+            };
+
+            appcan.ajax({
+                type : "POST",
+                dataType : 'json',
+                url : Serverurl + "/user/findOldPassword",
+                data : parameter,
+                success : function(result) {
+                    msg = result;
+                    //appcan.window.openToast(result.Msg);
+                    if (result == "0") {
+                        appcan.window.openToast('原登录密码不正确！', '1000');
+                        msg = result;
+                        return;
+                    }
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000');
+                }
+            });
+        }
+
+        function updatePassword() {
+            var Fpassword = $("#password").val();
+            //密码
+            if (Fpassword == "") {
+                appcan.window.openToast('新密码不能为空', '1000', 5);
+                return;
+            };
+            var rFpassword = $("#repassword").val();
+            //重复密码
+            if (rFpassword == "") {
+                appcan.window.openToast('再次输入密码不能为空', '1000', 5);
+                return;
+            };
+            if (Fpassword.length < 6 || Fpassword.length > 20) {
+                appcan.window.openToast("密码长度不正确，请设置6-20位密码!", "1000");
+                return;
+            }
+            if (Fpassword != rFpassword) {
+                appcan.window.openToast('两次输入密码不一样！', '1000', 5);
+                return;
+            };
+            var parameter = {
+                FuserId : getuserid(),
+                Fpassword : Fpassword //密码
+            };
+            if (msg == "0") {
+                appcan.window.openToast('原登录密码不正确！', '1000');
+                return;
+            }
+            appcan.ajax({
+                url : Serverurl + "/user/updatePassword",
+                type : "POST",
+                dataType : 'json',
+                data : parameter,
+                success : function(result) {
+                    //appcan.window.openToast(result);
+                    if (result == '1') {
+                        //appcan.window.openToast("登录成功！")
+                        appcan.window.open("login", "../../login/login.html");
+                        appcan.window.publish('toastpassowrd', '密码修改成功,正在跳转到登录页面！');
+                        //appcan.window.openToast("登录成功！");
+                    }
+                    appcan.window.evaluateScript({
+                        name : 'password',
+                        scriptContent : 'windowclose()'
+                    });
+                },
+                error : function(e) {
+                    appcan.window.openToast('服务器出错!', '1000', 5);
+                }
+            });
+        }
+
+        //我的资料点击事件
+        appcan.button("#updatepaw", "ani-act", function(a, b) {
+            updatePassword();
+        })
+        /*用户注册提交*/
+        appcan.button("#forgetpassword", "ani-act", function(a, b) {
+            appcan.window.open("register", "../../findpassword/findpassword.html");
+        })
+    </script>
+
+</html>

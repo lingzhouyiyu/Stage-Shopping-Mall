@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/app.css">
+		<link rel="stylesheet" href="orderpay_content/css/main.css">
+	</head>
+
+	<body class="bc-bg order-body-color" ontouchstart>
+		<div class="ub ub-ver order-gig-color">
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize" style="padding-top: 0.6em;">
+				<div class="ub ub-f2 ub-ac ub-con">
+					<div class="order-font-left">
+						订单名称：
+					</div>
+
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-name-text">
+					苹果iphone6Plus1
+				</div>
+			</div>
+
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize">
+				<div class="ub ub-f2 ub-ac  ub-con">
+					<div class="order-font-left">
+						订单金额：
+					</div>
+
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-free-text">
+					￥
+					<div id="count">
+
+					</div>
+					元
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize">
+				<div class="ub ub-f2 ub-ac ub-con">
+					<div class="order-font-left">
+						补差金额：
+					</div>
+
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-lessfree-text">
+					￥
+					<div id="count">
+
+					</div>
+					元
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize" style="padding-bottom: 0.6em;">
+				<div class="ub ub-f2 ub-ac  ub-con">
+					<div class="order-font-left">
+						保证金:
+					</div>
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-bond-text">
+					￥
+					<div id="count2">
+
+					</div>
+					元
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-f1 order-line"> </div>
+		<!--<div style="height: 1em;border-image: url(orderpay_content/css/myImg/border.png);">-->
+
+		</div>
+
+		<div class="ub ub-ver" style="background-color: white;">
+			<div class="ub ub-ac ub-pc order-boxsize-1 order-fontsize" style="padding-top: 0.5em; padding-bottom: 0.5em;">
+				<div class="ub ub-f2 ub-ac  ub-con">
+					<div class="order-font-left">
+						还需支付:
+					</div>
+				</div>
+				<div class="ub ub-f1 ub-ac order-text-over ub-con order-needpay-text">
+					￥
+					<div id="count3">
+
+					</div>
+					元
+				</div>
+			</div>
+		</div>
+
+		<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;color: white;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="orderpay_content/css/myImg/weixin.png" class="ub ub-ac ub-pc order-less-img" />
+					</div>
+
+				</div>
+				<div class="ub ub-f4 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						微信支付
+					</div>
+					<div class="order-less-font">
+						推荐安装微信5.0及以上的版本使用
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('0')">
+					<img id="chooseImg0" class="choose_img" src="orderpay_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>
+
+		<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;color: white;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="orderpay_content/css/myImg/yinhangka.png" class="ub ub-ac ub-pc order-less-img1" />
+					</div>
+
+				</div>
+
+				<div class="ub ub-f1 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						银行卡支付
+					</div>
+					<div class="order-less-font">
+						支付需银行卡已开通网上银行
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('1')">
+					<img id="chooseImg1" class="choose_img" src="orderpay_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ver ub-pc ub-ac order-payfont " style="height: 3.7em;">
+			<div class="ub ub-pc ub-ac ub-con">
+
+				<div class="ub  ub-fv ub-ac ub-pc" style="width: 5em;">
+					<div class="ub ub-ac ub-pc uc-a1 order-three-pic" style="height: 2.5em;">
+						<img src="orderpay_content/css/myImg/zhifubao.png" class="ub ub-ac ub-pc order-less-img" />
+					</div>
+
+				</div>
+
+				<div class="ub ub-f4 ub-ver ub-fv ub-fh  ub-pc">
+					<div class="order-fontsize">
+						支付宝支付
+					</div>
+					<div class="order-less-font">
+						推荐有支付宝账号的用户使用
+					</div>
+				</div>
+				<div class="ub ub-fv ub-ac ub-pc item" style="padding-right: 0.7em;" onclick="chooseitem('2')">
+					<img id="chooseImg2" class="choose_img" src="orderpay_content/css/myImg/chooseno.png" />
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ac order-less-font order-notice">
+			如有金额支付错误，请联系我们客服！
+		</div>
+		<!--确认支付开始-->
+		<div class="order-btn">
+			<div class="btn ub ub-ac bc-text-head ulev1 ub-pc bc-btn uc-a1 " id="submit">
+				确认支付
+			</div>
+		</div>
+
+		<button type="submit" class="uinvisible"></button>
+		<!--确认支付结束-->
+		<div id="footer" class=""></div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.listview.js"></script>
+		<script src="../common/js/countUp.min.js"></script>
+		<script src="../common/js/jquery-1.7.1.min.js" ></script>
+	</body>
+	<script>
+	   var chooseId=0;
+		var paymethord = "";
+		appcan.ready(function() { 
+			appcan.initBounce();
+			options = {  
+                useEasing: true,
+                  useGrouping: true,
+                  separator: ',',
+                  decimal: '.',
+                  prefix: '',
+                  suffix: ''
+            };
+            count = new CountUp("count", 0, 200, 2, 1, options);
+            count.start();
+		})
+		appcan.button("#submit", "ani-act", function() {
+			$("form").submit();
+		})
+		
+		
+		chooseitem('0');
+		function chooseitem(id){
+			chooseId = id;
+			$(".choose_img").attr("src","orderpay_content/css/myImg/chooseno.png");
+			$("#chooseImg"+id).attr("src","orderpay_content/css/myImg/choose.png");		   
+		}
+		
+	</script>
+
+</html>

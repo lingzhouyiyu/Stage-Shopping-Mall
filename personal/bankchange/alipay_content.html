@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="um uof landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px" ontouchstart>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/app.css" />
+		<link rel="stylesheet" href="../personal_content/css/main.css" />
+		<link rel="stylesheet" href="bankchange_content/css/main.css">
+	</head>
+
+	<body class="userInfo-bdcolor ub ub-ver">
+		<div class="ub ub-ver">
+			<div class="ub bc-bg userInfo-header userInfo-border ub-ac ub-pc common-font-color2 password_font_size">
+				已绑定支付宝信息
+			</div>
+			<div class="ub bc-bg password_margin_small">
+				<div class="ub ub-ac bankchange_width userInfo-header text_next common-font-color2  personal_margin_one">
+					支付宝账号
+				</div>
+				<div class="ub ub-ac userInfo-header common-font-color2  umar-l" id="FalipayAccount">
+
+				</div>
+			</div>
+			<div class="bank_change"></div>
+			<div class="ub bc-bg">
+				<div class="ub ub-ac bankchange_width userInfo-header text_next common-font-color2  personal_margin_one">
+					支付宝名称
+				</div>
+				<div class="ub ub-ac  userInfo-header text_next common-font-color2 umar-l" id="Fname">
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-f1 ub-ver">
+			<div class="bill_img mybill_height"></div>
+			<div class="ub bc-bg password_margin_small">
+				<div class="ub ub-ac bankchange_width userInfo-header text_next common-font-color2  personal_margin_one">
+					支付宝账号
+				</div>
+				<div class="ub ub-ac ub-f1 userInfo-header common-font-color2  umar-l">
+					<input name="" placeholder="请输入需要绑定的支付宝账号" type="number" class="ub ub-ac ub-f1 userInfo-input" id="newFalipayAccount" />
+				</div>
+			</div>
+			<div class="bank_change"></div>
+			<div class="ub ub-ac bc-bg">
+				<div class="ub ub-ac bankchange_width userInfo-header text_next common-font-color2  personal_margin_one">
+					支付宝账号
+				</div>
+				<div class="ub ub-ac ub-f1 userInfo-header text_next common-font-color2  umar-l">
+					<input name="" placeholder="请再次输入需要绑定的支付宝账号" type="number" class="ub ub-ac ub-f1 userInfo-input" id="rnewFalipayAccount" />
+
+				</div>
+			</div>
+			<div class="ub ub-ac">
+				<div class="ub ub-ac bankchange_width userInfo-header text_next common-font-color2  personal_margin_one">
+				</div>
+				<div class="ub ub-ac userInfo-header text_next common-font-color2 umar-l">
+				</div>
+			</div>
+			<div class="ub-f1 uinn password_padding">
+				<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 ulev1" id="updatepaw">
+					确定修改绑定
+				</div>
+			</div>
+		</div>
+		<script src="../../common/js/jquery-1.7.1.min.js"></script>
+		<script src="../../common/js/appcan.js"></script>
+		<script src="../../common/js/appcan.control.js"></script>
+		<script src="../../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			findBankAndName();
+		})
+
+		function findBankAndName() {
+			var parameter = {
+				FuserId: getuserid(),
+			};
+			appcan.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: Serverurl + "/user/findPayAndName",
+				data: parameter,
+				success: function(result) {
+					var bankinfo = result.Data[0];
+					if (result.Data.length > 0) {
+						var msg = result.Msg;
+						if (msg == "1") {
+							$("#FalipayAccount").text(bankinfo.FalipayAccount);
+							$("#Fname").text(bankinfo.Fname);
+						}
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000');
+				}
+			});
+		}
+		//更新支付宝信息
+		function updatePassword() {
+			var FbankInfo = $("#newFalipayAccount").val();
+			// 支付宝账号
+			if (FbankInfo == "") {
+				appcan.window.openToast('支付宝账号不能为空', '1000', 5);
+				return;
+			};
+			var FbankAccount = $("#rnewFalipayAccount").val();
+			if (FbankAccount == "") {
+				appcan.window.openToast('重复输入支付宝账号不能为空', '1000', 5);
+				return;
+			};
+			if (FbankInfo != FbankAccount) {
+				appcan.window.openToast('两次输入的账号不一样!', '1000', 5);
+				return;
+			};
+			var parameter = {
+				FuserId: getuserid(),
+				FalipayAccount: FbankInfo
+			};
+			appcan.ajax({
+				url: Serverurl + "/user/updatePayBankInfo",
+				type: "POST",
+				dataType: 'json',
+				data: parameter,
+				success: function(result) {
+					//appcan.window.openToast(result);
+					if (result == '1') {
+						appcan.window.openToast('支付宝信息修改成功！', '1000');
+						appcan.window.publish('closepay', '');
+					}
+				},
+				error: function(e) {
+					appcan.window.openToast('服务器出错!', '1000', 5);
+				}
+			});
+		}
+		//我的资料点击事件
+		appcan.button("#updatepaw", "ani-act", function(a, b) {
+			updatePassword();
+		})
+	</script>
+
+</html>

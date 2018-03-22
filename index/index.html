@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../common/css/app.css">
+        <link rel="stylesheet" href="index_content/css/main.css" </head>
+
+        <body class="um-vp up bc-bg" ontouchstart>
+        <div id="page_0" class="up ub ub-ver uof" tabindex="0">
+        <!--header开始-->
+        <!--<div id="header" class="ub ub-ver bc-head uof yfhead">
+        <div id="header-child1" class="bc-text-head ub ub-f1">
+        <div class="ub ub-pc ub-ac" style="width: 5em;">
+        <div id="leftpic" class="ub ub-pc ub-ac ub-f1 hidden-img">
+        <img src="index_content/css/myImg/pic_right.png" id="" class="consumed-head-pic img" onclick="getgoodstypem(this)" />
+        </div>
+        </div>
+        <div class="ub ub-f1 ub-pc ub-ac ulev1">
+
+        <h1 class="ut ub-f1 ulev1 ut-s tx-c" tabindex="0">妙分期</h1>
+        <!--<img class="ub ub-ac ub-pc title_text" src="../images/title.png" />-->
+        <!--</div>
+        <div class="ub ub-pc ub-ac" style="width: 5em;">
+        <div id="rightpic" class="ub ub-pc ub-ac ub-f1 hidden-img ">
+
+        </div>
+        <div class="ub ub-pc ub-ac ub-f1 uhide" id="loginbtn">
+        <img class="ub ub-img loginimg" src="index_content/css/myImg/login.png">
+        <div class="ub ub-ac logintxt">登录</div>
+        </div>
+        </div>
+        </div>
+        </div>-->
+        <!---->
+
+        <!--header结束-->
+        <!--header开始-->
+        <div id="header" class="uh ub-ac bc-text-head ub bc-head yfhead">
+        <div class="nav-btn nav-bt">
+        <div id="leftpic" class="ub ub-pc ub-ac ub-f1 hidden-img">
+        <img src="index_content/css/myImg/pic_right.png" style="" id="" class="img" onclick="getgoodstypem(this)" />
+        </div>
+        </div>
+        <h1 class="ub ut ub-f1 ub-pc ub-ac title_font ut-s tx-c" tabindex="0">妙分期</h1>
+        <div class="nav-btn nav-bt" id="nav-right">
+        <div id="rightpic" class="ub ub-pc ub-ac ub-f1 hidden-img ">
+
+        </div>
+        <div class="ub ub-pc ub-ac ub-f1 uhide" id="loginbtn">
+        <img class="ub ub-img loginimg" src="index_content/css/myImg/login.png">
+        <div class="ub ub-ac logintxt">登录</div>
+        </div>
+        </div>
+        </div>
+        <!--header结束-->
+        <!--content开始-->
+        <div id="content" class="ub-f1 ub">
+
+        </div>
+        <!--content结束-->
+        <div id="footer" class="ub bc-text-head" style="border-top: 2px solid #E3E3E3; background-color: #FFFFFF;">
+
+        </div>
+        </div>
+        <script src="../common/js/appcan.js"></script>
+        <script src="../common/js/appcan.control.js"></script>
+        <script src="../common/js/yfkj.tab.js"></script>
+        <script src="../common/js/yfkj.js"></script>
+        </body>
+        <script>
+            var orderindex = appcan.locStorage.getVal("orderindex");
+            var tabset = {
+                selector : "#footer",
+                hasIcon : true,
+                hasAnim : false,
+                hasLabel : true,
+                hasBadge : true,
+                index : 0,
+                ispico : true,
+                data : [{
+                    label : "首页",
+                    icon : "fa-home",
+                    pico : "../images/home.png",
+                    pactivico : "../images/home-red.png"
+                }, {
+                    label : "购物",
+                    icon : "fa-shopping-cart",
+                    pico : "../images/gouwu.png",
+                    pactivico : "../images/gouwu-red.png"
+                }, {
+                    label : "消费",
+                    icon : "fa-search",
+                    pico : "../images/xiaofei.png",
+                    pactivico : "../images/xiaofei-red.png"
+                }, {
+                    label : "我的",
+                    icon : "fa-cube",
+                    pico : "../images/wode.png",
+                    badge : "1",
+                    pactivico : "../images/wode-red.png"
+                }]
+            };
+            tabset.data[2].badge = "";
+            var tabview = appcan.tab(tabset);
+            tabview.on("click", function(obj, index) {
+                //alert(index);
+                if (index == '0') {
+                    $("#leftpic").removeClass("catype");
+                    $("#leftpic").addClass("hidden-img");
+                    //appcan.window.publish('myindex0', '');
+                }
+                if (index == '1') {
+                    //                   appcan.window.publish('myindex2', '');
+                    //appcan.window.publish('gugu', '');
+                    $("#leftpic").removeClass("hidden-img ");
+                    $("#leftpic").addClass("active-img catype ");
+                    $("#leftpic .img").removeClass("consumed-head-pic");
+                    $("#leftpic .img").addClass("consumed-head-catey");
+                    $("#leftpic .img").attr("src", "index_content/css/myImg/pic_left.png");
+                    $("#leftpic .img").attr("onclick", "getgoodstypem('1')");
+                }
+                if (index == '2') {
+                    //                   appcan.window.publish('myindex3', '');
+                    $("#leftpic .img").attr("src", "index_content/css/myImg/pic_right.png");
+                    $("#leftpic .img").attr("onclick", "getgoodstypem('2')");
+                    $("#leftpic").removeClass("hidden-img catype ");
+                    $("#leftpic .img").removeClass("consumed-head-catey");
+                    $("#leftpic .img").addClass("consumed-head-pic");
+                }
+                if (index == '3') {
+                    $("#leftpic").removeClass("catype");
+                    $("#leftpic").addClass("hidden-img");
+                    //appcan.window.publish('3', '');
+                }
+                appcan.window.selectMultiPopover("content", index);
+            })
+            appcan.ready(function() {
+                uexWidgetOne.cbGetCurrentWidgetInfo = cbGetCurrentWidgetInfo;
+                uexWidgetOne.getCurrentWidgetInfo();
+               // getversion();
+               // uexJPush.cbSetAlias = function(data) {
+              //  }
+                var json = {
+                    alias : getphone(),//String 设置的别名
+                };
+               // uexJPush.setAlias(json)
+                //扫描回调
+                uexScanner.cbOpen = ScannerSuccessCallBack;
+                var userid = getuserid();
+                if (userid == -1) {
+                    $("#loginbtn").removeClass("uhide");
+                } else {
+                    $("#loginbtn").addClass("uhide");
+                }
+                appcan.window.subscribe('loginbtnini', function(msg) {
+                    var userid = getuserid();
+                    if (userid == -1) {
+                        $("#loginbtn").removeClass("uhide");
+                    } else {
+                        $("#loginbtn").addClass("uhide");
+                    }
+                });
+                appcan.window.subscribe('logintoast', function(msg) {
+                    appcan.window.openToast('登录成功', '1000');
+                });
+                appcan.window.subscribe('toast', function(msg) {
+                    appcan.window.openToast(msg, '1000');
+                });
+                appcan.window.subscribe('ordersuccess', function(msg) {
+                    appcan.window.openToast("商品下单成功", '2000');
+                });
+                appcan.window.subscribe('ordererror', function(msg) {
+                    appcan.window.openToast('您的可消费金额不足', '2000');
+                });
+                var top = $('#header').offset().height;
+                appcan.frame.open({
+                    id : "content",
+                    url : [{
+                        "inPageName" : "index",
+                        "inUrl" : "index_content.html",
+                    }, {
+                        "inPageName" : "shop",
+                        "inUrl" : "../shoping/shop_content.html",
+                    }, {
+                        "inPageName" : "consumed",
+                        "inUrl" : "../consumed/consumed_content.html",
+                    }, {
+                        "inPageName" : "personal",
+                        "inUrl" : "../personal/personal_content.html",
+                    }],
+                    top : top,
+                    left : 0,
+                    index : 0,
+                    change : function(index, res) {
+                        //alert(res.multiPopSelectedIndex);
+                        if (res.multiPopSelectedIndex == '0') {
+                            $("#leftpic").removeClass("catype");
+                            $("#leftpic").addClass("hidden-img");
+                            appcan.window.publish('myindex0', '');
+                        }
+                        if (res.multiPopSelectedIndex == '1') {
+                            //                   appcan.window.publish('myindex2', '');
+                            appcan.window.publish('gugu', '');
+                            $("#leftpic").removeClass("hidden-img ");
+                            $("#leftpic").addClass("active-img catype ");
+                            $("#leftpic .img").removeClass("consumed-head-pic");
+                            $("#leftpic .img").addClass("consumed-head-catey");
+                            // $("#leftpic").removeClass("hidden-img ");
+                            // $("#leftpic").addClass("active-img catype");
+                            // $("#leftpic").removeClass("hidden-img");
+                            // $("#leftpic").addClass("active-img catype");
+                            $("#leftpic .img").attr("src", "index_content/css/myImg/pic_left.png");
+                            $("#leftpic .img").attr("onclick", "getgoodstypem('1')");
+                        }
+                        if (res.multiPopSelectedIndex == '2') {
+                            //                   appcan.window.publish('myindex3', '');
+                            $("#leftpic .img").attr("src", "index_content/css/myImg/pic_right.png");
+                            $("#leftpic .img").attr("onclick", "getgoodstypem('2')");
+                            // $("#leftpic").removeClass("hidden-img catype");
+                            $("#leftpic").removeClass("hidden-img catype ");
+                            //$("#leftpic").addClass("consumed-head-pic");
+                            $("#leftpic .img").removeClass("consumed-head-catey");
+                            $("#leftpic .img").addClass("consumed-head-pic");
+                        }
+                        if (res.multiPopSelectedIndex == '3') {
+                            $("#leftpic").removeClass("catype");
+                            $("#leftpic").addClass("hidden-img");
+                            appcan.window.publish('3', '');
+                            getnewscount();
+                        }
+                        tabview.moveTo(res.multiPopSelectedIndex);
+                    }
+                });
+                window.onorientationchange = window.onresize = function() {
+                    appcan.frame.resize("content", 0, top);
+                }
+                appcan.window.subscribe('move', function(msg) {
+                    appcan.window.selectMultiPopover("content", msg);
+                });
+                appcan.window.subscribe('setindexbaget', function(msg) {
+                    getnewscount();
+                });
+                getnewscount();
+            });
+            version = "";
+            sversion = "3";
+            function cbGetCurrentWidgetInfo(opId, dataType, data) {
+                var obj = eval('(' + data + ')');
+                version = obj.version;
+                //获取当前APP的一些信息，比如应用ID之类的数据
+            }
+
+            //          appcan.button(".nav-btn", "btn-act", function() {
+            //              appcan.window.close(-1);
+            //          })
+            appcan.button("#loginbtn", "btn-act", function() {
+                appcan.window.open({
+                    name : "login",
+                    aniId : 1,
+                    data : "../login/login.html",
+                });
+            })
+            appcan.button(".catype", "btn-act", function() {
+                appcan.window.open("shar", "../shar/shar.html");
+            })
+            function getgoodstypem(sdi) {
+                if (sdi === '1') {
+                    //打开商品分类
+                    appcan.window.open("shar", "../shar/shar.html");
+                } else if (sdi === '2') {
+                    //打开扫描
+                    uexScanner.open();
+                }
+            }
+
+            function ScannerSuccessCallBack(opCode, dataType, data) {
+                var datas = JSON.parse(data);
+                var shopdatas = {
+                    FshoperId : datas.code
+                };
+                //alert(datas.code);
+                appcan.locStorage.setVal("shopinfo", shopdatas);
+                appcan.window.open("seller_consume", "../shoping/seller_consume/seller_consume.html");
+            }
+
+            function getnewscount() {
+                appcan.ajax({
+                    url : Serverurl + "/user/getnewcount",
+                    dataType : 'json',
+                    type : "POST",
+                    data : {
+                        "Fphone" : getphone()
+                    },
+                    success : function(result) {
+                        if (result > 0) {
+                            setbuget(0);
+                        } else {
+                            setbuget(1);
+                        }
+                        appcan.locStorage.setVal("newcount", result);
+                        appcan.window.publish('setuserbaget', '');
+                    },
+                    error : function(e) {
+                        appcan.window.openToast('服务器出错!', '1000');
+                    }
+                });
+            }
+
+            function setbuget(tag) {
+                if (tag == 0) {
+                    // $(".tab_badge").removeClass("uhide");
+                    $(".tab_badge").addClass("uhide");
+                } else {
+                    $(".tab_badge").addClass("uhide");
+                }
+            }
+        </script>
+
+</html>
